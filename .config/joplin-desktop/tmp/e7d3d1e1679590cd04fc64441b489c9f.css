@@ -1,0 +1,11 @@
+/* For styling the rendered Markdown */
+/* body {
+    background: hsl(20, 13%, 18%);
+} */
+h1, h2, h3 {
+    color: hsl(207, 82%, 66%);
+}
+
+h4, h5, h6 {
+    color: hsl(187, 47%, 55%);
+}
