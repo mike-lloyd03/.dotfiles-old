@@ -10,7 +10,7 @@ export PATH="/Users/mikelloyd/.nvm/versions/node/v12.16.1/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mikelloyd/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
