@@ -6,7 +6,7 @@ ZSH_DISABLE_COMPFIX='true'
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH="/opt/anaconda3/bin:$PATH"  # commented out by conda initialize
 export PATH="/opt/anaconda3/condabin:$PATH"
-export PATH="/Users/mikelloyd/.nvm/versions/node/v12.16.1/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Path to your oh-my-zsh installation.
@@ -114,7 +114,12 @@ alias gocode='cd ~/Documents/coding'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias svenv='source venv/bin/activate'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# dotfiles setup
+alias dotfiles-fetch='git -C ~/.dotfiles fetch'
+alias dotfiles-pull='git -C ~/.dotfiles pull'
+alias dotfiles-status='git -C ~/.dotfiles status'
+alias dotfiles-commit='git -C ~/.dotfiles add ~/.dotfiles; git -C ~/.dotfiles commit -m "General update"; git -C ~/.dotfiles push'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
