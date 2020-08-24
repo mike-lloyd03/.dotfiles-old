@@ -1,2 +1,3 @@
 .config/coc/history.json
 .config/coc/extensions/coc-yank-data/yank
+__pycache__
