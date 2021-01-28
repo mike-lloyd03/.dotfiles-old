@@ -38,9 +38,27 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " switches to open tab for files which are already open
 set switchbuf=usetab
 
-" loads and sets the onedark theme
-packadd! onedark.vim
+""""""" vim-plug Config """""""
+call plug#begin('~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+
+call plug#end()
+
+""""""" Theme Config """""""
 colorscheme onedark
+
+""""""" Lightline Config """""""
+let g:lightline = { 'colorscheme': 'PaperColor light' }
+set laststatus=2
 
 
 """"""" Status Line Config """""""
@@ -66,41 +84,6 @@ nnoremap <buffer> H :<C-u>execute "!pydoc3 " . expand("<cword>")<CR>
 map <C-j> <C-E>
 map <C-k> <C-Y>
 
-""""""" vim-plug Config """""""
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-default branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-" Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
-
-" Initialize plugin system
-call plug#end()
 
 """"""" NERDTree Config """""""
 " close NERDTree when it's open by itself
@@ -112,15 +95,6 @@ let NERDTreeDirArrows = 1
 
 " NERDTree Ignore
 let NERDTreeIgnore=['__pycache__']
-
-
-""""""" Kite Config """""""
-" setup the status line with Kite
-" set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-" set laststatus=2  " always display the status line
-
-" tab autocomplete for Kite
-" let g:kite_tab_complete=1"
 
 
 """"""" COC Config """""""
