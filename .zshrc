@@ -2,6 +2,10 @@
 # to access the same .zsh and .oh-my-zsh files
 ZSH_DISABLE_COMPFIX='true'
 
+# Locale issues fix
+export LC_ALL=en_US.utf-8 
+export LANG="$LC_ALL" 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH="/opt/anaconda3/bin:$PATH"  # commented out by conda initialize
