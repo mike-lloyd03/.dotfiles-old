@@ -149,4 +149,4 @@ unset __conda_setup
 source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh autocompletion
-source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
