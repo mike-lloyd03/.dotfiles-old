@@ -142,3 +142,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# VIM IN ZSH!
+bindkey -v
+
+# zsh syntax highlighting
+source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh autocompletion
+source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
