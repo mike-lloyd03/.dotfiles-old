@@ -7,7 +7,7 @@
 # Unset or set to any other value to do the opposite.
 #
 # The default is not to reset, unless we're showing the mode in RPS1.
-typeset -g VI_MODE_RESET_PROMPT_ON_MODE_CHANGE
+typeset -g VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 # Control whether to change the cursor style on mode change.
 #
 # Set to "true" to change the cursor on each mode change.

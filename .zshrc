@@ -120,6 +120,7 @@ alias gocode='cd ~/Documents/coding'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias svenv='source venv/bin/activate'
+alias svim='sudo vim'
 
 # dotfiles setup
 alias dotfiles-fetch='git -C ~/.dotfiles fetch'

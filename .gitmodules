@@ -37,3 +37,15 @@
 [submodule "vim-surround"]
 	path = .vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+
+[submodule "tmux-sensible"]
+	path = .tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+
+[submodule "tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+
+[submodule "tmux-themepack"]
+	path = .tmux/plugins/tmux-themepack
+	url = https://github.com/jimeh/tmux-themepack.git
