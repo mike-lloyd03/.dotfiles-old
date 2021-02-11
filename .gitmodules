@@ -49,3 +49,7 @@
 [submodule "tmux-themepack"]
 	path = .tmux/plugins/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
+
+[submodule "tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
