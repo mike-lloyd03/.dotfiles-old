@@ -81,17 +81,19 @@ colorscheme onedark
 let g:lightline = { 'colorscheme': 'onedark' }
 set laststatus=2
 
+""""""" coc-snippets Config """""""
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-""""""" Status Line Config """""""
-" set statusline=
-" set statusline+=%<\                       " cut at start
-" set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
-" set statusline+=%-40f\                    " path
-" set statusline+=%{coc#status()}
-" set statusline+=%=%1*%y%*%*\              " file type
-" set statusline+=%10((%l,%c)%)\            " line and column
-" set statusline+=%P                        " percentage of file
-" let g:NERDTreeStatusline = '%#NonText#'
+function! s:check_back_space() abort
+    let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    let g:coc_snippet_next = '<tab>'
 
 
 """"""" Keyboard Config """""""
