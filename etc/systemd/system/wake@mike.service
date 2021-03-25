@@ -1,0 +1,13 @@
+[Unit]
+Description=User resume actions
+After=sleep.target
+
+[Service]
+User=mike
+Type=simple
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/bin/sh /home/mike/.config/xkbcomp/vim-keys-xkb.sh
+
+[Install]
+WantedBy=sleep.target
