@@ -122,7 +122,7 @@ alias vimrc='vim ~/.vimrc'
 alias svenv='source venv/bin/activate'
 alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
-alias xmap='sh ~/.config/xmodmap/xmodmap-vim.sh'
+alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
 alias startfusuma='killall fusuma && fusuma -d'
 
 # dotfiles setup
