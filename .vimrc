@@ -2,6 +2,9 @@
 " Use system clipboard for copy and paste
 set clipboard=unnamed
 
+" Break lines at word boundaries when wrapping
+set linebreak
+
 " enable syntax highlighting
 syntax enable
 
@@ -29,6 +32,17 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
 " enable Python highlighting features
 let python_hightlight_all = 1
+
+" Markdown bindings
+augroup mdbindings
+  autocmd! mdbindings
+  autocmd Filetype markdown noremap <buffer> <silent> k gk
+  autocmd Filetype markdown noremap <buffer> <silent> j gj
+  autocmd Filetype markdown noremap <buffer> <silent> 0 g0
+  autocmd Filetype markdown noremap <buffer> <silent> $ g$
+  autocmd FileType markdown setlocal spell spelllang=en_us
+  " autocmd Filetype markdown Goyo
+augroup end
 
 " set the cursor to a line in Normal Mode and a block in Insert Mode
 if exists('$TMUX')
@@ -71,6 +85,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -80,6 +97,10 @@ colorscheme onedark
 """"""" Lightline Config """""""
 let g:lightline = { 'colorscheme': 'onedark' }
 set laststatus=2
+
+""""""" vim_markdown Config """""""
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
 
 """"""" coc-snippets Config """""""
 inoremap <silent><expr> <TAB>

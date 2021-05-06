@@ -6,7 +6,7 @@ export LANG="$LC_ALL"
 export PATH="/opt/anaconda3/condabin:$PATH"
 export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -34,11 +34,12 @@ plugins=(git vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+export EDITOR='vim'
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -56,6 +57,7 @@ alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
 alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
 alias startfusuma='killall fusuma && fusuma -d'
+alias load-kvm="sudo /home/mike/Documents/scripts/intel_gvt-g_setup/start-kvm-gvt-g.sh"
 
 # dotfiles setup
 alias dotfiles-fetch='git -C ~/.dotfiles fetch'
@@ -80,3 +82,8 @@ unset __conda_setup
 
 # zsh syntax highlighting
 source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Launch tmux
+if [ ! -v TMUX ]; then
+  tmux
+fi

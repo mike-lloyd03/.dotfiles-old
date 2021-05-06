@@ -38,6 +38,18 @@
 	path = .vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 
+[submodule "tabular"]
+	path = .vim/plugged/tabular
+	url = https://github.com/godlygeek/tabular
+
+[submodule "goyo.vim"]
+	path = .vim/plugged/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+
+[submodule "vim-markdown"]
+	path = .vim/plugged/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+
 [submodule "tmux-sensible"]
 	path = .tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
