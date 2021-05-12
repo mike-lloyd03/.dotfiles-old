@@ -33,6 +33,9 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=red
 " enable Python highlighting features
 let python_hightlight_all = 1
 
+""""""" lexical config """""""
+set nocompatible
+
 " Markdown bindings
 augroup mdbindings
   autocmd! mdbindings
@@ -41,6 +44,7 @@ augroup mdbindings
   autocmd Filetype markdown noremap <buffer> <silent> 0 g0
   autocmd Filetype markdown noremap <buffer> <silent> $ g$
   autocmd FileType markdown setlocal spell spelllang=en_us
+  autocmd FileType markdown call lexical#init()
   " autocmd Filetype markdown Goyo
 augroup end
 
@@ -88,6 +92,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'preservim/vim-lexical'
 
 call plug#end()
 

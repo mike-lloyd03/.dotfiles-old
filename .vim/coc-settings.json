@@ -1,6 +1,6 @@
 {
-    "markdownlint.config": 
-        {
-            "line_length": false
-        }
+    "coc.preferences.formatOnSaveFiletypes":
+        [
+            "rust"
+        ]
 }

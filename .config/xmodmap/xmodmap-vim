@@ -5,18 +5,6 @@ keycode 66 = Mode_switch
 keysym Shift_R = Shift_R Caps_Lock Shift_R
 keysym Shift_L = Shift_L Caps_Lock Shift_L
 
-! ! ARROWS - INVERTED T
-! keysym j = j J Left 
-! keysym l = l L Right 
-! keysym i = i I Up
-! keysym k = k K Down
-! ! Other Navigation Keys
-! keysym u = u U Prior
-! keysym o = o O Next
-! keysym y = y Y Home
-! keysym h = h H End
-
-
 ! ARROWS - VIM STYLE (uncomment to use)
 keysym h = h H Left
 keysym j = j J Down
