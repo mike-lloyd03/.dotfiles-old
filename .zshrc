@@ -87,3 +87,5 @@ source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlightin
 if [ ! -v TMUX ]; then
   tmux
 fi
+
+export PATH="$HOME/.poetry/bin:$PATH"

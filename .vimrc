@@ -93,6 +93,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/vim-lexical'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'psf/black', { 'branch': 'stable' }
 
 call plug#end()
 
@@ -121,6 +123,11 @@ function! s:check_back_space() abort
 
     let g:coc_snippet_next = '<tab>'
 
+""""""" vim-go Config """""""
+let g:go_gopls_enabled = 0
+
+""""""" vim-black configuration """""""
+let g:black_string_normalization = 0
 
 """"""" Keyboard Config """""""
 " nerdtree hotkey
@@ -132,6 +139,9 @@ nnoremap <buffer> H :<C-u>execute "!pydoc3 " . expand("<cword>")<CR>
 " Control j and h to scroll
 map <C-j> <C-E>
 map <C-k> <C-Y>
+
+""""""" Format Python on save """""""
+autocmd BufWritePre *.py execute ':Black'
 
 
 """"""" NERDTree Config """""""

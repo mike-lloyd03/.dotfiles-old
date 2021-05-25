@@ -2,6 +2,7 @@
   "dependencies": {
     "coc-clangd": ">=0.9.0",
     "coc-css": ">=1.2.6",
+    "coc-diagnostic": ">=0.18.6",
     "coc-go": ">=0.13.3",
     "coc-html": ">=1.4.1",
     "coc-jedi": ">=0.25.2",
