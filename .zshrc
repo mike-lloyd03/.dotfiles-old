@@ -58,6 +58,8 @@ alias chkjrn='sudo journalctl -xe'
 alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
 alias startfusuma='killall fusuma && fusuma -d'
 alias load-kvm="sudo /home/mike/Documents/scripts/intel_gvt-g_setup/start-kvm-gvt-g.sh"
+alias ls="exa"
+alias cat="bat"
 
 # dotfiles setup
 alias dotfiles-fetch='git -C ~/.dotfiles fetch'
