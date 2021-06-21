@@ -1,7 +1,4 @@
 """"""" Basic Config """""""
-" Use system clipboard for copy and paste
-set clipboard=unnamed
-
 " Break lines at word boundaries when wrapping
 set linebreak
 
@@ -95,6 +92,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'preservim/vim-lexical'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'darfink/vim-plist'
 
 call plug#end()
 
