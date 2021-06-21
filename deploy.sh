@@ -1,14 +1,19 @@
 #! /bin/sh
 
-# ln -s ~/.dotfiles/{.vim,.vimrc,.tmux,.tmux.conf} ~/
-# ln -s ~/.dotfiles/.config/{coc, xkb, fish, omf} ~/.config/
+dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .config/xkbcomp .config/fish .config/omf .config/karabiner)
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .config/xkb .config/fish .config/omf)
-
+echo "Deploying .dotfiles..."
 for f in "${dotfiles[@]}"
 do
     if [ -e ~/$f ]; then
-        mv ~/$f ~/$f.bak
+        if [ $(readlink ~/$f) = ~/.dotfiles/$f ]; then
+            echo "Link for $f already exists. Skipping."
+            continue
+        fi
+        echo "$f already exists. Backing up."
+        mv ~/$f ~/$f.pre-deploy
     fi
+    echo "Creating link for $f"
     ln -s ~/.dotfiles/$f ~/$f
 done
+echo "Done."
