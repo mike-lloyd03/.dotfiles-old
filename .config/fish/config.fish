@@ -9,7 +9,7 @@ alias cat="bat"
 
 
 # Launch tmux
-if test ! -n "$TMUX"
+if test \( ! -n "$TMUX" \) -a \( ! -n "SSH_CLIENT" \)
   tmux
 end
 
