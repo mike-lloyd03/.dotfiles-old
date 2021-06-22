@@ -1,6 +1,17 @@
 #! /bin/sh
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .config/xkbcomp .config/fish .config/omf .config/karabiner)
+dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .config/fish .config/omf)
+linux_dotfiles=(.config/xkbcomp)
+mac_dotfiles=(.config/karabiner)
+
+if [ $(uname -s) = Linux ]; then
+    dotfiles+=( ${linux_dotfiles[@]} )
+elif [ $(uname -s) = Darwin ]; then
+    dotfiles+=( ${mac_dotfiles[@]} )
+else
+    echo "Cannot deploy on this system."
+    exit 1
+fi
 
 echo "Deploying .dotfiles..."
 for f in "${dotfiles[@]}"
@@ -17,3 +28,4 @@ do
     ln -s ~/.dotfiles/$f ~/$f
 done
 echo "Done."
+exit 0
