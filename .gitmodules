@@ -82,3 +82,6 @@
 [submodule ".vim/plugged/vim-plist"]
 	path = .vim/plugged/vim-plist
 	url = https://github.com/darfink/vim-plist
+[submodule ".vim/plugged/auto-pairs"]
+	path = .vim/plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs

@@ -93,6 +93,7 @@ Plug 'preservim/vim-lexical'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'darfink/vim-plist'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
