@@ -2,3 +2,4 @@
 .config/coc/extensions/coc-yank-data/yank
 __pycache__
 .tmux/resurrect/*
+.config/karabiner/automatic_backups
