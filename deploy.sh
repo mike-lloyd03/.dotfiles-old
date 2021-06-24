@@ -1,6 +1,6 @@
 #! /bin/sh
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .config/xkbcomp .config/fish .config/omf .config/karabiner)
+dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .config/xkbcomp .zshrc .oh-my-zsh .local/share/zsh .config/karabiner)
 
 echo "Deploying .dotfiles..."
 for f in "${dotfiles[@]}"
