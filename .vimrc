@@ -1,5 +1,9 @@
 """"""" Basic Config """""""
-" Break lines at word boundaries when wrapping
+" toggle set paste
+set pastetoggle=<F8>
+
+"
+"" Break lines at word boundaries when wrapping
 set linebreak
 
 " enable syntax highlighting

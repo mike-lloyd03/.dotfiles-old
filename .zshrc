@@ -90,6 +90,9 @@ source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlightin
 # Launch tmux
 if [ ! -v TMUX ]; then
   tmux
+  echo -ne '\e[?1004l']' # For dealing with dumb focus issues.
 fi
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+eval "$(starship init zsh)"
