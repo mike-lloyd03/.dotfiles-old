@@ -1,0 +1,9 @@
+command_timeout = 1000
+
+[character]
+success_symbol = '[\[I\]](bold green) [❯](bold green)'
+error_symbol = '[\[I\]](bold green) [❯](bold red)'
+vicmd_symbol = '[\[N\]](bold red) [❯](bold green)'
+
+[kubernetes]
+disabled = false

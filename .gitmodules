@@ -73,15 +73,19 @@
 [submodule ".vim/plugged/vim-lexical"]
 	path = .vim/plugged/vim-lexical
 	url = https://github.com/preservim/vim-lexical
+
 [submodule ".vim/plugged/black"]
 	path = .vim/plugged/black
 	url = https://github.com/psf/black
+
 [submodule ".vim/plugged/vim-go"]
 	path = .vim/plugged/vim-go
 	url = https://github.com/fatih/vim-go
+
 [submodule ".vim/plugged/vim-plist"]
 	path = .vim/plugged/vim-plist
 	url = https://github.com/darfink/vim-plist
+
 [submodule ".vim/plugged/auto-pairs"]
 	path = .vim/plugged/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs

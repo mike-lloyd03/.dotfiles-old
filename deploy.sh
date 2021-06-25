@@ -2,7 +2,7 @@
 
 # set -x
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh)
+dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
 
