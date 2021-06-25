@@ -7,3 +7,17 @@ vicmd_symbol = '[\[N\]](bold red) [❯](bold green)'
 
 [kubernetes]
 disabled = false
+
+[docker_context]
+format = "| [$symbol$context]($style) "
+
+[golang]
+format = "| [$symbol($version )]($style) "
+symbol = "go "
+
+[python]
+format = '| [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
+
+[rust]
+format = "| [$symbol($version )]($style) "
+symbol = "𝗥 "
