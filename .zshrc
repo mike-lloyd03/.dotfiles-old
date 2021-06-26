@@ -15,6 +15,7 @@ if [ $(uname -n) = kratos ]; then
   export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
+  export PATH="$HOME/.poetry/bin:$PATH"
 
   alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
   alias startfusuma='killall fusuma && fusuma -d'
@@ -35,15 +36,17 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME='avit-custom'
 ZSH_THEME=''
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 # COMPLETION_WAITING_DOTS="true"
 export DISABLE_LS_COLORS="true"
 plugins=(git vi-mode)
 source $ZSH/oh-my-zsh.sh
+MODE_INDICATOR=""
+source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mike/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('home/mike/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -56,16 +59,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# zsh syntax highlighting
-source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Launch tmux
 if [ ! -v TMUX ]; then
   tmux
   echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi
-
-export PATH="$HOME/.poetry/bin:$PATH"
 
 # Starship prompt
 eval "$(starship init zsh)"

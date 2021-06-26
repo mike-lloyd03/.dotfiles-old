@@ -21,3 +21,6 @@ format = '| [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
 [rust]
 format = "| [$symbol($version )]($style) "
 symbol = "𝗥 "
+
+[package]
+format = "| [$symbol$version]($style) "
