@@ -24,3 +24,6 @@ symbol = "𝗥 "
 
 [package]
 format = "| [$symbol$version]($style) "
+
+[vagrant]
+format = "| [$symbol($version )]($style) "
