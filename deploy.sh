@@ -18,16 +18,16 @@ fi
 echo "Deploying .dotfiles..."
 for f in "${dotfiles[@]}"
 do
-    if [ -e ~/$f ]; then
-        if [ -L $HOME/$f -a $(readlink ~/$f) = ~/.dotfiles/$f ]; then
+    if [ -e $HOME/$f ]; then
+        if [ -L $HOME/$f -a $(readlink $HOME/$f) = $HOME/.dotfiles/$f ]; then
             echo "Link for $f already exists. Skipping."
             continue
         fi
         echo "$f already exists. Backing up."
-        mv ~/$f ~/$f.pre-deploy
+        mv $HOME/$f $HOME/$f.pre-deploy
     fi
     echo "Creating link for $f"
-    ln -s ~/.dotfiles/$f ~/$f
+    ln -s $HOME/.dotfiles/$f $HOME/$f
 done
 echo "Done."
 exit 0
