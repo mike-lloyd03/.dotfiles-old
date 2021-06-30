@@ -19,7 +19,7 @@ echo "Deploying .dotfiles..."
 for f in "${dotfiles[@]}"
 do
     if [ -e ~/$f ]; then
-        if [ $(readlink ~/$f) = ~/.dotfiles/$f ]; then
+        if [ -L $HOME/$f -a $(readlink ~/$f) = ~/.dotfiles/$f ]; then
             echo "Link for $f already exists. Skipping."
             continue
         fi
