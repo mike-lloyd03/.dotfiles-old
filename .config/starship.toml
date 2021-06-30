@@ -1,9 +1,9 @@
 command_timeout = 1000
 
 [character]
-success_symbol = '[\[I\]](bold green) [❯](bold green)'
-error_symbol = '[\[I\]](bold green) [❯](bold red)'
-vicmd_symbol = '[\[N\]](bold red) [❯](bold green)'
+success_symbol = '[\[I\]](bold green) [▶](bold green)'
+error_symbol = '[\[I\]](bold green) [▶](bold red)'
+vicmd_symbol = '[\[N\]](bold red) [▶](bold green)'
 
 [kubernetes]
 disabled = false
@@ -24,3 +24,17 @@ symbol = "𝗥 "
 
 [package]
 format = "| [$symbol$version]($style) "
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #5192df"
+
+[hostname]
+format = "[@$hostname]($style):"
+style = "bold #5192df"
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncate_to_repo = false
