@@ -1,7 +1,8 @@
 #! /bin/sh
 
-# set -x
+set -x
 
+script_location=dirname $0
 dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
@@ -27,6 +28,7 @@ do
         mv $HOME/$f $HOME/$f.pre-deploy
     fi
     echo "Creating link for $f"
+    mkdir -p $(dirname $HOME/$f)
     ln -s $HOME/.dotfiles/$f $HOME/$f
 done
 echo "Done."
