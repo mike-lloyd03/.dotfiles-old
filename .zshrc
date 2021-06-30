@@ -7,6 +7,7 @@ alias chkjrn='sudo journalctl -xe'
 alias ls="exa"
 alias cat="bat"
 
+export ZSH_DISABLE_COMPFIX=true
 export EDITOR='vim'
 
 # Personal Machine Setup
@@ -24,8 +25,6 @@ fi
 
 # Work Machine Setup
 if [ $(uname -n) = TD-C02FK3H8MD6T ]; then
-  export ZSH_DISABLE_COMPFIX=true
-
   # k8s config
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
   alias kdev='kubectl config use-context appsec-dev'

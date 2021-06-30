@@ -1,8 +1,9 @@
 #! /bin/sh
 
-set -x
+# set -x
 
-script_location=dirname $0
+script_location=$(dirname $(readlink -f $0))
+
 dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
@@ -20,7 +21,7 @@ echo "Deploying .dotfiles..."
 for f in "${dotfiles[@]}"
 do
     if [ -e $HOME/$f ]; then
-        if [ -L $HOME/$f -a $(readlink $HOME/$f) = $HOME/.dotfiles/$f ]; then
+        if [ -L $HOME/$f -a $(readlink $HOME/$f) = $script_location/$f ]; then
             echo "Link for $f already exists. Skipping."
             continue
         fi
@@ -29,7 +30,7 @@ do
     fi
     echo "Creating link for $f"
     mkdir -p $(dirname $HOME/$f)
-    ln -s $HOME/.dotfiles/$f $HOME/$f
+    ln -s $script_location/$f $HOME/$f
 done
 echo "Done."
 exit 0
