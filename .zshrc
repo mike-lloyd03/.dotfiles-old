@@ -60,7 +60,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Launch tmux
-if [ ! -v TMUX ]; then
+if [ ! -v TMUX -a ! -v SSH_CONNECTION ]; then
   tmux
   echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi
