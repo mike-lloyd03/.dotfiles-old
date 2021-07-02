@@ -20,7 +20,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -40,7 +40,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -60,7 +60,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -80,7 +80,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -97,13 +97,13 @@
           },
           "to": [{
             "set_variable": {
-              "name": "caps_lock pressed",
+              "name": "caps_lock_pressed",
               "value": 1
             }
           }],
           "to_after_key_up": [{
             "set_variable": {
-              "name": "caps_lock pressed",
+              "name": "caps_lock_pressed",
               "value": 0
             }
           }],
@@ -129,7 +129,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -149,7 +149,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -173,7 +173,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -197,7 +197,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         },
@@ -221,7 +221,7 @@
           }],
           "conditions": [{
             "type": "variable_if",
-            "name": "caps_lock pressed",
+            "name": "caps_lock_pressed",
             "value": 1
           }]
         }
