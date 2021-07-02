@@ -89,3 +89,6 @@
 [submodule ".vim/plugged/auto-pairs"]
 	path = .vim/plugged/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule ".vim/plugged/vim-terraform"]
+	path = .vim/plugged/vim-terraform
+	url = https://github.com/hashivim/vim-terraform

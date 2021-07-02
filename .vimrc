@@ -98,6 +98,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'darfink/vim-plist'
 Plug 'jiangmiao/auto-pairs'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -132,6 +133,9 @@ let g:go_gopls_enabled = 0
 """"""" vim-black configuration """""""
 let g:black_string_normalization = 0
 
+""""""" vim-terraform Config """""""
+let g:terraform_fmt_on_save = 1
+
 """"""" Keyboard Config """""""
 " nerdtree hotkey
 map <C-n> :NERDTreeToggle<CR>
@@ -145,7 +149,7 @@ map <C-k> <C-Y>
 
 """"""" Format Python on save """""""
 autocmd BufWritePre *.py execute ':Black'
-
+"
 
 """"""" NERDTree Config """""""
 " close NERDTree when it's open by itself
