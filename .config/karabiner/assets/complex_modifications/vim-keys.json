@@ -5,6 +5,7 @@
       "description": "vim navigation with CAPS_LOCK",
       "manipulators": [
         {
+          "description": "j to down_arrow",
           "type": "basic",
           "from": {
             "key_code": "j",
@@ -22,62 +23,69 @@
             "name": "caps_lock pressed",
             "value": 1
           }]
-        }, {
-        "type": "basic",
-        "from": {
-          "key_code": "k",
-          "modifiers": {
-            "optional": [
-              "any"
-              ]
-          }
-        },
-        "to": [{
-          "key_code": "up_arrow"
-        }],
-        "conditions": [{
-          "type": "variable_if",
-          "name": "caps_lock pressed",
-          "value": 1
-        }]
-        }, {
-        "type": "basic",
-        "from": {
-          "key_code": "h",
-          "modifiers": {
-            "optional": [
-              "any"
-              ]
-          }
-        },
-        "to": [{
-          "key_code": "left_arrow"
-        }],
-        "conditions": [{
-          "type": "variable_if",
-          "name": "caps_lock pressed",
-          "value": 1
-        }]
-        }, {
-        "type": "basic",
-        "from": {
-          "key_code": "l",
-          "modifiers": {
-            "optional": [
-              "any"
-              ]
-          }
-        },
-        "to": [{
-          "key_code": "right_arrow"
-        }],
-        "conditions": [{
-          "type": "variable_if",
-          "name": "caps_lock pressed",
-          "value": 1
-        }]
         },
         {
+          "description": "k to up_arrow",
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "up_arrow"
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "h to left_arrow",
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "left_arrow"
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "l to right_arrow",
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "right_arrow"
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "set caps_lock_pressed variable",
           "type": "basic",
           "from": {
             "key_code": "caps_lock",
@@ -104,6 +112,118 @@
               "key_code": "escape"
             }
           ]
+        },
+        {
+          "description": "0 to home",
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "home"
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "4 to end",
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "end"
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "d to cut",
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "x",
+            "modifiers": 
+            [
+              "right_command"
+            ]
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "y to copy",
+          "type": "basic",
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "c",
+            "modifiers": 
+            [
+              "right_command"
+            ]
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
+        },
+        {
+          "description": "p to paste",
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "v",
+            "modifiers": 
+            [
+              "right_command"
+            ]
+          }],
+          "conditions": [{
+            "type": "variable_if",
+            "name": "caps_lock pressed",
+            "value": 1
+          }]
         }
       ]
     },
