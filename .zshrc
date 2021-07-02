@@ -25,10 +25,14 @@ fi
 
 # Work Machine Setup
 if [ $(uname -n) = TD-C02FK3H8MD6T ]; then
+  export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
   # k8s config
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
+
   alias kdev='kubectl config use-context appsec-dev'
   alias kprod='kubectl config use-context app-sec'
+  alias pip="pip3"
+  alias python="python3"
 fi
 
 # ZSH Config
