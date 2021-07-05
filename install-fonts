@@ -4,7 +4,7 @@ systemfontdir=/usr/local/share/fonts
 
 if [ $(/usr/bin/id -u) -eq 0 ]; then
     mkdir -p $systemfontdir
-    mv ./fonts/* $systemfontdir
+    cp ./fonts/* $systemfontdir
     fc-cache
     exit 0
 else
