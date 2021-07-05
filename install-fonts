@@ -1,0 +1,13 @@
+#! /bin/sh
+
+systemfontdir=/usr/local/share/fonts
+
+if [ $(/usr/bin/id -u) -eq 0 ]; then
+    mkdir -p $systemfontdir
+    mv ./fonts/* $systemfontdir
+    fc-cache
+    exit 0
+else
+    echo 'This script must be run as root'
+    exit 1
+fi
