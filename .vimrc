@@ -94,7 +94,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/vim-lexical'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'darfink/vim-plist'
 Plug 'jiangmiao/auto-pairs'
@@ -128,7 +128,11 @@ function! s:check_back_space() abort
     let g:coc_snippet_next = '<tab>'
 
 """"""" vim-go Config """""""
-let g:go_gopls_enabled = 0
+" let g:go_gopls_enabled = 0
+
+"""""""" coc-go Config """"""
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
 
 """"""" vim-black configuration """""""
 let g:black_string_normalization = 0
