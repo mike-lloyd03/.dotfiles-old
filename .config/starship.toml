@@ -21,7 +21,8 @@ symbol = " "
 
 [python]
 symbol = " "
-format = '| [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
+format = '| [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
+
 
 [rust]
 format = "| [$symbol($version )]($style) "
