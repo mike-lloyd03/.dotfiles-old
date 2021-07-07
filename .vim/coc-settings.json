@@ -2,7 +2,9 @@
 	"coc.preferences.formatOnSaveFiletypes":
 	[
 		"rust",
-		"python"
+		"python",
+		"go",
+		"terraform"
 	],
 	"languageserver": {
 		"golang": {
@@ -11,10 +13,17 @@
 			"filetypes": ["go"],
 			"initializationOptions": {
 				"usePlaceholders": true
-
 			}
-
+		},
+		"terraform": {
+			"command": "terraform-ls",
+			"args": ["serve"],
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+			"initializationOptions": {},
+			"settings": {}
 		}
-
 	}
 }

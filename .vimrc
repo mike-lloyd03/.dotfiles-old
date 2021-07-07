@@ -1,9 +1,8 @@
-""""""" Basic Config """""""
+"------ Basic Config ------
 " toggle set paste
 set pastetoggle=<F8>
 
-"
-"" Break lines at word boundaries when wrapping
+" Break lines at word boundaries when wrapping
 set linebreak
 
 " enable syntax highlighting
@@ -34,7 +33,7 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=red
 " enable Python highlighting features
 let python_hightlight_all = 1
 
-""""""" lexical config """""""
+"------ lexical config ------
 set nocompatible
 
 " Markdown bindings
@@ -78,7 +77,7 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " switches to open tab for files which are already open
 set switchbuf=usetab
 
-""""""" vim-plug Config """""""
+"------ vim-plug Config ------
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -95,25 +94,25 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/vim-lexical'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black', { 'branch': 'main' }
 Plug 'darfink/vim-plist'
 Plug 'jiangmiao/auto-pairs'
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
-""""""" Theme Config """""""
+"------ Theme Config ------
 colorscheme onedark
 
-""""""" Lightline Config """""""
+"------ Lightline Config ------
 let g:lightline = { 'colorscheme': 'onedark' }
 set laststatus=2
 
-""""""" vim_markdown Config """""""
+"------ vim_markdown Config ------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 
-""""""" coc-snippets Config """""""
+"------ coc-snippets Config ------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -127,20 +126,20 @@ function! s:check_back_space() abort
 
     let g:coc_snippet_next = '<tab>'
 
-""""""" vim-go Config """""""
-" let g:go_gopls_enabled = 0
+"------ vim-go Config ------
+" let g:go_def_mode='gopls'
+" let g:go_info_mode='gopls'
 
-"""""""" coc-go Config """"""
+"------ gopls ------
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
+"------ vim-black configuration ------
+" let g:black_string_normalization = 0
 
-""""""" vim-black configuration """""""
-let g:black_string_normalization = 0
-
-""""""" vim-terraform Config """""""
+"------ vim-terraform Config ------
 let g:terraform_fmt_on_save = 1
 
-""""""" Keyboard Config """""""
+"------ Keyboard Config ------
 " nerdtree hotkey
 map <C-n> :NERDTreeToggle<CR>
 
@@ -151,11 +150,11 @@ nnoremap <buffer> H :<C-u>execute "!pydoc3 " . expand("<cword>")<CR>
 map <C-j> <C-E>
 map <C-k> <C-Y>
 
-""""""" Format Python on save """""""
+"------ Format Python on save ------
 autocmd BufWritePre *.py execute ':Black'
 "
 
-""""""" NERDTree Config """""""
+"------ NERDTree Config ------
 " close NERDTree when it's open by itself
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTreeType') && b:NERDTreeType == 'primary') | q | endif
 
@@ -167,7 +166,7 @@ let NERDTreeDirArrows = 1
 let NERDTreeIgnore=['__pycache__']
 
 
-""""""" COC Config """""""
+"------ COC Config ------
 " TextEdit might fail if hidden is not set.
 set hidden
 

@@ -15,3 +15,5 @@ Dependencies:
 - `oh-my-zsh` (will be auto-installed)
 - `nodejs`
 - `starship`
+- `gopls`
+- `black`

@@ -25,6 +25,7 @@ fi
 
 # Work Machine Setup
 if [ $(uname -n) = TD-C02FK3H8MD6T ]; then
+  export PATH="/usr/local/bin:$PATH"
   export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
   # k8s config
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
