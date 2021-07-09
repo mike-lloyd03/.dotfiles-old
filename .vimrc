@@ -1,4 +1,11 @@
+"------ lexical config ------
+set nocompatible
+
 "------ Basic Config ------
+" Split panes open on the right or below
+set splitright
+set splitbelow
+
 " toggle set paste
 set pastetoggle=<F8>
 
@@ -30,11 +37,11 @@ set cursorline
 set showmatch
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
+" Smart case when searching
+set smartcase
+
 " enable Python highlighting features
 let python_hightlight_all = 1
-
-"------ lexical config ------
-set nocompatible
 
 " Markdown bindings
 augroup mdbindings
@@ -45,7 +52,6 @@ augroup mdbindings
   autocmd Filetype markdown noremap <buffer> <silent> $ g$
   autocmd FileType markdown setlocal spell spelllang=en_us
   autocmd FileType markdown call lexical#init()
-  " autocmd Filetype markdown Goyo
 augroup end
 
 " set the cursor to a line in Normal Mode and a block in Insert Mode
@@ -93,11 +99,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/vim-lexical'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'main' }
 Plug 'darfink/vim-plist'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
