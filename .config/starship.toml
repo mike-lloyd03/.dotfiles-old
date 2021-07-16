@@ -49,10 +49,11 @@ disabled = true
 
 [directory]
 read_only = " "
-truncate_to_repo = false
+truncate_to_repo = true
 
 [terraform]
 format = "| [$symbol$workspace]($style) "
+disabled = true
 
 [git_branch]
 symbol = " "

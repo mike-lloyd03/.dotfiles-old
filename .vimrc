@@ -6,6 +6,9 @@ set nocompatible
 set splitright
 set splitbelow
 
+" Split panes use solid lines
+set fillchars+=vert:\│
+
 " toggle set paste
 set pastetoggle=<F8>
 
