@@ -3,3 +3,5 @@
 __pycache__
 .tmux/resurrect/*
 .config/karabiner/automatic_backups
+.venv
+.vim/black
