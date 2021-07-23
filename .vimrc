@@ -1,3 +1,8 @@
+set wildmode=longest:full,full
+set wildmenu
+set wildignore=*.o,*~
+set wildignorecase
+
 "------ lexical config ------
 set nocompatible
 
