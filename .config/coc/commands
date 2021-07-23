@@ -1,3 +1,4 @@
+clangd.install
 editor.action.organizeImport
 go.playground
 workspace.showOutput
