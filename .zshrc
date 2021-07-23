@@ -23,6 +23,7 @@ if [ $(uname -n) = kratos ]; then
   alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
   alias startfusuma='killall fusuma && fusuma -d'
   alias load-kvm="sudo /home/mike/Documents/scripts/intel_gvt-g_setup/start-kvm-gvt-g.sh"
+  alias om=optimus-manager
 fi
 
 # Work Machine Setup
