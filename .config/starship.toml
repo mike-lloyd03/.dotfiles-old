@@ -2,47 +2,13 @@ command_timeout = 1000
 
 [aws]
 symbol = "  "
+format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+disabled = true
 
 [character]
 success_symbol = '[\[I\]](bold green) [▶](bold green)'
 error_symbol = '[\[I\]](bold green) [▶](bold red)'
 vicmd_symbol = '[\[N\]](bold red) [▶](bold green)'
-
-[kubernetes]
-disabled = false
-
-[docker_context]
-symbol = " "
-format = "| [$symbol$context]($style) "
-
-[golang]
-format = "| [$symbol($version )]($style) "
-symbol = " "
-
-[python]
-symbol = " "
-format = '| [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
-python_binary = ["python3", "python2"]
-
-
-[rust]
-format = "| [$symbol($version )]($style) "
-symbol = "𝗥 "
-
-[package]
-format = "| [$symbol$version]($style) "
-symbol = " "
-
-[vagrant]
-format = "| [$symbol($version )]($style) "
-
-[username]
-format = "[$user]($style)"
-style_user = "bold #5192df"
-
-[hostname]
-format = "[@$hostname]($style):"
-style = "bold #5192df"
 
 [cmd_duration]
 disabled = true
@@ -51,12 +17,27 @@ disabled = true
 read_only = " "
 truncate_to_repo = true
 
-[terraform]
-format = "| [$symbol$workspace]($style) "
+[docker_context]
 disabled = true
+symbol = " "
+format = "| [$symbol$context]($style) "
 
 [git_branch]
 symbol = " "
+
+[golang]
+format = "| [$symbol($version )]($style)"
+symbol = " "
+
+[hostname]
+format = "[@$hostname]($style):"
+style = "bold #5192df"
+
+[java]
+symbol = " "
+
+[kubernetes]
+disabled = false
 
 [memory_usage]
 symbol = " "
@@ -67,11 +48,33 @@ symbol = " "
 [php]
 symbol = " "
 
+[package]
+format = "| [$symbol$version]($style) "
+symbol = " "
+
+[python]
+symbol = " "
+format = '| [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+python_binary = ["python3", "python2"]
+
 [ruby]
 symbol = " "
 
-[java]
-symbol = " "
+[rust]
+format = "| [$symbol($version )]($style) "
+symbol = "𝗥 "
 
 [shlvl]
 symbol = " "
+
+[terraform]
+format = "| [$symbol$workspace]($style) "
+disabled = true
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #5192df"
+
+[vagrant]
+format = "| [$symbol($version )]($style) "
+

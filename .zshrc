@@ -70,6 +70,18 @@ if [ ! -v TMUX -a ! -v SSH_CONNECTION ]; then
   echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi
 
+# Source venv
+function chpwd {
+  if [[ -d .venv ]]; then
+    VENV_ROOT_DIR=$PWD
+    source .venv/bin/activate
+  elif [[ ! -z $VENV_ROOT_DIR ]] && [[ $PWD != ${VENV_ROOT_DIR}* ]]; then
+    unset VENV_ROOT_DIR
+    deactivate
+  fi
+}
+test -d .venv && chpwd || true
+
 # Starship prompt
 eval "$(starship init zsh)"
 
