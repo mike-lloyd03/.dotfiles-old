@@ -66,7 +66,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Launch tmux
-if [ ! -v TMUX -a ! -v SSH_CONNECTION ]; then
+if [ ! -v TMUX -a ! -v SSH_CONNECTION  -a ! $(whoami) = "root" ]; then
   tmux
   echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi
