@@ -1,4 +1,66 @@
 command_timeout = 1000
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$kubernetes\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$character\
+"""
 
 [aws]
 symbol = "  "
@@ -15,12 +77,13 @@ disabled = true
 
 [directory]
 read_only = " "
-truncate_to_repo = true
+truncate_to_repo = false
 
 [docker_context]
-disabled = true
+# disabled = true
 symbol = " "
 format = "| [$symbol$context]($style) "
+only_with_files = true
 
 [git_branch]
 symbol = " "
@@ -37,7 +100,9 @@ style = "bold #5192df"
 symbol = " "
 
 [kubernetes]
-disabled = false
+disabled = true
+format = '[$symbol$context( \($namespace\) )]($style)'
+# style = "cyan bold align:right"
 
 [memory_usage]
 symbol = " "
@@ -77,4 +142,3 @@ style_user = "bold #5192df"
 
 [vagrant]
 format = "| [$symbol($version )]($style) "
-
