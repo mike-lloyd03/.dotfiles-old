@@ -120,6 +120,8 @@ Plug 'preservim/vim-lexical'
 Plug 'psf/black', { 'branch': 'main' }
 Plug 'darfink/vim-plist'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
