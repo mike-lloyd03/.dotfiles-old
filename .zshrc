@@ -23,6 +23,7 @@ if [ $(uname -n) = kratos ]; then
   alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
   alias startfusuma='killall fusuma && fusuma -d'
   alias load-kvm="sudo /home/mike/Documents/scripts/intel_gvt-g_setup/start-kvm-gvt-g.sh"
+  alias om=optimus-manager
 fi
 
 # Work Machine Setup
@@ -65,7 +66,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Launch tmux
-if [ ! -v TMUX -a ! -v SSH_CONNECTION ]; then
+if [ ! -v TMUX -a ! -v SSH_CONNECTION  -a ! $(whoami) = "root" ]; then
   tmux
   echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi

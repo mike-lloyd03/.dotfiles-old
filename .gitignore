@@ -5,3 +5,5 @@ __pycache__
 .config/karabiner/automatic_backups
 .venv
 .vim/black
+.config/coc/extensions/coc-*
+.config/coc/list-extensions-history.json
