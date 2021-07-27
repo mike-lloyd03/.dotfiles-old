@@ -129,8 +129,17 @@ call plug#end()
 colorscheme onedark
 
 "------ Lightline Config ------
-let g:lightline = { 'colorscheme': 'onedark' }
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+	  \ 'component_function': {
+      \   'filename': 'FilenameForLightline'
+      \ }
+      \ }
 set laststatus=2
+" Show full path of filename
+function! FilenameForLightline()
+    return expand('%')
+endfunction
 
 "------ vim_markdown Config ------
 let g:vim_markdown_folding_disabled = 1

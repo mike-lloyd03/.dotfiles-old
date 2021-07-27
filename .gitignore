@@ -7,3 +7,5 @@ __pycache__
 .vim/black
 .config/coc/extensions/coc-*
 .config/coc/list-extensions-history.json
+.config/coc/list-extensions-history.json
+.tmux/resurrect/last
