@@ -137,7 +137,7 @@ format = "| [$symbol$workspace]($style) "
 disabled = true
 
 [username]
-format = "[$user]($style)"
+format = "[$user]($style) "
 style_user = "bold #5192df"
 
 [vagrant]
