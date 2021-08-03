@@ -17,8 +17,9 @@ set fillchars+=vert:\│
 " toggle set paste
 set pastetoggle=<F8>
 
-" Break lines at word boundaries when wrapping
+" Break lines at word boundaries when wrapping and wrap to previous indent
 set linebreak
+set breakindent
 
 " enable syntax highlighting
 syntax enable
