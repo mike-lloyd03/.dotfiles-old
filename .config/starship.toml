@@ -107,6 +107,9 @@ format = '[$symbol$context( \($namespace\) )]($style)'
 [memory_usage]
 symbol = " "
 
+[nodejs]
+format = "| [$symbol($version )]($style)"
+
 [perl]
 symbol = " "
 
