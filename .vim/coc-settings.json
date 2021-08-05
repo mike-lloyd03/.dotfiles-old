@@ -27,7 +27,7 @@
 			"settings": {}
 		}
 	},
-	"clangd.path": "$HOME/.dotfiles/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+	"clangd.path": "/Users/mike.lloyd/.dotfiles/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
 	"diagnostic-languageserver.filetypes": {
 		"python": "pylint"
 	},
@@ -66,5 +66,11 @@
 			"offsetColumn": 1,
 			"formatLines": 1
 		}
-	}
+	},
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-14",
+			"path": "/usr/local/share/openjdk"
+		}
+	]
 }

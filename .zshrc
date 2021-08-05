@@ -29,6 +29,7 @@ fi
 # Work Machine Setup
 if [ $(uname -n) = TD-C02FK3H8MD6T ]; then
   export PATH="/usr/local/bin:$PATH"
+  export PATH=/usr/local/opt/openjdk/bin:$PATH
   # k8s config
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
 
