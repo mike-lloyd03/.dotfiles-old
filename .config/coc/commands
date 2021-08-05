@@ -1,4 +1,4 @@
-clangd.install
 editor.action.organizeImport
+clangd.install
 go.playground
 workspace.showOutput
