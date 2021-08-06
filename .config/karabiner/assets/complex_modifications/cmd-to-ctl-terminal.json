@@ -30,6 +30,31 @@
           }]
         },
         {
+          "description": "C-v",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.apple\\.Terminal$"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "v",
+            "modifiers": ["left_control"]
+          }]
+        },
+        {
           "description": "C-a",
           "type": "basic",
           "conditions": [
