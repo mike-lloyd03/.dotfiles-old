@@ -146,6 +146,12 @@ endfunction
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 
+"------ Change background to none -------
+nnoremap <C-F> :highlight Normal ctermbg=none<CR>
+
+"------ fzf Buffers -------
+nnoremap <C-B> :Buffers<CR>
+
 "------ coc-snippets Config ------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :

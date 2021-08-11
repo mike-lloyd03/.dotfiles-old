@@ -98,3 +98,6 @@
 [submodule ".vim/plugged/fzf"]
 	path = .vim/plugged/fzf
 	url = https://github.com/junegunn/fzf
+[submodule ".tmux/plugins/tmux-continuum"]
+	path = .tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
