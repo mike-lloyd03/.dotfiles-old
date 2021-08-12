@@ -78,26 +78,22 @@
 	path = .vim/plugged/black
 	url = https://github.com/psf/black
 
-[submodule ".vim/plugged/vim-go"]
-	path = .vim/plugged/vim-go
-	url = https://github.com/fatih/vim-go
-
 [submodule ".vim/plugged/vim-plist"]
 	path = .vim/plugged/vim-plist
 	url = https://github.com/darfink/vim-plist
 
-[submodule ".vim/plugged/auto-pairs"]
-	path = .vim/plugged/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs
-[submodule ".vim/plugged/vim-terraform"]
-	path = .vim/plugged/vim-terraform
-	url = https://github.com/hashivim/vim-terraform
 [submodule ".vim/plugged/fzf.vim"]
 	path = .vim/plugged/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+
 [submodule ".vim/plugged/fzf"]
 	path = .vim/plugged/fzf
 	url = https://github.com/junegunn/fzf
+
 [submodule ".tmux/plugins/tmux-continuum"]
 	path = .tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
+
+[submodule ".vim/plugged/vim-shfmt"]
+	path = .vim/plugged/vim-shfmt
+	url = https://github.com/z0mbix/vim-shfmt.git

@@ -123,6 +123,7 @@ Plug 'darfink/vim-plist'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 
 call plug#end()
 
@@ -192,7 +193,12 @@ map <C-k> <C-Y>
 
 "------ Format Python on save ------
 autocmd BufWritePre *.py execute ':Black'
-"
+
+"------ Format Python on save ------
+" autocmd BufWritePre *.sh execute ':Shfmt'
+let g:shfmt_fmt_on_save = 1
+let g:shfmt_extra_args = '-i 4'
+
 
 "------ NERDTree Config ------
 " close NERDTree when it's open by itself
