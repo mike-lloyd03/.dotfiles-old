@@ -66,10 +66,6 @@
 	path = .tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
 
-[submodule "tmux-sensible"]
-	path = .tmux/plugins/tmux-sensible
-	url = https://github.com/tmux-plugins/tmux-sensible.git
-
 [submodule ".vim/plugged/vim-lexical"]
 	path = .vim/plugged/vim-lexical
 	url = https://github.com/preservim/vim-lexical
