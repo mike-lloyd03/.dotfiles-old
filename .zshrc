@@ -6,6 +6,7 @@ alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
 alias ls="exa"
 alias cat="bat"
+alias dcomp="docker-compose"
 
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR='vim'
@@ -24,6 +25,8 @@ if [ $(uname -n) = kratos ]; then
   alias startfusuma='killall fusuma && fusuma -d'
   alias load-kvm="sudo /home/mike/Documents/scripts/intel_gvt-g_setup/start-kvm-gvt-g.sh"
   alias om=optimus-manager
+  alias pacman-ls-orphan="sudo pacman -Qdtq"
+  alias pacman-rm-deps="sudo pacman -Rcns"
 fi
 
 # Work Machine Setup
