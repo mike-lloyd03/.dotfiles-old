@@ -1,4 +1,0 @@
-pane	0	0	:kvm-setup	1	:*	0	:/home/mike/.dotfiles	1	zsh	:
-pane	0	0	:kvm-setup	1	:*	1	:/home/mike/Documents/scripts/kvm-setup	0	zsh	:
-window	0	0	1	:*	efe7,236x57,0,0{118x57,0,0,0,117x57,119,0,1}
-state	0	
