@@ -106,41 +106,57 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'preservim/vim-lexical'
-Plug 'psf/black', { 'branch': 'main' }
+Plug 'psf/black', { 'branch': 'main', 'for': 'python' }
 Plug 'darfink/vim-plist'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 
 call plug#end()
 
-"------ Theme Config ------
+"------ onedark.vim Theme Config ------
 colorscheme onedark
 
 "------ Lightline Config ------
 let g:lightline = {
       \ 'colorscheme': 'onedark',
-	  \ 'component_function': {
-      \   'filename': 'FilenameForLightline'
-      \ }
+      \   'component_function': {
+      \     'filename': 'FilenameLightline',
+      \     'gitbranch': 'GitbranchLightline'
+      \   },
+      \ 'separator': {'left': '', 'right': '' },
+      \ 'subseparator': {'left': '', 'right': '' },
+      \   'active': {
+      \     'left': [ [ 'mode', 'paste' ],
+      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \   },
       \ }
 set laststatus=2
+
 " Show full path of filename
-function! FilenameForLightline()
+function! FilenameLightline()
     return expand('%')
+endfunction
+
+function! GitbranchLightline()
+  if gitbranch#name() != ''
+    return ' ' . gitbranch#name()
+  else
+    return ''
+  endif
 endfunction
 
 "------ vim_markdown Config ------

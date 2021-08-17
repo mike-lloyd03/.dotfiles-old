@@ -8,3 +8,4 @@ __pycache__
 .config/coc/extensions/coc-*
 .config/coc/list-extensions-history.json
 .config/coc/list-extensions-history.json
+.vim/.netrwhist
