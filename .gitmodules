@@ -99,3 +99,6 @@
 [submodule ".vim/plugged/vim-gitbranch"]
 	path = .vim/plugged/vim-gitbranch
 	url = https://github.com/itchyny/vim-gitbranch.git
+[submodule ".vim/plugged/vim-gitgutter"]
+	path = .vim/plugged/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

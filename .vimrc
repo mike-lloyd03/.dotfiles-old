@@ -124,6 +124,7 @@ Plug 'darfink/vim-plist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'airblade/vim-gitgutter/'
 
 call plug#end()
 
