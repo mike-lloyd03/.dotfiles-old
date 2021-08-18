@@ -17,3 +17,4 @@ Dependencies:
 - `starship`
 - `gopls`
 - `black`
+- `shfmt`
