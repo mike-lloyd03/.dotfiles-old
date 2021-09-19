@@ -40,7 +40,7 @@ if [ $(uname -n) = TD-C02FK3H8MD6T ]; then
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
 
   alias kdev='kubectl config use-context appsec-dev'
-  alias kprod='kubectl config use-context app-sec'
+  alias kprod='kubectl config use-context appsec-prod'
   alias pip="pip3"
   alias python="python3"
 fi
