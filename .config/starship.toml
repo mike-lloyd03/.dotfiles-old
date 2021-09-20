@@ -1,5 +1,7 @@
 command_timeout = 1000
 format = """
+$kubernetes\
+$line_break\
 $username\
 $hostname\
 $shlvl\
@@ -51,7 +53,6 @@ $env_var\
 $crystal\
 $custom\
 $cmd_duration\
-$kubernetes\
 $line_break\
 $lua\
 $jobs\
@@ -102,8 +103,10 @@ style = "bold #5192df"
 symbol = " "
 
 [kubernetes]
-disabled = true
-format = '[$symbol$context( \($namespace\) )]($style)'
+disabled = false
+# format = '[$symbol$context( \($namespace\) )]($style)'
+symbol = "☸ "
+format = '[$symbol$context]($style)'
 # style = "cyan bold align:right"
 
 [memory_usage]
