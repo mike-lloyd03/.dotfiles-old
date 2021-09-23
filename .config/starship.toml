@@ -63,6 +63,8 @@ $shell\
 $character\
 """
 
+# right_format = """$kubernetes"""
+
 [aws]
 symbol = "  "
 format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
@@ -88,6 +90,9 @@ symbol = " "
 format = "| [$symbol$context]($style) "
 only_with_files = true
 
+# [fill]
+# symbol = " "
+
 [git_branch]
 symbol = " "
 
@@ -107,7 +112,7 @@ disabled = false
 # format = '[$symbol$context( \($namespace\) )]($style)'
 symbol = "☸ "
 format = '[$symbol$context]($style)'
-# style = "cyan bold align:right"
+style = "blue bold"
 
 [memory_usage]
 symbol = " "
