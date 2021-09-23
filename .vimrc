@@ -53,7 +53,7 @@ set smartcase
 let python_hightlight_all = 1
 
 " Show sign column when signs are present (instead of overwriting line numbers)
-set signcolumn=auto
+set signcolumn=yes
 
 " Markdown bindings
 augroup mdbindings
@@ -149,6 +149,7 @@ let g:lightline = {
       \   },
       \ }
 set laststatus=2
+set noshowmode
 
 " Show full path of filename
 function! FilenameLightline()
