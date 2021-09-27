@@ -110,7 +110,7 @@ symbol = " "
 disabled = false
 # format = '[$symbol$context( \($namespace\) )]($style)'
 symbol = "☸ "
-format = '[$symbol$context]($style)\n'
+format = "[$symbol$context]($style)\n"
 style = "blue bold"
 
 [memory_usage]
