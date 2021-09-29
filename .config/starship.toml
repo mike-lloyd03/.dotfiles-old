@@ -1,6 +1,5 @@
 command_timeout = 1000
 format = """
-$kubernetes\
 $username\
 $hostname\
 $shlvl\
@@ -62,7 +61,7 @@ $shell\
 $character\
 """
 
-# right_format = """$kubernetes"""
+right_format = """$kubernetes"""
 
 [aws]
 symbol = "  "
@@ -110,7 +109,7 @@ symbol = " "
 disabled = false
 # format = '[$symbol$context( \($namespace\) )]($style)'
 symbol = "☸ "
-format = "[$symbol$context]($style)\n"
+format = "[$symbol$context]($style)"
 style = "blue bold"
 
 [memory_usage]
