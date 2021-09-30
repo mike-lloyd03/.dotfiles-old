@@ -341,6 +341,32 @@
             "key_code": "t",
             "modifiers": ["left_control"]
           }]
+        },
+        {
+          "description": "C-o",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.apple\\.Terminal$",
+                "^org\\.vim\\.MacVim$"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "o",
+            "modifiers": ["left_control"]
+          }]
         }
       ]
     }
