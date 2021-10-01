@@ -6,7 +6,7 @@ alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
 alias ls="exa"
 alias cat="bat"
-alias dcomp="docker-compose"
+alias dcomp="docker compose"
 
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR='vim'
