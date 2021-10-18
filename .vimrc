@@ -26,6 +26,7 @@ syntax enable
 
 " show line numbers
 set number
+set relativenumber
 
 " set tabs to 4 spaces
 set ts=4
@@ -54,6 +55,9 @@ let python_hightlight_all = 1
 
 " Show sign column when signs are present (instead of overwriting line numbers)
 set signcolumn=yes
+
+" Enable mouse support
+set mouse=a
 
 " Markdown bindings
 augroup mdbindings
