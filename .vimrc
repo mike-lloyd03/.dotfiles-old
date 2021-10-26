@@ -56,9 +56,6 @@ let python_hightlight_all = 1
 " Show sign column when signs are present (instead of overwriting line numbers)
 set signcolumn=yes
 
-" Enable mouse support
-set mouse=a
-
 " Markdown bindings
 augroup mdbindings
   autocmd! mdbindings
@@ -222,7 +219,7 @@ autocmd BufWritePre *.py execute ':Black'
 "------ Format Python on save ------
 " autocmd BufWritePre *.sh execute ':Shfmt'
 let g:shfmt_fmt_on_save = 1
-let g:shfmt_extra_args = '-i 4'
+let g:shfmt_extra_args = '-i 2'
 
 
 "------ NERDTree Config ------
