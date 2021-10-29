@@ -5,7 +5,7 @@ A portable collection of my settings for vim, zsh, tmux, xkb and other stuff.
 To use, git clone recursively (preferably into your home directory) and run the `deploy.sh` script. This will automatically configure your system to use these dotfiles.
 ```bash
 $ git clone --recurse-submodules git@github.com:mike-lloyd03/.dotfiles.git
-$ sh .dotfiles/deploy.sh
+$ ./.dotfiles/deploy.sh
 ```
 
 Dependencies:
@@ -18,3 +18,4 @@ Dependencies:
 - `gopls`
 - `black`
 - `shfmt`
+- `shellcheck`
