@@ -1,3 +1,4 @@
+"------ Command mode zsh-like autocompletion -------
 set wildmode=longest:full,full
 set wildmenu
 set wildignore=*.o,*~
@@ -69,29 +70,14 @@ augroup end
 
 " set the cursor to a line in Normal Mode and a block in Insert Mode
 if exists('$TMUX')
-  " let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
-  " let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-  " let &t_SI = "\e[5 q"
-  " let &t_EI = "\e[2 q"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-" let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-
-" Global and local variable replace
-" For local replace
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-
-" For global replace
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " switches to open tab for files which are already open
 set switchbuf=usetab
@@ -123,11 +109,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'preservim/vim-lexical'
-Plug 'psf/black', { 'branch': 'main', 'for': 'python' }
 Plug 'darfink/vim-plist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
-Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'airblade/vim-gitgutter/'
 
 call plug#end()
@@ -137,20 +121,38 @@ colorscheme onedark
 
 "------ Lightline Config ------
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \   'colorscheme': 'onedark',
       \   'component_function': {
-      \     'filename': 'FilenameLightline',
-      \     'gitbranch': 'GitbranchLightline'
+      \       'filename': 'FilenameLightline',
+      \       'gitbranch': 'GitbranchLightline'
       \   },
-      \ 'separator': {'left': '', 'right': '' },
-      \ 'subseparator': {'left': '', 'right': '' },
+      \   'component_expand': {
+      \       'cocstatus': 'COCStatusLightline',
+      \       'coc_error_status': 'COCErrorStatus',
+      \       'coc_warning_status': 'COCWarningStatus'
+      \   },
+      \   'component_type': {
+      \       'coc_error_status': 'error',
+      \       'coc_warning_status': 'warning'
+      \   },
+      \   'separator': {'left': '', 'right': '' },
+      \   'subseparator': {'left': '', 'right': '' },
       \   'active': {
-      \     'left': [ [ 'mode', 'paste' ],
-      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \     'left': [
+      \         ['mode', 'paste'],
+      \         ['gitbranch', 'readonly', 'filename', 'modified'],
+      \         ['coc_error_status', 'coc_warning_status'],
+      \     ],
+      \     'right': [
+      \         ['lineinfo'],
+      \         ['percent'],
+      \         ['fileformat', 'fileencoding', 'filetype'],
+      \     ]
       \   },
       \ }
 set laststatus=2
 set noshowmode
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Show full path of filename
 function! FilenameLightline()
@@ -165,15 +167,44 @@ function! GitbranchLightline()
   endif
 endfunction
 
+function! COCStatusLightline() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, ' ' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, ' ' . info['warning'])
+  endif
+  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
+endfunction
+
+function! COCErrorStatus() abort
+  hi RedText ctermbg=grey ctermfg=red
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if info['error']
+    return ' ' . info['error']
+  endif
+  return ''
+endfunction
+
+function! COCWarningStatus() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if info['warning']
+    return ' ' . info['warning']
+  endif
+  return ''
+endfunction
+
+" Override error and warning colors
+" let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+" let s:palette.normal.error = [['#E06C75', '#282C34', 204, 235]]
+" let s:palette.normal.warning = [['#E5C07B', '#282C34', 180, 235]]
+
 "------ vim_markdown Config ------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
-
-"------ Change background to none -------
-nnoremap <C-F> :highlight Normal ctermbg=none<CR>
-
-"------ fzf Buffers -------
-nnoremap <C-B> :Buffers<CR>
 
 "------ coc-snippets Config ------
 inoremap <silent><expr> <TAB>
@@ -189,15 +220,8 @@ function! s:check_back_space() abort
 
     let g:coc_snippet_next = '<tab>'
 
-"------ vim-go Config ------
-" let g:go_def_mode='gopls'
-" let g:go_info_mode='gopls'
-
 "------ gopls ------
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-
-"------ vim-black configuration ------
-" let g:black_string_normalization = 0
 
 "------ vim-terraform Config ------
 let g:terraform_fmt_on_save = 1
@@ -213,14 +237,11 @@ nnoremap <buffer> H :<C-u>execute "!pydoc3 " . expand("<cword>")<CR>
 map <C-j> <C-E>
 map <C-k> <C-Y>
 
-"------ Format Python on save ------
-autocmd BufWritePre *.py execute ':Black'
+"------ Change background to none -------
+nnoremap <C-F> :highlight Normal ctermbg=none<CR>
 
-"------ Format Python on save ------
-" autocmd BufWritePre *.sh execute ':Shfmt'
-let g:shfmt_fmt_on_save = 1
-let g:shfmt_extra_args = '-i 2'
-
+"------ fzf Buffers -------
+nnoremap <C-B> :Buffers<CR>
 
 "------ NERDTree Config ------
 " close NERDTree when it's open by itself
@@ -232,7 +253,6 @@ let NERDTreeDirArrows = 1
 
 " NERDTree Ignore
 let NERDTreeIgnore=['__pycache__']
-
 
 "------ COC Config ------
 " TextEdit might fail if hidden is not set.
@@ -303,28 +323,6 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
@@ -336,20 +334,6 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
@@ -358,18 +342,10 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
+" Get outline of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" Custom coc bindings
+nmap <leader>r  <Plug>(coc-rename)

@@ -10,3 +10,4 @@ __pycache__
 .config/coc/list-extensions-history.json
 .vim/.netrwhist
 .config/coc/list-location-history.json
+.config/coc/*history.json
