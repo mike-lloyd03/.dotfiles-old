@@ -1,8 +1,8 @@
 {
-  "title": "Command to Control in iTerm2, Terminal, and MacVim",
+  "title": "Control Key Rebinding for Terminal Emulators",
   "rules": [
     {
-      "description": "Command to Control in iTerm2 Terminal, and MacVim",
+      "description": "Command to Control in iTerm2, Terminal, and MacVim",
       "manipulators": [
         {
           "description": "C-c",
@@ -391,6 +391,32 @@
           },
           "to": [{
             "key_code": "o",
+            "modifiers": ["left_control"]
+          }]
+        },
+        {
+          "description": "C-b",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.apple\\.Terminal$",
+                "^org\\.vim\\.MacVim$"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [{
+            "key_code": "b",
             "modifiers": ["left_control"]
           }]
         }

@@ -465,7 +465,7 @@
                         ]
                     },
                     {
-                        "description": "Command to Control in iTerm2 Terminal, and MacVim",
+                        "description": "Command to Control in iTerm2, Terminal, and MacVim",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -910,6 +910,36 @@
                                 "to": [
                                     {
                                         "key_code": "o",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "C-b",
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "b",
                                         "modifiers": [
                                             "left_control"
                                         ]
