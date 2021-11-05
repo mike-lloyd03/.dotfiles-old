@@ -7,6 +7,7 @@ alias chkjrn='sudo journalctl -xe'
 alias ls="exa"
 alias cat="bat"
 alias dcomp="docker compose"
+alias gitundo="git reset --soft HEAD~1"
 
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR='vim'
@@ -43,6 +44,7 @@ if [ $(uname -n) = TD-C02FK3H8MD6T ]; then
   alias kprod='kubectl config use-context appsec-prod'
   alias pip="pip3"
   alias python="python3"
+  alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
 fi
 
 # ZSH Config
