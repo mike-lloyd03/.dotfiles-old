@@ -1,0 +1,14 @@
+[Unit]
+Description=Vim keys X config
+After=suspend.target
+
+[Service]
+User=mike
+Type=simple
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/sleep 15
+ExecStart=/bin/sh /home/mike/.config/xkbcomp/vim-keys-xkb.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
