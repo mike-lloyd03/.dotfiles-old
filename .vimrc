@@ -102,6 +102,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'joshdick/onedark.vim'
@@ -124,7 +125,8 @@ let g:lightline = {
       \   'colorscheme': 'onedark',
       \   'component_function': {
       \       'filename': 'FilenameLightline',
-      \       'gitbranch': 'GitbranchLightline'
+      \       'gitbranch': 'GitbranchLightline',
+      \       'sessionstatus': 'SessionLightline'
       \   },
       \   'component_expand': {
       \       'cocstatus': 'COCStatusLightline',
@@ -146,7 +148,7 @@ let g:lightline = {
       \     'right': [
       \         ['lineinfo'],
       \         ['percent'],
-      \         ['fileformat', 'fileencoding', 'filetype'],
+      \         ['sessionstatus', 'fileformat', 'fileencoding', 'filetype'],
       \     ]
       \   },
       \ }
@@ -157,6 +159,19 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " Show full path of filename
 function! FilenameLightline()
     return expand('%')
+endfunction
+"
+" Show session status
+function! SessionLightline()
+    let status = ObsessionStatus()
+    if empty(status)
+        return ''
+    elseif status == "[$]"
+      return 'tracking'
+    elseif status == "[S]"
+      return 'paused'
+    endif
+    return status
 endfunction
 
 function! GitbranchLightline()

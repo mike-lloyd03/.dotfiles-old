@@ -15,7 +15,7 @@ prefix_err="${RD}[.dotfiles deploy]${NM}"
 
 script_location="$(cd "$(dirname "$0")" && pwd -P)"
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml)
+dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml .gitignore-global)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
 
@@ -44,3 +44,6 @@ for f in "${dotfiles[@]}"; do
 done
 echo "$prefix Done."
 exit 0
+
+# Setup global .gitignore file
+git config --global core.excludesfile "$HOME/.gitignore-global"

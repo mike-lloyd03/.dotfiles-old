@@ -37,6 +37,10 @@
 	path = .vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 
+[submodule ".vim/plugged/vim-obsession"]
+	path = .vim/plugged/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git
+
 [submodule "lightline.vim"]
 	path = .vim/plugged/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
