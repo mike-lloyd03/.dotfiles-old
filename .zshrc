@@ -66,7 +66,7 @@ fi
 # vim session management
 function vim() {
     if [ $# -gt 0 ]; then
-        env vim "$@" -c "Obsession .session.vim"
+        env vim "$@" #-c "Obsession .session.vim"
     elif [ -f ".session.vim" ]; then
         env vim -S .session.vim
     else

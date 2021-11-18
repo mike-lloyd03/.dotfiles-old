@@ -212,11 +212,6 @@ function! COCWarningStatus() abort
   return ''
 endfunction
 
-" Override error and warning colors
-" let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-" let s:palette.normal.error = [['#E06C75', '#282C34', 204, 235]]
-" let s:palette.normal.warning = [['#E5C07B', '#282C34', 180, 235]]
-
 "------ vim_markdown Config ------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
@@ -230,16 +225,27 @@ inoremap <silent><expr> <TAB>
 
 function! s:check_back_space() abort
     let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
 
-    let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<tab>'
 
 "------ gopls ------
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 "------ vim-terraform Config ------
 let g:terraform_fmt_on_save = 1
+
+"------ vim-obsession Config ------
+function! s:obsession_toggle()
+  if ObsessionStatus() == "[$]"
+    :Obsession
+  else
+    :Obsession .session.vim
+  endif
+endfunction
+
+nnoremap <C-s> call s:obsession_toggle()<CR>
 
 "------ Keyboard Config ------
 " nerdtree hotkey
