@@ -42,8 +42,14 @@ for f in "${dotfiles[@]}"; do
     mkdir -p "$(dirname "$HOME/$f")"
     ln -s "$script_location/$f" "$HOME/$f"
 done
-echo "$prefix Done."
-exit 0
 
 # Setup global .gitignore file
-git config --global core.excludesfile "$HOME/.gitignore-global"
+if [ -z "$(git config --global core.excludesfile)" ]; then
+    echo "$prefix Setting global .gitignore variable"
+    git config --global core.excludesfile "$HOME/.gitignore-global"
+else
+    echo "$prefix Global .gitignore variable already set."
+fi
+
+echo "$prefix Done."
+exit 0
