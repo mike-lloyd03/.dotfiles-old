@@ -153,3 +153,9 @@ style_user = "bold #5192df"
 
 [vagrant]
 format = "| [$symbol($version )]($style) "
+
+[custom.vim]
+files = [".session.vim"]
+symbol = ""
+style = "green"
+format = "| [$symbol]($style) "
