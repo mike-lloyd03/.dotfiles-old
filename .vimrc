@@ -368,5 +368,10 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 
+" Formatting
+command! -nargs=0 Format :call CocAction('format')
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 " Custom coc bindings
 nmap <leader>r  <Plug>(coc-rename)

@@ -1,31 +1,51 @@
 {
-	"coc.preferences.formatOnSaveFiletypes":
-	[
+	"coc.preferences.formatOnSaveFiletypes": [
 		"cpp",
+		"css",
 		"go",
+		"html",
+		"jsonc",
+		"json",
 		"python",
 		"rust",
 		"sh",
-		"terraform"
+		"terraform",
+		"yaml"
 	],
+	"coc.preferences.willSaveHandlerTimeout": 1000,
 	"languageserver": {
 		"bash": {
 			"command": "bash-language-server",
-			"args": ["start"],
-			"filetypes": ["sh"],
-			"ignoredRootPaths": ["~"]
+			"args": [
+				"start"
+			],
+			"filetypes": [
+				"sh"
+			],
+			"ignoredRootPaths": [
+				"~"
+			]
 		},
 		"golang": {
 			"command": "gopls",
-			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-			"filetypes": ["go"],
+			"rootPatterns": [
+				"go.mod",
+				".vim/",
+				".git/",
+				".hg/"
+			],
+			"filetypes": [
+				"go"
+			],
 			"initializationOptions": {
 				"usePlaceholders": true
 			}
 		},
 		"terraform": {
 			"command": "terraform-ls",
-			"args": ["serve"],
+			"args": [
+				"serve"
+			],
 			"filetypes": [
 				"terraform",
 				"tf"
@@ -62,7 +82,11 @@
 					"message": 4
 				}
 			],
-			"rootPatterns": [".git", "pyproject.toml", "setup.py"],
+			"rootPatterns": [
+				".git",
+				"pyproject.toml",
+				"setup.py"
+			],
 			"securities": {
 				"informational": "hint",
 				"refactor": "info",
@@ -76,13 +100,23 @@
 		}
 	},
 	"diagnostic-languageserver.formatFiletypes": {
-		"python": "black",
-		"sh": "shfmt"
+		"css": "prettier",
+		"html": "prettier",
+		"json": "prettier",
+		"python": [
+			"black",
+			"isort"
+		],
+		"sh": "shfmt",
+		"yaml": "prettier"
 	},
 	"diagnostic-languageserver.formatters": {
 		"shfmt": {
 			"command": "shfmt",
-			"args": ["-i", "4"]
+			"args": [
+				"-i",
+				"4"
+			]
 		}
 	},
 	"java.configuration.runtimes": [
