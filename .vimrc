@@ -57,6 +57,10 @@ let python_hightlight_all = 1
 " Show sign column when signs are present (instead of overwriting line numbers)
 set signcolumn=yes
 
+" Show tab characters
+" set list
+" set listchars=tab:>-
+
 " Markdown bindings
 augroup mdbindings
   autocmd! mdbindings
@@ -258,11 +262,15 @@ nnoremap <buffer> H :<C-u>execute "!pydoc3 " . expand("<cword>")<CR>
 map <C-j> <C-E>
 map <C-k> <C-Y>
 
-"------ Change background to none -------
+" Change background to none
 nnoremap <C-F> :highlight Normal ctermbg=none<CR>
 
-"------ fzf Buffers -------
+" fzf Buffers
 nnoremap <C-B> :Buffers<CR>
+
+" Find and replace under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>d :%s/\<'<,'>\>/
 
 "------ NERDTree Config ------
 " close NERDTree when it's open by itself
