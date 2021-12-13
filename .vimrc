@@ -107,6 +107,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'joshdick/onedark.vim'
@@ -270,7 +271,22 @@ nnoremap <C-B> :Buffers<CR>
 
 " Find and replace under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-nnoremap <Leader>d :%s/\<'<,'>\>/
+" nnoremap <Leader>d :%s/\<'<,'>\>/
+
+" GitGutter diff base
+function! GitGutterDiffBranch(branch_name)
+    let g:gitgutter_diff_base = a:branch_name
+    GitGutter
+endfunction
+
+function! ListBranches(A,L,P)
+  return system("git branch --list | sed 's/^[* ] //g' | cat <<< 'HEAD'")
+endfunction
+
+command! -nargs=1 -complete=custom,ListBranches GitGutterDiffBranch :call GitGutterDiffBranch(<f-args>)
+
+nmap <Leader>d :GitGutterDiffBranch 
+
 
 "------ NERDTree Config ------
 " close NERDTree when it's open by itself
