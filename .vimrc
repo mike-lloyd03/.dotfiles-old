@@ -221,6 +221,10 @@ endfunction
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 
+"------ Goyo config
+let g:goyo_width = 120
+let g:goyo_height = "100%"
+
 "------ coc-snippets Config ------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
