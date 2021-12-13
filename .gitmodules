@@ -41,6 +41,10 @@
 	path = .vim/plugged/vim-obsession
 	url = https://github.com/tpope/vim-obsession.git
 
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+
 [submodule "lightline.vim"]
 	path = .vim/plugged/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
