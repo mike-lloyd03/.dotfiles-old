@@ -23,11 +23,11 @@ if [ "$(uname -n)" = kratos ]; then
     export PATH="$HOME/.poetry/bin:$PATH"
 
     alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
-    alias startfusuma='killall fusuma && fusuma -d'
-    alias load-kvm="sudo /home/mike/Documents/scripts/intel_gvt-g_setup/start-kvm-gvt-g.sh"
     alias om=optimus-manager
     alias pacman-ls-orphan="sudo pacman -Qdtq"
     alias pacman-rm-deps="sudo pacman -Rcns"
+    alias xcopy="xclip -r -i -selection clipboard"
+    alias xpaste="xclip -o -selection clipboard"
 fi
 
 # Work Machine Setup
