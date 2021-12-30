@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 "------ Command mode zsh-like autocompletion -------
 set wildmode=longest:full,full
 set wildmenu
@@ -5,7 +8,7 @@ set wildignore=*.o,*~
 set wildignorecase
 
 "------ lexical config ------
-set nocompatible
+" set nocompatible
 
 "------ Basic Config ------
 " Split panes open on the right or below
@@ -96,7 +99,9 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
+"------------------------------------------------------------------------------------
 "------ vim-plug Config ------
+"------------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -120,6 +125,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter/'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
@@ -133,10 +139,10 @@ let g:lightline = {
       \       'filename': 'FilenameLightline',
       \       'gitbranch': 'GitbranchLightline',
       \       'sessionstatus': 'SessionLightline',
-      \       'zoom': 'ZoomLightline'
+      \       'zoom': 'ZoomLightline',
+      \       'nearestfunc': 'NearestMethodOrFunction',
       \   },
       \   'component_expand': {
-      \       'cocstatus': 'COCStatusLightline',
       \       'coc_error_status': 'COCErrorStatus',
       \       'coc_warning_status': 'COCWarningStatus'
       \   },
@@ -149,7 +155,7 @@ let g:lightline = {
       \   'active': {
       \     'left': [
       \         ['mode', 'paste'],
-      \         ['gitbranch', 'readonly', 'filename','modified', 'zoom', ],
+      \         ['gitbranch', 'readonly', 'filename','modified', 'nearestfunc', 'zoom', ],
       \         ['coc_error_status', 'coc_warning_status'],
       \     ],
       \     'right': [
@@ -173,9 +179,9 @@ function! SessionLightline()
     let status = ObsessionStatus()
     if empty(status)
         return ''
-    elseif status == "[$]"
+    elseif status == '[$]'
       return 'tracking'
-    elseif status == "[S]"
+    elseif status == '[S]'
       return 'paused'
     endif
     return status
@@ -187,19 +193,6 @@ function! GitbranchLightline()
   else
     return ''
   endif
-endfunction
-
-function! COCStatusLightline() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, ' ' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, ' ' . info['warning'])
-  endif
-  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
 endfunction
 
 function! COCErrorStatus() abort
@@ -230,13 +223,21 @@ function! ZoomLightline()
     return status
 endfunction
 
+" Show nearest method or function
+function! NearestMethodOrFunction() abort
+    return get(b:, 'vista_nearest_method_or_function', '')
+  endfunction
+
+"------------------------------------------------------------------------------------
+"------ Plugin Configuration ------
+"------------------------------------------------------------------------------------
 "------ vim_markdown Config ------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 
-"------ Goyo config
+"------ Goyo Config ------
 let g:goyo_width = 120
-let g:goyo_height = "100%"
+let g:goyo_height = '100%'
 
 "------ coc-snippets Config ------
 inoremap <silent><expr> <TAB>
@@ -258,38 +259,7 @@ autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeIm
 "------ vim-terraform Config ------
 let g:terraform_fmt_on_save = 1
 
-"------ vim-obsession Config ------
-function! s:obsession_toggle()
-  if ObsessionStatus() == "[$]"
-    :Obsession
-  else
-    :Obsession .session.vim
-  endif
-endfunction
-
-nnoremap <C-s> call s:obsession_toggle()<CR>
-
-"------ Keyboard Config ------
-" nerdtree hotkey
-map <C-n> :NERDTreeToggle<CR>
-
-" bind pydoc3 to shift-H
-nnoremap <buffer> H :<C-u>execute "!pydoc3 " . expand("<cword>")<CR>
-
-" Control j and h to scroll
-map <C-j> <C-E>
-map <C-k> <C-Y>
-
-" Change background to none
-nnoremap <C-F> :highlight Normal ctermbg=none<CR>
-
-" fzf Buffers
-nnoremap <C-B> :Buffers<CR>
-
-" Find and replace under cursor
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-" nnoremap <Leader>d :%s/\<'<,'>\>/
-
+"------ gitgutter Config ------
 " GitGutter diff base
 function! GitGutterDiffBranch(branch_name)
     let g:gitgutter_diff_base = a:branch_name
@@ -304,12 +274,50 @@ command! -nargs=1 -complete=custom,ListBranches GitGutterDiffBranch :call GitGut
 
 nmap <Leader>d :GitGutterDiffBranch 
 
-nmap <C-W>z <Plug>(zoom-toggle)
+"------ vim-obsession Config ------
+function! s:obsession_toggle()
+  if ObsessionStatus() == '[$]'
+    :Obsession
+  else
+    :Obsession .session.vim
+  endif
+endfunction
 
+nnoremap <C-s> call s:obsession_toggle()<CR>
+
+"------ vista Config ------
+let g:vista_default_executive = 'coc'
+let g:vista#renderer#enable_icon = 1
+map <C-m> :Vista finder<CR>
 
 "------ NERDTree Config ------
+map <C-n> :NERDTreeToggle<CR>
+
+"------ vim-zoom Config ------
+nmap <C-W>z <Plug>(zoom-toggle)
+
+"------------------------------------------------------------------------------------
+"------ Keyboard Config ------
+"------------------------------------------------------------------------------------
+" Control j and h to scroll
+map <C-j> <C-E>
+map <C-k> <C-Y>
+
+" Change background to none
+nnoremap <C-F> :highlight Normal ctermbg=none<CR>
+
+" fzf Buffers
+nnoremap <C-B> :Buffers<CR>
+
+" Find and replace under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+" nnoremap <Leader>d :%s/\<'<,'>\>/
+
+"------------------------------------------------------------------------------------
+"------ NERDTree Config ------
+"------------------------------------------------------------------------------------
 " close NERDTree when it's open by itself
-autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTreeType') && b:NERDTreeType == 'primary') | q | endif
+" autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTreeType') && b:NERDTreeType == 'primary') | q | endif
 
 " Disable "Press ? for help
 let NERDTreeMinimalUI = 1
