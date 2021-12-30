@@ -107,3 +107,6 @@
 [submodule "tmux-themepack"]
 	path = .tmux/plugins/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
+[submodule ".vim/plugged/vim-zoom"]
+	path = .vim/plugged/vim-zoom
+	url = git@github.com:dhruvasagar/vim-zoom.git

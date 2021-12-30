@@ -119,6 +119,7 @@ Plug 'darfink/vim-plist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter/'
+Plug 'dhruvasagar/vim-zoom'
 
 call plug#end()
 
@@ -131,7 +132,8 @@ let g:lightline = {
       \   'component_function': {
       \       'filename': 'FilenameLightline',
       \       'gitbranch': 'GitbranchLightline',
-      \       'sessionstatus': 'SessionLightline'
+      \       'sessionstatus': 'SessionLightline',
+      \       'zoom': 'ZoomLightline'
       \   },
       \   'component_expand': {
       \       'cocstatus': 'COCStatusLightline',
@@ -147,7 +149,7 @@ let g:lightline = {
       \   'active': {
       \     'left': [
       \         ['mode', 'paste'],
-      \         ['gitbranch', 'readonly', 'filename', 'modified'],
+      \         ['gitbranch', 'readonly', 'filename','modified', 'zoom', ],
       \         ['coc_error_status', 'coc_warning_status'],
       \     ],
       \     'right': [
@@ -215,6 +217,17 @@ function! COCWarningStatus() abort
     return ' ' . info['warning']
   endif
   return ''
+endfunction
+
+" Show zoom status
+function! ZoomLightline()
+    let status = zoom#statusline()
+    " if empty(status)
+    "     return ''
+    " elseif status == "zoomed"
+    "   return 'Z'
+    " endif
+    return status
 endfunction
 
 "------ vim_markdown Config ------
@@ -290,6 +303,8 @@ endfunction
 command! -nargs=1 -complete=custom,ListBranches GitGutterDiffBranch :call GitGutterDiffBranch(<f-args>)
 
 nmap <Leader>d :GitGutterDiffBranch 
+
+nmap <C-W>z <Plug>(zoom-toggle)
 
 
 "------ NERDTree Config ------
