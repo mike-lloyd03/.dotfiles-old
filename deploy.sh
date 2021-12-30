@@ -43,6 +43,9 @@ for f in "${dotfiles[@]}"; do
     ln -s "$script_location/$f" "$HOME/$f"
 done
 
+# Install vim-plugs
+vim -c "PlugInstall | qa"
+
 # Setup global .gitignore file
 if [ -z "$(git config --global core.excludesfile)" ]; then
     echo "$prefix Setting global .gitignore variable"
