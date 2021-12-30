@@ -3,93 +3,6 @@
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 
 ###############
-# vim plugs
-###############
-[submodule "coc.nvim"]
-	path = .vim/plugged/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
-
-[submodule "nerdtree"]
-	path = .vim/plugged/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-
-[submodule "nerdtree-git-plugin"]
-	path = .vim/plugged/nerdtree-git-plugin
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-
-[submodule "Vim-Jinja2-Syntax"]
-	path = .vim/plugged/Vim-Jinja2-Syntax
-	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
-
-[submodule "vim-polyglot"]
-	path = .vim/plugged/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
-
-[submodule "vim-sensible"]
-	path = .vim/plugged/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-
-[submodule "vim-commentary"]
-	path = .vim/plugged/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-
-[submodule "vim-surround"]
-	path = .vim/plugged/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-
-[submodule "vim-obsession"]
-	path = .vim/plugged/vim-obsession
-	url = https://github.com/tpope/vim-obsession.git
-
-[submodule "vim-fugitive"]
-	path = .vim/plugged/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-
-[submodule "lightline.vim"]
-	path = .vim/plugged/lightline.vim
-	url = https://github.com/itchyny/lightline.vim.git
-
-[submodule "vim-gitbranch"]
-	path = .vim/plugged/vim-gitbranch
-	url = https://github.com/itchyny/vim-gitbranch.git
-
-[submodule "onedark.vim"]
-	path = .vim/plugged/onedark.vim
-	url = https://github.com/joshdick/onedark.vim.git
-
-[submodule "goyo.vim"]
-	path = .vim/plugged/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
-
-[submodule "tabular"]
-	path = .vim/plugged/tabular
-	url = https://github.com/godlygeek/tabular
-
-[submodule "vim-markdown"]
-	path = .vim/plugged/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
-
-[submodule "vim-lexical"]
-	path = .vim/plugged/vim-lexical
-	url = https://github.com/preservim/vim-lexical
-
-[submodule "vim-plist"]
-	path = .vim/plugged/vim-plist
-	url = https://github.com/darfink/vim-plist
-
-[submodule "fzf.vim"]
-	path = .vim/plugged/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
-
-[submodule "fzf"]
-	path = .vim/plugged/fzf
-	url = https://github.com/junegunn/fzf
-
-[submodule "vim-gitgutter"]
-	path = .vim/plugged/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-
-###############
 # tmux plugs
 ###############
 [submodule "tpm"]
@@ -107,6 +20,3 @@
 [submodule "tmux-themepack"]
 	path = .tmux/plugins/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
-[submodule ".vim/plugged/vim-zoom"]
-	path = .vim/plugged/vim-zoom
-	url = git@github.com:dhruvasagar/vim-zoom.git
