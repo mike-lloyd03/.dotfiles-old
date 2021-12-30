@@ -1,6 +1,10 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+"------------------------------------------------------------------------------------
+"------ Basic Config ------
+"------------------------------------------------------------------------------------
+
 "------ Command mode zsh-like autocompletion -------
 set wildmode=longest:full,full
 set wildmenu
@@ -10,7 +14,6 @@ set wildignorecase
 "------ lexical config ------
 " set nocompatible
 
-"------ Basic Config ------
 " Split panes open on the right or below
 set splitright
 set splitbelow
@@ -52,6 +55,7 @@ set showmatch
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
 " Smart case when searching
+set ignorecase
 set smartcase
 
 " enable Python highlighting features
