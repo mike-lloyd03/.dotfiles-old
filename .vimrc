@@ -292,7 +292,7 @@ nnoremap <C-s> call s:obsession_toggle()<CR>
 "------ vista Config ------
 let g:vista_default_executive = 'coc'
 let g:vista#renderer#enable_icon = 1
-map <C-m> :Vista finder<CR>
+map <C-l> :Vista finder<CR>
 
 "------ NERDTree Config ------
 map <C-n> :NERDTreeToggle<CR>
