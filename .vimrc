@@ -258,7 +258,8 @@ function! s:check_back_space() abort
 let g:coc_snippet_next = '<tab>'
 
 "------ gopls ------
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 "------ vim-terraform Config ------
 let g:terraform_fmt_on_save = 1
@@ -296,6 +297,16 @@ map <C-l> :Vista finder<CR>
 
 "------ NERDTree Config ------
 map <C-n> :NERDTreeToggle<CR>
+"
+" close NERDTree when it's open by itself
+" autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTreeType') && b:NERDTreeType == 'primary') | q | endif
+
+" Disable "Press ? for help
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" NERDTree Ignore
+let NERDTreeIgnore=['__pycache__']
 
 "------ vim-zoom Config ------
 nmap <C-W>z <Plug>(zoom-toggle)
@@ -318,19 +329,8 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " nnoremap <Leader>d :%s/\<'<,'>\>/
 
 "------------------------------------------------------------------------------------
-"------ NERDTree Config ------
-"------------------------------------------------------------------------------------
-" close NERDTree when it's open by itself
-" autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTreeType') && b:NERDTreeType == 'primary') | q | endif
-
-" Disable "Press ? for help
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-
-" NERDTree Ignore
-let NERDTreeIgnore=['__pycache__']
-
 "------ COC Config ------
+"------------------------------------------------------------------------------------
 " TextEdit might fail if hidden is not set.
 set hidden
 
