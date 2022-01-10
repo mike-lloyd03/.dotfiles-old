@@ -44,7 +44,7 @@ for f in "${dotfiles[@]}"; do
 done
 
 # Install vim-plugs
-vim -c "PlugInstall | qa"
+# vim -c "PlugInstall | qa"
 
 # Setup global .gitignore file
 if [ -z "$(git config --global core.excludesfile)" ]; then
