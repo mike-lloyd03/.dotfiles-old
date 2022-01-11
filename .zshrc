@@ -4,8 +4,6 @@ alias vimrc='vim ~/.vimrc'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
-alias ls="exa"
-alias cat="bat"
 alias dcomp="docker compose"
 alias gitundo="git reset --soft HEAD~1"
 
@@ -28,6 +26,8 @@ if [ "$(uname -n)" = kratos ]; then
     alias pacman-rm-deps="sudo pacman -Rcns"
     alias xcopy="xclip -r -i -selection clipboard"
     alias xpaste="xclip -o -selection clipboard"
+    alias ls="exa"
+    alias cat="bat"
 fi
 
 # Work Machine Setup
@@ -45,6 +45,8 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
     alias pip="pip3"
     alias python="python3"
     alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
+    alias ls="exa"
+    alias cat="bat"
 fi
 
 # ZSH Config
