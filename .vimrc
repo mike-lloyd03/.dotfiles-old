@@ -291,8 +291,10 @@ endfunction
 nnoremap <C-s> call s:obsession_toggle()<CR>
 
 "------ vista Config ------
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_default_executive = 'coc'
 let g:vista#renderer#enable_icon = 1
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 map <C-l> :Vista finder<CR>
 
 "------ NERDTree Config ------
