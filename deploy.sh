@@ -16,7 +16,7 @@ prefix_err="${RD}[.dotfiles deploy]${NM}"
 script_location="$(cd "$(dirname "$0")" && pwd -P)"
 
 dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml .gitignore-global)
-linux_dotfiles=(.config/xkbcomp)
+linux_dotfiles=(.xinitrc .config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
 
 if [ "$(uname -s)" = Linux ]; then
@@ -51,7 +51,7 @@ if [ -z "$(git config --global core.excludesfile)" ]; then
     echo "$prefix Setting global .gitignore variable"
     git config --global core.excludesfile "$HOME/.gitignore-global"
 else
-    echo "$prefix Global .gitignore variable already set."
+    echo "$prefix_warn Global .gitignore variable already set."
 fi
 
 echo "$prefix Done."
