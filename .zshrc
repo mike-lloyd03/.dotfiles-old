@@ -28,6 +28,7 @@ if [ "$(uname -n)" = kratos ]; then
     alias xpaste="xclip -o -selection clipboard"
     alias ls="exa"
     alias cat="bat"
+    alias plasma="kstart5 plasmashell"
 fi
 
 # Work Machine Setup
@@ -60,7 +61,9 @@ source "$ZSH/oh-my-zsh.sh"
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Launch tmux
-if [ ! -v TMUX ] && [ ! -v SSH_CONNECTION ] && [ ! "$(whoami)" = "root" ]; then
+if [ ! -v TMUX ] && \
+    [ -v DISPLAY ] && \
+    [ "$(whoami)" != "root" ]; then
     tmux attach || tmux
     echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi
