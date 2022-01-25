@@ -22,7 +22,7 @@ set splitbelow
 set fillchars+=vert:\│
 
 " toggle set paste
-set pastetoggle=<F8>
+set pastetoggle=<Leader>p
 
 " Break lines at word boundaries when wrapping and wrap to previous indent
 set linebreak

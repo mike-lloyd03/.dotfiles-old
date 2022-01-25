@@ -1,4 +1,5 @@
-{ "title": "Mouse Buttons",
+{
+  "title": "Mouse Buttons",
   "rules": [
     {
       "description": "Forward and back with button4 and button5",
@@ -7,50 +8,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^org\\.mozilla\\.firefox$"
-              ]
-            }
-          ],
-          "type": "basic",
-          "from": {
-            "pointing_button": "button5"
-          },
-          "to": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": "command"
-            }
-          ]
-        },
-        {
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^org\\.mozilla\\.firefox$"
-              ]
-            }
-          ],
-          "type": "basic",
-          "from": {
-            "pointing_button": "button4"
-          },
-          "to": 
-          [
-            {
-              "key_code": "left_arrow",
-              "modifiers": "command"
-            }
-          ]
-        },
-        {
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.finder$"
-              ]
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
             }
           ],
           "type": "basic",
@@ -68,17 +26,14 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.finder$"
-              ]
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
             }
           ],
           "type": "basic",
           "from": {
             "pointing_button": "button5"
           },
-          "to": 
-          [
+          "to": [
             {
               "key_code": "close_bracket",
               "modifiers": "command"
