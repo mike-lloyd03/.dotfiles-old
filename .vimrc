@@ -35,16 +35,11 @@ syntax enable
 set number
 set relativenumber
 
-" set tabs to 4 spaces
-set ts=4
-
-" indent when moving to the next line when writing code
+" autoindent and tab options
 set autoindent
-
-" expand tabs into spaces
 set expandtab
-
-" << and >> shift the lines four spaces
+set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 
 " put a line under the cursor

@@ -1,5 +1,6 @@
 {
 	"coc.preferences.formatOnSaveFiletypes": [
+		"c",
 		"cpp",
 		"css",
 		"go",
@@ -25,6 +26,28 @@
 			"ignoredRootPaths": [
 				"~"
 			]
+		},
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cc",
+				"cpp",
+				"c++",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				"compile_commands.json",
+				".git/",
+				".hg/"
+			],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
+				}
+			}
 		},
 		"golang": {
 			"command": "gopls",
@@ -54,7 +77,6 @@
 			"settings": {}
 		}
 	},
-	"clangd.path": "/Users/mike.lloyd/.dotfiles/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
 	"diagnostic-languageserver.mergeConfig": true,
 	"diagnostic-languageserver.filetypes": {
 		"python": "pylint",
@@ -102,6 +124,8 @@
 		}
 	},
 	"diagnostic-languageserver.formatFiletypes": {
+		"c": "clang-format",
+		"cpp": "clang-format",
 		"css": "prettier",
 		"html": "prettier",
 		"json": "prettier",
@@ -113,6 +137,12 @@
 		"yaml": "prettier"
 	},
 	"diagnostic-languageserver.formatters": {
+		"clang-format": {
+			"command": "clang-format",
+			"args": [
+				"--style=LLVM"
+			]
+		},
 		"shfmt": {
 			"command": "shfmt",
 			"args": [
