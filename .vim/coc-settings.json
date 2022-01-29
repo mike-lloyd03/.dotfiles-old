@@ -64,6 +64,15 @@
 				"usePlaceholders": true
 			}
 		},
+		"rust": {
+			"command": "rust-analyzer",
+			"filetypes": [
+				"rust"
+			],
+			"rootPatterns": [
+				"Cargo.toml"
+			]
+		},
 		"terraform": {
 			"command": "terraform-ls",
 			"args": [
