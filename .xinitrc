@@ -64,6 +64,6 @@ get_session(){
     echo "dbus-launch ${dbus_args[*]}"
 }
 
-/usr/bin/prime-offload # for optimus-manager
+# /usr/bin/prime-offload # for optimus-manager
 exec $(get_session "$1")
-sudo /usr/bin/prime-switch # for optimus-manager
+# sudo /usr/bin/prime-switch # for optimus-manager
