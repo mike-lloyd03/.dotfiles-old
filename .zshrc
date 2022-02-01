@@ -79,5 +79,26 @@ function vim() {
     fi
 }
 
+function dx() {
+    service_name="$1"
+    project_name="$(basename $(pwd))"
+    args="${@:2}"
+
+    if [ ! -f "docker-compose.yml" ]; then
+        echo "not in a docker-compose project directory"
+        return 1
+    fi
+    if [ "$service_name" = "" ]; then
+        echo "must include a service name"
+        return 1
+    fi
+    if [ "$args" = "" ]; then
+        echo "must include a command to run"
+        return 1
+    fi
+
+    docker exec -it ${project_name}-${service_name}-1 $args
+}
+
 # Starship prompt
 eval "$(starship init zsh)"
