@@ -8,14 +8,33 @@ $ git clone --recurse-submodules git@github.com:mike-lloyd03/.dotfiles.git
 $ ./.dotfiles/deploy.sh
 ```
 
-Dependencies:
+Required Dependencies:
 - `vim`
 - `tmux`
 - `zsh`
 - `oh-my-zsh` (will be auto-installed)
 - `nodejs`
 - `starship`
-- `gopls`
-- `black`
-- `shfmt`
-- `shellcheck`
+
+Optional Dependencies:
+- Rust:
+    - `rust-analyzer`
+- Go:
+    - `gopls`
+- Python:
+    - `black`
+    - `isort`
+    - `pylint`
+- Bash:
+    - `bash-language-server`
+    - `shfmt`
+    - `shellcheck`
+- C/C++:
+    - `ccls`
+    - `clang-format`
+- yaml, json, JS, css, html
+    - `prettier`
+- Terraform:
+    - `terraform-ls`
+- Vim:
+    - `vint`
