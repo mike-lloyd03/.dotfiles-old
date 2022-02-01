@@ -8,7 +8,12 @@ $ git clone --recurse-submodules git@github.com:mike-lloyd03/.dotfiles.git
 $ ./.dotfiles/deploy.sh
 ```
 
-Required Dependencies:
+To install vim plugins:
+```bash
+$ vim -c "PlugInstall"
+```
+
+## Required Dependencies
 - `vim`
 - `tmux`
 - `zsh`
@@ -16,7 +21,7 @@ Required Dependencies:
 - `nodejs`
 - `starship`
 
-Optional Dependencies:
+## Optional Dependencies
 - Rust:
     - `rust-analyzer`
 - Go:
