@@ -27,7 +27,6 @@ if [ "$(uname -n)" = kratos ]; then
     alias xcopy="xclip -r -i -selection clipboard"
     alias xpaste="xclip -o -selection clipboard"
     alias ls="exa"
-    alias cat="bat"
     alias plasma="kstart5 plasmashell"
 fi
 
@@ -47,7 +46,8 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
     alias python="python3"
     alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
     alias ls="exa"
-    alias cat="bat"
+    alias grep="ggrep"
+    alias sed="gsed"
 fi
 
 # ZSH Config
