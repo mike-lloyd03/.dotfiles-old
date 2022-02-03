@@ -105,5 +105,17 @@ function cdtemp() {
     cd $tmp_dir
 }
 
+function h() {
+    cmd="$1"
+    if man -w $cmd &>/dev/null; then
+        man $cmd
+    elif $cmd --help &> /dev/null; then
+        $cmd --help | less
+    else
+        echo "no man page or --help option available for $cmd"
+        return 1
+    fi
+}
+
 # Starship prompt
 eval "$(starship init zsh)"
