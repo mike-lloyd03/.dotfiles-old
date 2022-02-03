@@ -100,5 +100,10 @@ function dx() {
     docker exec -it ${project_name}-${service_name}-1 $args
 }
 
+function cdtemp() {
+    tmp_dir="$(mktemp -d)"
+    cd $tmp_dir
+}
+
 # Starship prompt
 eval "$(starship init zsh)"

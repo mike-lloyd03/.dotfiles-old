@@ -73,6 +73,14 @@ augroup mdbindings
   autocmd FileType markdown setlocal spell spelllang=en_us
   autocmd FileType markdown call lexical#init()
 augroup end
+"
+" sh tabs
+augroup shtabs
+  autocmd! shtabs
+  autocmd Filetype sh set tabstop=4
+  autocmd Filetype sh set softtabstop=4
+  autocmd Filetype sh set shiftwidth=4
+augroup end
 
 " set the cursor to a line in Normal Mode and a block in Insert Mode
 if exists('$TMUX')
