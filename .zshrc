@@ -13,7 +13,7 @@ export EDITOR='vim'
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
 
 # Personal Machine Setup
-if [ "$(uname -n)" = kratos ]; then
+if [ "$(uname -n)" = kratos ] || [ "$(uname -n)" = dev ]; then
   export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
