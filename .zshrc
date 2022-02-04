@@ -14,40 +14,40 @@ export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
 
 # Personal Machine Setup
 if [ "$(uname -n)" = kratos ]; then
-    export PATH="/opt/anaconda3/condabin:$PATH"
-    export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
-    export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-    export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
-    export PATH="$HOME/.poetry/bin:$PATH"
+  export PATH="/opt/anaconda3/condabin:$PATH"
+  export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
+  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+  export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
+  export PATH="$HOME/.poetry/bin:$PATH"
 
-    alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
-    alias om=optimus-manager
-    alias pacman-ls-orphan="sudo pacman -Qdtq"
-    alias pacman-rm-deps="sudo pacman -Rcns"
-    alias xcopy="xclip -r -i -selection clipboard"
-    alias xpaste="xclip -o -selection clipboard"
-    alias ls="exa"
-    alias plasma="kstart5 plasmashell"
+  alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
+  alias om=optimus-manager
+  alias pacman-ls-orphan="sudo pacman -Qdtq"
+  alias pacman-rm-deps="sudo pacman -Rcns"
+  alias xcopy="xclip -r -i -selection clipboard"
+  alias xpaste="xclip -o -selection clipboard"
+  alias ls="exa"
+  alias plasma="kstart5 plasmashell"
 fi
 
 # Work Machine Setup
 if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
-    export PATH="/usr/local/bin:$PATH"
-    export PATH="/usr/local/opt/openjdk/bin:$PATH"
-    export PATH="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin:$PATH"
-    export PATH="$PATH:$HOME/.cargo/bin"
+  export PATH="/usr/local/bin:$PATH"
+  export PATH="/usr/local/opt/openjdk/bin:$PATH"
+  export PATH="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin:$PATH"
+  export PATH="$PATH:$HOME/.cargo/bin"
 
-    # k8s config
-    export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
+  # k8s config
+  export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
 
-    alias kdev='kubectl config use-context appsec-dev'
-    alias kprod='kubectl config use-context appsec-prod'
-    alias pip="pip3"
-    alias python="python3"
-    alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
-    alias ls="exa"
-    alias grep="ggrep"
-    alias sed="gsed"
+  alias kdev='kubectl config use-context appsec-dev'
+  alias kprod='kubectl config use-context appsec-prod'
+  alias pip="pip3"
+  alias python="python3"
+  alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
+  alias ls="exa"
+  alias grep="ggrep"
+  alias sed="gsed"
 fi
 
 # ZSH Config
@@ -61,60 +61,64 @@ source "$ZSH/oh-my-zsh.sh"
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Launch tmux
-if [ ! -v TMUX ] && \
-    [ -v DISPLAY ] && \
-    [ "$(whoami)" != "root" ]; then
-    tmux attach || tmux
-    echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
+if [ ! -v TMUX ] &&
+  [ -v DISPLAY ] &&
+  [ "$(whoami)" != "root" ]; then
+  tmux attach || tmux
+  echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
 fi
 
 # vim session management
 function vim() {
-    if [ $# -gt 0 ]; then
-        env vim "$@" #-c "Obsession .session.vim"
-    elif [ -f ".session.vim" ]; then
-        env vim -S .session.vim
-    else
-        env vim -c "Obsession .session.vim"
-    fi
+  if [ $# -gt 0 ]; then
+    env vim "$@" #-c "Obsession .session.vim"
+  elif [ -f ".session.vim" ]; then
+    env vim -S .session.vim
+  else
+    env vim -c "Obsession .session.vim"
+  fi
 }
 
 function dx() {
-    service_name="$1"
-    project_name="$(basename $(pwd))"
-    args="${@:2}"
+  service_name="$1"
+  project_name="$(basename $(pwd))"
+  args="${@:2}"
 
-    if [ ! -f "docker-compose.yml" ]; then
-        echo "not in a docker-compose project directory"
-        return 1
-    fi
-    if [ "$service_name" = "" ]; then
-        echo "must include a service name"
-        return 1
-    fi
-    if [ "$args" = "" ]; then
-        echo "must include a command to run"
-        return 1
-    fi
+  if [ ! -f "docker-compose.yml" ]; then
+    echo "not in a docker-compose project directory"
+    return 1
+  fi
+  if [ "$service_name" = "" ]; then
+    echo "must include a service name"
+    return 1
+  fi
+  if [ "$args" = "" ]; then
+    echo "must include a command to run"
+    return 1
+  fi
 
-    docker exec -it ${project_name}-${service_name}-1 $args
+  docker exec -it ${project_name}-${service_name}-1 $args
 }
 
 function cdtemp() {
-    tmp_dir="$(mktemp -d)"
-    cd $tmp_dir
+  tmp_dir="$(mktemp -d)"
+  cd "$tmp_dir" || exit 1
 }
 
 function h() {
-    cmd="$1"
-    if man -w $cmd &>/dev/null; then
-        man $cmd
-    elif $cmd --help &> /dev/null; then
-        $cmd --help | less
-    else
-        echo "no man page or --help option available for $cmd"
-        return 1
-    fi
+  cmd=$*
+  if [ "$1" = "go" ]; then
+    go help "${@:2}" | $PAGER
+  elif [ "$1" = "aws" ]; then
+    "$@" help | $PAGER
+  elif man -w "$cmd" &>/dev/null; then
+    man "$cmd"
+  elif eval "$cmd --help" &>/dev/null; then
+    eval "$cmd --help" | $PAGER
+  else
+    echo "no man page or --help option available for '$cmd'"
+    return 1
+  fi
 }
 
 # Starship prompt
