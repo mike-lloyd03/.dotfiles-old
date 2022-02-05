@@ -1,3 +1,4 @@
+#!/bin/bash
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
@@ -80,8 +81,9 @@ function vim() {
 
 function dx() {
   service_name="$1"
+  shift
   project_name="$(basename $(pwd))"
-  args="${@:2}"
+  args=("$@")
 
   if [ ! -f "docker-compose.yml" ]; then
     echo "not in a docker-compose project directory"
@@ -96,7 +98,7 @@ function dx() {
     return 1
   fi
 
-  docker exec -it ${project_name}-${service_name}-1 $args
+  eval "docker exec -it ${project_name}-${service_name}-1 $(printf "'%s' " "${args[@]}")"
 }
 
 function cdtemp() {
