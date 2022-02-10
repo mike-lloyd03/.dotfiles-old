@@ -38,7 +38,9 @@ function cdtemp() {
 
 function h() {
   cmd=$*
-  if [ "$1" = "go" ]; then
+  if [ "$1" = "cargo" ]; then
+    cargo help "${@:2}"
+  elif [ "$1" = "go" ]; then
     go help "${@:2}" | $PAGER
   elif [ "$1" = "aws" ]; then
     "$@" help | $PAGER
