@@ -15,7 +15,7 @@ prefix_err="${RD}[.dotfiles deploy]${NM}"
 
 script_location="$(cd "$(dirname "$0")" && pwd -P)"
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .oh-my-zsh .local/share/zsh .config/starship.toml .gitignore-global)
+dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .zsh_functions .oh-my-zsh .local/share/zsh .config/starship.toml .gitignore-global)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
 

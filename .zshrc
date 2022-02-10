@@ -1,4 +1,4 @@
-#!/bin/bash
+##!/bin/bash
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
@@ -60,67 +60,7 @@ source "$ZSH/oh-my-zsh.sh"
 # MODE_INDICATOR=""
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Launch tmux
-if [ ! -v TMUX ] &&
-  [ -v DISPLAY ] &&
-  [ "$(whoami)" != "root" ]; then
-  tmux attach || tmux
-  echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
-fi
-
-# vim session management
-function vim() {
-  if [ $# -gt 0 ]; then
-    env vim "$@" #-c "Obsession .session.vim"
-  elif [ -f ".session.vim" ]; then
-    env vim -S .session.vim
-  else
-    env vim -c "Obsession .session.vim"
-  fi
-}
-
-function dx() {
-  service_name="$1"
-  shift
-  project_name="$(basename $(pwd))"
-  args=("$@")
-
-  if [ ! -f "docker-compose.yml" ]; then
-    echo "not in a docker-compose project directory"
-    return 1
-  fi
-  if [ "$service_name" = "" ]; then
-    echo "must include a service name"
-    return 1
-  fi
-  if [ "$args" = "" ]; then
-    echo "must include a command to run"
-    return 1
-  fi
-
-  eval "docker exec -it ${project_name}-${service_name}-1 $(printf "'%s' " "${args[@]}")"
-}
-
-function cdtemp() {
-  tmp_dir="$(mktemp -d)"
-  cd "$tmp_dir" || exit 1
-}
-
-function h() {
-  cmd=$*
-  if [ "$1" = "go" ]; then
-    go help "${@:2}" | $PAGER
-  elif [ "$1" = "aws" ]; then
-    "$@" help | $PAGER
-  elif man -w "$cmd" &>/dev/null; then
-    man "$cmd"
-  elif eval "$cmd --help" &>/dev/null; then
-    eval "$cmd --help" | $PAGER
-  else
-    echo "no man page or --help option available for '$cmd'"
-    return 1
-  fi
-}
+source $HOME/.zsh_functions
 
 # Starship prompt
 eval "$(starship init zsh)"
