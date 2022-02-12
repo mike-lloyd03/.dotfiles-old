@@ -62,5 +62,13 @@ source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlig
 
 source $HOME/.zsh_functions
 
+# Launch tmux
+if [ ! -v TMUX ] &&
+  [ -v DISPLAY ] &&
+  [ "$(whoami)" != "root" ]; then
+  tmux attach || tmux
+  echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
+fi
+
 # Starship prompt
 eval "$(starship init zsh)"
