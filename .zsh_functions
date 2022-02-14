@@ -1,11 +1,17 @@
 # vim session management
 function vim() {
-  if [ $# -gt 0 ]; then
-    env vim "$@" #-c "Obsession .session.vim"
-  elif [ -f ".session.vim" ]; then
-    env vim -S .session.vim
+  if command -v nvim &> /dev/null; then
+    vim_cmd=nvim
   else
-    env vim -c "Obsession .session.vim"
+    vim_cmd=vim
+  fi
+
+  if [ $# -gt 0 ]; then
+    env $vim_cmd "$@" #-c "Obsession .session.vim"
+  elif [ -f ".session.vim" ]; then
+    env $vim_cmd -S .session.vim
+  else
+    env $vim_cmd -c "Obsession .session.vim"
   fi
 }
 

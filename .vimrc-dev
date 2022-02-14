@@ -1,0 +1,10 @@
+function YankToSshPbcopy() abort
+  if v:event['regname'] == '+'
+    call system('ssh mac pbcopy', v:event['regcontents'])
+  endif
+endfunction
+
+augroup YankToMac
+  autocmd! YankToMac
+  autocmd TextYankPost * call YankToSshPbcopy()
+augroup END

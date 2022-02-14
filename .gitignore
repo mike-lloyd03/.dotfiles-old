@@ -9,3 +9,4 @@ __pycache__
 .vim/black
 doc/tags
 .vim/plugged
+.config/coc/suggest.txt

@@ -436,3 +436,5 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 " Custom coc bindings
 nmap <leader>r  <Plug>(coc-rename)
+
+source ~/.dotfiles/.vimrc-dev
