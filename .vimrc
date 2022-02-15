@@ -11,9 +11,6 @@ set wildmenu
 set wildignore=*.o,*~
 set wildignorecase
 
-"------ lexical config ------
-" set nocompatible
-
 " Split panes open on the right or below
 set splitright
 set splitbelow
@@ -105,6 +102,10 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
+
+"------ vim-polyglot config ------
+set nocompatible
+let g:polyglot_disabled = ['sh']
 
 "------------------------------------------------------------------------------------
 "------ vim-plug Config ------
@@ -260,9 +261,20 @@ function! s:check_back_space() abort
 
 let g:coc_snippet_next = '<tab>'
 
-"------ gopls ------
+"------ gopls Config ------
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 command! -nargs=0 OR :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+"------ go syntax Config ------
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 
 "------ vim-terraform Config ------
 let g:terraform_fmt_on_save = 1
@@ -315,6 +327,7 @@ let NERDTreeIgnore=['__pycache__']
 
 "------ vim-zoom Config ------
 nmap <C-W>z <Plug>(zoom-toggle)
+"
 
 "------------------------------------------------------------------------------------
 "------ Keyboard Config ------
