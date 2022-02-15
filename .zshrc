@@ -8,10 +8,6 @@ alias chkjrn='sudo journalctl -xe'
 alias dcomp="docker compose"
 alias gitundo="git reset --soft HEAD~1"
 
-if command -v nvim &> /dev/null; then
-  alias vim="nvim"
-fi
-
 export ZSH_DISABLE_COMPFIX=true
 export EDITOR='vim'
 
