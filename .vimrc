@@ -346,6 +346,9 @@ nnoremap <C-B> :Buffers<CR>
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " nnoremap <Leader>d :%s/\<'<,'>\>/
 
+" Clear hightlight after search
+nnoremap <C-_> <Cmd>nohlsearch<CR>
+
 "------------------------------------------------------------------------------------
 "------ COC Config ------
 "------------------------------------------------------------------------------------
