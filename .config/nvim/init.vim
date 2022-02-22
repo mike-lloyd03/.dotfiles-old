@@ -23,7 +23,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-fugitive'
-Plug 'joshdick/onedark.vim'
+Plug 'mike-lloyd03/onedark.vim'
 Plug 'preservim/vim-lexical'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dhruvasagar/vim-zoom'
@@ -188,9 +188,9 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 require'lspconfig'.diagnosticls.setup{
-    on_attach = on_attach,
+    -- on_attach = on_attach,
 --     capabilities = lsp_status.capabilities,
-    cmd = {"diagnostic-languageserver", "--stdio"},
+    -- cmd = {"diagnostic-languageserver", "--stdio"},
     filetypes = {
             "c",
             "cpp",
@@ -245,9 +245,32 @@ require'lspconfig'.diagnosticls.setup{
                 },
                 offsetColumn = 1,
                 formatLines = 1
-            }
-        },
-        formatFiletypes = {
+            },
+        shellcheck = {
+				sourceName = "shellcheck",
+				command = "shellcheck",
+				debounce = 100,
+				args = { "--format=gcc", "-" },
+				offsetLine = 0,
+				offsetColumn = 0,
+				formatLines = 1,
+				formatPattern = {
+					"^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+					{
+						line = 1,
+						column = 2,
+						message = 4,
+						security = 3
+					};
+				},
+				securities = {
+					error = "error",
+					warning = "warning",
+					note = "info"
+				};
+			}
+    },
+    formatFiletypes = {
             c = "clang_format",
             cpp = "clang_format",
             css = "prettier",
@@ -259,20 +282,20 @@ require'lspconfig'.diagnosticls.setup{
             },
             sh = "shfmt",
             yaml = "prettier"
+    },
+    formatters = {
+        black = {
+            command = "black"
         },
-        formatters = {
-            black = {
-                command = "black"
-            },
-            clang_format = {
-                command = "clang-format",
-                args = {"--style=LLVM"}
-            },
-            shfmt = {
-                command = "shfmt",
-                args = {"-i", "2"}
-            }
+        clang_format = {
+            command = "clang-format",
+            args = {"--style=LLVM"}
         },
+        shfmt = {
+            command = "shfmt",
+            args = {"-i", "2"}
+        }
+    },
     }
 } 
 require'lspconfig'.sqls.setup{}
@@ -324,7 +347,7 @@ vim.diagnostic.config{
     severity_sort = true,
 }
 vim.ui.select = require"popui.ui-overrider" -- PopUI
-vim.ui.input = require"popui.ui-input-override" -- PopUI
+-- vim.ui.input = require"popui.ui-input-override" -- PopUI
 
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 for type, icon in pairs(signs) do
