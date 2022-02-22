@@ -2,6 +2,7 @@
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
+alias nvimrc='vim ~/.config/nvim/init.vim'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
