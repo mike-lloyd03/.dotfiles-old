@@ -1,5 +1,6 @@
-local function nmap(shortcut, command)
-    vim.api.nvim_set_keymap('n', shortcut, command, {noremap = true})
+local function nmap(shortcut, command, opts)
+    opts = opts or {noremap = true}
+    vim.api.nvim_set_keymap('n', shortcut, command, opts)
 end
 -- Control j and h to scroll
 nmap("<C-j>", "<C-e>")
@@ -12,9 +13,9 @@ nmap("<C-b>", "<cmd>Buffers<cr>")
 nmap("<Leader>s", "<cmd>%s/<<C-r><C-w>>/")
 
 -- Clear hightlight after search
--- nnoremap <C-_> <Cmd>nohlsearch<CR>
 nmap("C-_>", "<Cmd>nohlsearch<CR>")
 
+-- LSP/Diagnostics
 nmap("[g", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
 nmap("]g", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
 nmap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
@@ -31,5 +32,12 @@ nmap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 nmap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 nmap("<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
+-- NERDTree
 nmap("<C-n>", "<cmd>NERDTreeToggle<cr>")
+
+-- Vista
 nmap("<C-l>", ":Vista finder<CR>")
+
+-- gitsigns
+nmap("]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr = true})
+nmap("[c", "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr = true})
