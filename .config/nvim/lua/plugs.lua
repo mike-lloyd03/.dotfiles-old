@@ -28,6 +28,7 @@ vim.cmd([[
     Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'dhruvasagar/vim-zoom'
     Plug 'liuchengxu/vista.vim'
+    Plug 'junegunn/fzf' "Required for vista finder
 
     call plug#end()
 ]])

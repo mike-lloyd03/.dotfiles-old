@@ -25,7 +25,7 @@ nmap("<leader>vimrc", ":lua search_dotfiles()<CR>")
 nmap("<Leader>s", "<cmd>%s/<<C-r><C-w>>/")
 
 -- Clear hightlight after search
-nmap("C-_>", "<Cmd>nohlsearch<CR>")
+nmap("<C-_>", "<cmd>nohlsearch<CR>")
 
 -- LSP/Diagnostics
 nmap("[g", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
