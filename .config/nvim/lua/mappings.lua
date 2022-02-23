@@ -6,8 +6,20 @@ end
 nmap("<C-j>", "<C-e>")
 nmap("<C-k>", "<C-y>")
 
--- fzf Buffers
-nmap("<C-b>", "<cmd>Buffers<cr>")
+-- Telescope
+nmap("<C-b>", "<cmd>Telescope buffers<cr>")
+nmap("<leader>ff", "<cmd>Telescope find_files<cr>")
+nmap("<leader>fg", "<cmd>Telescope live_grep<cr>")
+nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+function search_dotfiles()
+	require("telescope.builtin").find_files({
+		prompt_title = "< vimrc >",
+		cwd = "~/.config/nvim",
+		hidden = true,
+    })
+end
+nmap("<leader>vimrc", ":lua search_dotfiles()<CR>")
 
 -- Find and replace under cursor
 nmap("<Leader>s", "<cmd>%s/<<C-r><C-w>>/")

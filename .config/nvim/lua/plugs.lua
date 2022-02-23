@@ -10,12 +10,14 @@ vim.cmd([[
     Plug 'simrat39/rust-tools.nvim'
     Plug 'hrsh7th/vim-vsnip'
     "Plug 'nvim-lua/popup.nvim'
+    Plug 'onsails/lspkind-nvim'
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'lewis6991/gitsigns.nvim' "Depends on plenary
+    Plug 'nvim-telescope/telescope.nvim' "Depends on plenary
     Plug 'RishabhRD/popfix'
     Plug 'hood/popui.nvim' "Depends on popfix
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'lewis6991/gitsigns.nvim' "Depends on plenary
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
@@ -25,10 +27,7 @@ vim.cmd([[
     Plug 'preservim/vim-lexical'
     Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'dhruvasagar/vim-zoom'
-    Plug 'onsails/lspkind-nvim'
     Plug 'liuchengxu/vista.vim'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
-    Plug 'junegunn/fzf.vim'
 
     call plug#end()
 ]])
