@@ -52,3 +52,6 @@ vim.g.vista_icon_indent = {"╰─▸ ", "├─▸ "}
 
 -- gitsigns config
 require('gitsigns').setup()
+-- PopUI config
+vim.ui.select = require"popui.ui-overrider"
+-- vim.ui.input = require"popui.ui-input-override"

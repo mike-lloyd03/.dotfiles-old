@@ -1,8 +1,5 @@
-vim.opt.completeopt = "menuone,noselect"
--- Avoid showing extra messages when using completion
-vim.opt.shortmess = vim.opt.shortmess + "c"
-vim.ui.select = require"popui.ui-overrider" -- PopUI
--- vim.ui.input = require"popui.ui-input-override" -- PopUI
+vim.opt.completeopt = "menuone,noselect,noinsert"
+vim.opt.shortmess = vim.opt.shortmess + "c" -- Avoid showing extra messages when using completion
 
 vim.diagnostic.config{
     virtual_text=false, -- Disable virtual text
@@ -91,20 +88,17 @@ require'lspconfig'.diagnosticls.setup{
             "json",
             "python",
             "sh",
-            "yaml"
     },
     init_options = {
         filetypes = {
             python = "pylint",
             sh = "shellcheck",
-            vim = "vint"
         },
         linters = {
             pylint = {
                 sourceName = "pylint",
                 command = "pylint",
                 args = {
-                    "--init-hook='import pylint_venv; pylint_venv.inithook()'",
                     "--output-format",
                     "text",
                     "--score",
@@ -122,11 +116,7 @@ require'lspconfig'.diagnosticls.setup{
                         message = 4
                     }
                 },
-                rootPatterns = {
-                    ".git",
-                    "pyproject.toml",
-                    "setup.py"
-                },
+                rootPatterns = {".git", "pyproject.toml", "setup.py"},
                 securities = {
                     informational = "hint",
                     refactor = "info",
@@ -137,30 +127,31 @@ require'lspconfig'.diagnosticls.setup{
                 },
                 offsetColumn = 1,
                 formatLines = 1
-            },
-        shellcheck = {
-				sourceName = "shellcheck",
-				command = "shellcheck",
-				debounce = 100,
-				args = { "--format=gcc", "-" },
-				offsetLine = 0,
-				offsetColumn = 0,
-				formatLines = 1,
-				formatPattern = {
-					"^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
-					{
-						line = 1,
-						column = 2,
-						message = 4,
-						security = 3
-					};
-				},
-				securities = {
-					error = "error",
-					warning = "warning",
-					note = "info"
-				};
-			}
+              },
+            shellcheck = {
+               command = "shellcheck",
+               debounce = 100,
+               args = {
+                   "--format",
+                   "json",
+                   "-"
+               },
+               sourceName = "shellcheck",
+               parseJson = {
+                 line = "line",
+                 column = "column",
+                 endLine = "endLine",
+                 endColumn = "endColumn",
+                 message = "${message} [${code}]",
+                 security = "level"
+               },
+               securities = {
+                 error = "error",
+                 warning = "warning",
+                 info = "info",
+                 style = "hint"
+               }
+            }
     },
     formatFiletypes = {
             c = "clang_format",
@@ -177,11 +168,16 @@ require'lspconfig'.diagnosticls.setup{
     },
     formatters = {
         black = {
-            command = "black"
+            command = "black",
+            args = {"--quiet", "-"}
         },
         clang_format = {
             command = "clang-format",
             args = {"--style=LLVM"}
+        },
+        isort = {
+            command = "isort",
+            args = {"--quiet", "-"}
         },
         shfmt = {
             command = "shfmt",
@@ -214,7 +210,7 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
+      select = false,
     })
   },
 
