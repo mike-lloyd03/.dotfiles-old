@@ -2,13 +2,28 @@
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
+alias nvimrc='vim ~/.config/nvim/init.vim'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
 alias dcomp="docker compose"
-alias gitundo="git reset --soft HEAD~1"
 
-export ZSH_DISABLE_COMPFIX=true
+# git Aliases
+alias gundo="git reset --soft HEAD~1"
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit -v'
+alias gca='git commit -v --all'
+alias gpl='git pull'
+alias gl='git log'
+alias gp='git push'
+alias gr='git remote'
+alias gra='git remote add'
+alias grs='git restore'
+alias gs='git status -s'
+alias gst='git status'
+alias gd-'git diff'
+
 export EDITOR='vim'
 
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
@@ -46,21 +61,19 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
   alias python="python3"
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
-  alias grep="ggrep"
   alias sed="gsed"
 fi
 
 # ZSH Config
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""
+export ZSH_DISABLE_COMPFIX=true
 HYPHEN_INSENSITIVE="true"
-export DISABLE_LS_COLORS="true"
-plugins=(git vi-mode)
+plugins=(vi-mode)
+VI_MODE_SET_CURSOR=true
+export ZSH="$HOME/.dotfiles/ohmyzsh"
 source "$ZSH/oh-my-zsh.sh"
-# MODE_INDICATOR=""
-source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $HOME/.zsh_functions
+source $HOME/.dotfiles/zsh_functions
 
 # Launch tmux
 if [ ! -v TMUX ] &&

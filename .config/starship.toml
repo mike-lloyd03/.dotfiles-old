@@ -112,6 +112,9 @@ symbol = "☸ "
 # format = "[$symbol$context]($style)"
 style = "blue bold"
 
+[lua]
+disabled = true
+
 [memory_usage]
 symbol = " "
 
