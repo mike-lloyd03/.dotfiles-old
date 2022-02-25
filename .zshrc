@@ -24,7 +24,6 @@ alias gs='git status -s'
 alias gst='git status'
 alias gd-'git diff'
 
-export ZSH_DISABLE_COMPFIX=true
 export EDITOR='vim'
 
 export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
@@ -62,18 +61,16 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
   alias python="python3"
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
-  # alias grep="ggrep"
   alias sed="gsed"
 fi
 
 # ZSH Config
-export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
+ZSH_DISABLE_COMPFIX=true
 HYPHEN_INSENSITIVE="true"
-# export DISABLE_LS_COLORS="true"
 plugins=(vi-mode)
+export ZSH="$HOME/.oh-my-zsh"
 source "$ZSH/oh-my-zsh.sh"
-# MODE_INDICATOR=""
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.zsh_functions
