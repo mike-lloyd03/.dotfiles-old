@@ -42,12 +42,19 @@ vim.opt.smartcase = true
 -----------
 -- Markdown bindings
 vim.cmd([[
-  autocmd Filetype markdown noremap <buffer> <silent> k gk
-  autocmd Filetype markdown noremap <buffer> <silent> j gj
-  autocmd Filetype markdown noremap <buffer> <silent> 0 g0
-  autocmd Filetype markdown noremap <buffer> <silent> $ g$
+  autocmd FileType markdown noremap <buffer> <silent> k gk
+  autocmd FileType markdown noremap <buffer> <silent> j gj
+  autocmd FileType markdown noremap <buffer> <silent> 0 g0
+  autocmd FileType markdown noremap <buffer> <silent> $ g$
   autocmd FileType markdown setlocal spell spelllang=en_us
   autocmd FileType markdown call lexical#init()
+]])
+--
+-- sh tabs
+vim.cmd([[
+  autocmd FileType sh lua vim.opt.tabstop = 2
+  autocmd FileType sh lua vim.opt.softtabstop = 2
+  autocmd FileType sh lua vim.opt.shiftwidth = 2
 ]])
 
 -- Format on Save
