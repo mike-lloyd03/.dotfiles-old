@@ -2,7 +2,8 @@
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
-alias nvimrc='vim ~/.config/nvim/init.vim'
+alias nvimrc='pushd ~/.config/nvim >/dev/null && vim init.lua && popd > /dev/null'
+alias sz='source ~/.zshrc'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
@@ -24,9 +25,8 @@ alias gs='git status -s'
 alias gst='git status'
 alias gd-'git diff'
 
-export EDITOR='vim'
-
-export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
+export EDITOR='nvim'
+export PATH="$PATH:$HOME/go/bin"
 
 # Personal Machine Setup
 if [ "$(uname -n)" = kratos ] || [ "$(uname -n)" = dev ]; then
