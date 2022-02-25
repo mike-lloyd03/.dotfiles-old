@@ -43,7 +43,7 @@ vim.cmd([[
 -- NERDTree Config
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeDirArrows = 1
-vim.g.NERDTreeIgnore = { '__pycache__' }
+vim.g.NERDTreeIgnore = { '__pycache__', '.session.vim' }
 
 -- Vista Config
 vim.g.vista_default_executive = 'nvim_lsp'

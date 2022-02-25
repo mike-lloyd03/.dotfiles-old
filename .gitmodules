@@ -20,10 +20,10 @@
 ###############
 # zsh plugs
 ###############
-[submodule "oh-my-zsh"]
-	path = .oh-my-zsh
+[submodule "ohmyzsh"]
+	path = ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 
 [submodule "zsh-syntax-highlighting"]
-	path = .local/share/zsh/plugins/zsh-syntax-highlighting
+	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

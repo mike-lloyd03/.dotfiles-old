@@ -2,57 +2,101 @@
 
 # set -x
 
-# BD=$(tput bold)
-NM=$(tput sgr0)
-# UL=$(tput smul)
-GN=$(tput setaf 2)
-YL=$(tput setaf 3)
-RD=$(tput setaf 1)
+function println() {
+  msg="$1"
+  level="${2:-info}"
 
-prefix="${GN}[.dotfiles deploy]${NM}"
-prefix_warn="${YL}[.dotfiles deploy]${NM}"
-prefix_err="${RD}[.dotfiles deploy]${NM}"
+  # BD=$(tput bold)
+  NM=$(tput sgr0)
+  # UL=$(tput smul)
+  GN=$(tput setaf 2)
+  YL=$(tput setaf 3)
+  RD=$(tput setaf 1)
+  prefix="[.dotfiles deploy]"
+
+  case $level in
+  info)
+    echo "${GN}${prefix}${NM} $msg"
+    ;;
+  warn)
+    echo "${YL}${prefix}${NM} $msg"
+    ;;
+  error | err)
+    echo "${RD}${prefix}${NM} $msg"
+    ;;
+  esac
+}
 
 script_location="$(cd "$(dirname "$0")" && pwd -P)"
 
-dotfiles=(.vim .vimrc .tmux .tmux.conf .config/coc .zshrc .zsh_functions .oh-my-zsh .local/share/zsh .config/starship.toml .gitignore-global)
+dotfiles=(.tmux .tmux.conf .zshrc .config/starship.toml .gitignore-global)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
+vim_dotfiles=(.vim .vimrc .config/coc)
+nvim_dotfiles=(.config/nvim)
 
 if [ "$(uname -s)" = Linux ]; then
   dotfiles+=("${linux_dotfiles[@]}")
 elif [ "$(uname -s)" = Darwin ]; then
   dotfiles+=("${mac_dotfiles[@]}")
 else
-  echo "$prefix_err Cannot deploy on this system."
+  println "Cannot deploy on this system" error
   exit 1
 fi
 
-echo "$prefix Deploying .dotfiles..."
+if command -v nvim &>/dev/null; then
+  println "neovim detected"
+  vim_cmd=nvim
+  dotfiles+=("${nvim_dotfiles[@]}")
+else
+  vim_cmd=vim
+  dotfiles+=("${vim_dotfiles[@]}")
+fi
+
+println "Deploying .dotfiles..."
+if [ ! -e "$HOME/.dotfiles" ]; then
+  if [ ! "$(readlink "$HOME/.dotfiles")" = "$script_location" ]; then
+    ln -s "$script_location" "$HOME/.dotfiles"
+  fi
+fi
+script_location="$HOME/.dotfiles"
+
 for f in "${dotfiles[@]}"; do
   if [ -e "$HOME/$f" ]; then
-    if [ -L "$HOME/$f" ] && [ "$(readlink "$HOME/$f")" = "$script_location/$f" ]; then
-      echo "$prefix_warn Link for $f already exists. Skipping."
+    if [ "$(readlink "$HOME/$f")" = "$script_location/$f" ]; then
+      println "Link for $f already exists. Skipping." warn
       continue
     fi
-    echo "$prefix_warn $f already exists. Backing up."
+    println "$f already exists. Backing up." warn
     mv "$HOME/$f" "$HOME/$f.pre-deploy"
   fi
-  echo "$prefix Creating link for $f"
+  println "Creating link for $f"
   mkdir -p "$(dirname "$HOME/$f")"
   ln -s "$script_location/$f" "$HOME/$f"
 done
 
 # Install vim-plugs
-# vim -c "PlugInstall | qa"
+println "Installing $vim_cmd plugs"
+vim_plug_path="$HOME/.local/share/nvim/site/autoload/plug.vim"
+if [ ! -e $vim_plug_path ]; then
+  println "vim-plug not intalled. Installing" warn
+  if [ "$vim_cmd" = "nvim" ]; then
+    sh -c "curl -fLo '$HOME/.local/share/nvim/site/autoload/plug.vim' --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+   else
+     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  fi
+fi
+$vim_cmd -c "PlugInstall | qa"
 
 # Setup global .gitignore file
 if [ -z "$(git config --global core.excludesfile)" ]; then
-  echo "$prefix Setting global .gitignore variable"
+  println "Setting global .gitignore variable"
   git config --global core.excludesfile "$HOME/.gitignore-global"
 else
-  echo "$prefix_warn Global .gitignore variable already set."
+  println "Global .gitignore variable already set." warn
 fi
 
-echo "$prefix Done."
+println "Done."
 exit 0

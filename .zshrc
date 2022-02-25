@@ -15,7 +15,7 @@ alias gaa='git add --all'
 alias gc='git commit -v'
 alias gca='git commit -v --all'
 alias gpl='git pull'
-alias glg='git log'
+alias gl='git log'
 alias gp='git push'
 alias gr='git remote'
 alias gra='git remote add'
@@ -65,15 +65,15 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
 fi
 
 # ZSH Config
-ZSH_THEME=""
-ZSH_DISABLE_COMPFIX=true
+export ZSH_DISABLE_COMPFIX=true
 HYPHEN_INSENSITIVE="true"
 plugins=(vi-mode)
-export ZSH="$HOME/.oh-my-zsh"
+VI_MODE_SET_CURSOR=true
+export ZSH="$HOME/.dotfiles/ohmyzsh"
 source "$ZSH/oh-my-zsh.sh"
-source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $HOME/.zsh_functions
+source $HOME/.dotfiles/zsh_functions
 
 # Launch tmux
 if [ ! -v TMUX ] &&
