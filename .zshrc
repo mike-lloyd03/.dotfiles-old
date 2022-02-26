@@ -10,6 +10,7 @@ alias chkjrn='sudo journalctl -xe'
 alias dcomp="docker compose"
 
 # git Aliases
+alias g="git"
 alias gundo="git reset --soft HEAD~1"
 alias ga='git add'
 alias gaa='git add --all'
@@ -23,7 +24,10 @@ alias gra='git remote add'
 alias grs='git restore'
 alias gs='git status -s'
 alias gst='git status'
-alias gd-'git diff'
+alias gd='git diff'
+alias gsw='git switch'
+alias gco='git checkout'
+alias gb='git branch'
 
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/go/bin"
