@@ -29,6 +29,16 @@ alias gsw='git switch'
 alias gco='git checkout'
 alias gb='git branch'
 
+# systemctl Aliases
+alias sc="sudo systemctl"
+alias scr="sudo systemctl restart"
+alias scstart="sudo systemctl start"
+alias scstop="sudo systemctl stop"
+alias sce="sudo systemctl enable"
+alias scen="sudo systemctl enable --now"
+alias scstat="sudo systemctl enable --now"
+alias scdr="sudo systemctl daemon-reload"
+
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/go/bin"
 
