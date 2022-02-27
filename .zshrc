@@ -8,6 +8,7 @@ alias svenv='source .venv/bin/activate'
 alias svim='sudo vim'
 alias chkjrn='sudo journalctl -xe'
 alias dcomp="docker compose"
+alias dotfiles="pushd $HOME/.dotfiles"
 
 # git Aliases
 alias g="git"
@@ -38,6 +39,7 @@ alias sce="sudo systemctl enable"
 alias scen="sudo systemctl enable --now"
 alias scstat="sudo systemctl enable --now"
 alias scdr="sudo systemctl daemon-reload"
+
 
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/go/bin"
