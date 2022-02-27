@@ -37,7 +37,7 @@ alias scstart="sudo systemctl start"
 alias scstop="sudo systemctl stop"
 alias sce="sudo systemctl enable"
 alias scen="sudo systemctl enable --now"
-alias scstat="sudo systemctl enable --now"
+alias scstat="sudo systemctl status"
 alias scdr="sudo systemctl daemon-reload"
 
 
