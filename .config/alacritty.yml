@@ -1,0 +1,57 @@
+window:
+  decorations: none
+  opacity: .80
+  #title: Alacritty
+  class:
+    instance: alacritty
+    general: alacritty
+
+font:
+  normal:
+    family: "MesloLGS NF"
+    style: Regular
+  size: 9.0
+
+live_config_reload: true
+
+key_bindings:
+  - {key: Q, mods: Control|Shift, action: Quit}
+  - {key: W, mods: Control|Shift, action: Quit}
+  - {key: Q, mods: Command|Shift, action: Quit}
+  - {key: W, mods: Command|Shift, action: Quit}
+
+# Colors (One Dark)
+colors:
+  primary:
+    foreground: '0xabb2bf'
+    # background: '0x282c34'
+    background: '0x1a1c23'
+
+  cursor:
+    text: '0x2c323c'
+    cursor: '0x5c6370'
+    unfocused_hollow: true
+
+  selection:
+    text: CellForeground
+    background: '0x3e4452'
+
+  normal:
+    black:   '0x2c323c'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xe5c07b'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x5c6370'
+
+  bright:
+    black:   '0x3e4452'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xe5c07b'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
