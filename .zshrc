@@ -16,7 +16,9 @@ alias gundo="git reset --soft HEAD~1"
 alias ga='git add'
 alias gaa='git add --all'
 alias gc='git commit -v'
+alias gcm='git commit -v -m'
 alias gca='git commit -v --all'
+alias gcam='git commit -v --all -m'
 alias gpl='git pull'
 alias gl='git log'
 alias gp='git push'
@@ -29,6 +31,7 @@ alias gd='git diff'
 alias gsw='git switch'
 alias gco='git checkout'
 alias gb='git branch'
+alias gsm='git submodule'
 
 # systemctl Aliases
 alias sc="sudo systemctl"
