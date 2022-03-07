@@ -46,13 +46,14 @@ alias scdr="sudo systemctl daemon-reload"
 
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Personal Machine Setup
 if [ "$(uname -n)" = kratos ] || [ "$(uname -n)" = dev ]; then
   export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
-  export PATH="$HOME/.local/bin:$PATH"
+
 
   alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
   alias om=optimus-manager
@@ -66,10 +67,9 @@ fi
 
 # Work Machine Setup
 if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
-  export PATH="/usr/local/bin:$PATH"
-  export PATH="/usr/local/opt/openjdk/bin:$PATH"
-  export PATH="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin:$PATH"
   export PATH="$PATH:$HOME/.cargo/bin"
+  export PATH=/usr/local/opt/gnubin:/usr/local/bin:$PATH
+  export MANPATH=/usr/local/opt/gnuman:${MANPATH:-/usr/share/man}
 
   # k8s config
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
