@@ -30,6 +30,7 @@ alias gst='git status'
 alias gd='git diff'
 alias gsw='git switch'
 alias gco='git checkout'
+alias gcob='git checkout -b'
 alias gb='git branch'
 alias gsm='git submodule'
 
@@ -81,6 +82,18 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
   alias sed="gsed"
+fi
+
+# Dev Machine Setup
+if [ "$(uname -n)" = dev ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+  export PATH="$PATH:$HOME/.cargo/bin"
+  export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
+
+  alias kdev='kubectl config use-context appsec-dev'
+  alias kprod='kubectl config use-context appsec-prod'
+  alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
+  alias ls="exa"
 fi
 
 # ZSH Config
