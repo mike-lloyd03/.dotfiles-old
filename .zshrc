@@ -30,6 +30,7 @@ alias gst='git status'
 alias gd='git diff'
 alias gsw='git switch'
 alias gco='git checkout'
+alias gcob='git checkout -b'
 alias gb='git branch'
 alias gsm='git submodule'
 
@@ -46,13 +47,14 @@ alias scdr="sudo systemctl daemon-reload"
 
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Personal Machine Setup
 if [ "$(uname -n)" = kratos ] || [ "$(uname -n)" = dev ]; then
   export PATH="$HOME/.nvm/versions/node/v12.16.1/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   export PATH="$HOME/.local/share/gem/ruby/2.7.0/bin:$PATH"
-  export PATH="$HOME/.local/bin:$PATH"
+
 
   alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
   alias om=optimus-manager
@@ -66,10 +68,9 @@ fi
 
 # Work Machine Setup
 if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
-  export PATH="/usr/local/bin:$PATH"
-  export PATH="/usr/local/opt/openjdk/bin:$PATH"
-  export PATH="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin:$PATH"
   export PATH="$PATH:$HOME/.cargo/bin"
+  export PATH=/usr/local/opt/gnubin:/usr/local/bin:$PATH
+  export MANPATH=/usr/local/opt/gnuman:${MANPATH:-/usr/share/man}
 
   # k8s config
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
@@ -81,6 +82,18 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
   alias sed="gsed"
+fi
+
+# Dev Machine Setup
+if [ "$(uname -n)" = dev ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+  export PATH="$PATH:$HOME/.cargo/bin"
+  export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-dev"
+
+  alias kdev='kubectl config use-context appsec-dev'
+  alias kprod='kubectl config use-context appsec-prod'
+  alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
+  alias ls="exa"
 fi
 
 # ZSH Config

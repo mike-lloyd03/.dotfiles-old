@@ -2,7 +2,7 @@
   "title": "Control Key Rebinding for Terminal Emulators",
   "rules": [
     {
-      "description": "Command to Control in iTerm2, Terminal, and MacVim",
+      "description": "Command to Control in terminal apps",
       "manipulators": [
         {
           "description": "C-c",
@@ -13,7 +13,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -39,7 +40,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -65,7 +67,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -91,7 +94,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -117,7 +121,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -143,7 +148,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -169,7 +175,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -195,7 +202,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -221,7 +229,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -247,7 +256,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -273,7 +283,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -299,7 +310,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -325,7 +337,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -351,7 +364,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -377,7 +391,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -403,7 +418,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -429,7 +445,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],
@@ -455,7 +472,8 @@
               "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.MacVim$"
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$"
               ]
             }
           ],

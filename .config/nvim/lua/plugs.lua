@@ -11,8 +11,9 @@ vim.cmd([[
     Plug 'hrsh7th/vim-vsnip'
     Plug 'onsails/lspkind-nvim'
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'lewis6991/gitsigns.nvim' "Depends on plenary
-    Plug 'nvim-telescope/telescope.nvim' "Depends on plenary
+    Plug 'nvim-telescope/telescope.nvim' "Depends on plenary and apparently tree-sitter
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
