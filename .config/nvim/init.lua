@@ -63,4 +63,5 @@ vim.cmd([[
   autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType json autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]])

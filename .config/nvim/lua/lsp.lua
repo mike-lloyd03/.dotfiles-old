@@ -179,6 +179,10 @@ require'lspconfig'.diagnosticls.setup{
             command = "isort",
             args = {"--quiet", "-"}
         },
+        prettier = {
+            command = "prettier",
+            args = {"--stdin-filepath", "%filepath"},
+        },
         shfmt = {
             command = "shfmt",
             args = {"-i", "2"}
