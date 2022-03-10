@@ -4,6 +4,7 @@ require('lsp')
 require('mappings')
 require('statusline')
 
+
 -- Command mode zsh-like autocompletion
 vim.opt.signcolumn = 'yes'
 vim.opt.wildmenu = true
@@ -65,3 +66,17 @@ vim.cmd([[
   autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType json autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]])
+
+-- Clipboard provider for dev machine
+if vim.fn.hostname() == 'dev'
+then
+    vim.g.clipboard = {
+      name = "ssh",
+      copy = {
+         ['+'] = {'ssh', 'mac', 'pbcopy'},
+       },
+       paste = {
+         ['+'] = {'ssh', 'mac', 'pbpaste'},
+       },
+    }
+end
