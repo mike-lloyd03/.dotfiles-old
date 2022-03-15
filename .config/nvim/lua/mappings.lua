@@ -56,7 +56,7 @@ nmap("<leader>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
 nmap("<space>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
 
 -- NERDTree
-nmap("<C-n>", "<CMD>NERDTreeToggle<CR>")
+nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
 
 -- Vista
 
