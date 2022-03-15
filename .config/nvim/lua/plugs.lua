@@ -17,33 +17,25 @@ vim.cmd([[
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-obsession'
     Plug 'tpope/vim-fugitive'
-    Plug 'joshdick/onedark.vim'
+    Plug 'navarasu/onedark.nvim'
     Plug 'preservim/vim-lexical'
-    Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'dhruvasagar/vim-zoom'
 
     call plug#end()
 ]])
 
 -- Color scheme config
-vim.cmd([[
-    augroup colorscheme
-    autocmd!
-    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white })
-    colorscheme onedark
-    augroup end
-]])
-
--- NERDTree Config
-vim.g.NERDTreeMinimalUI = 1
-vim.g.NERDTreeDirArrows = 1
-vim.g.NERDTreeIgnore = { '__pycache__', '.session.vim' }
+require('onedark').setup {
+    style = 'cool'
+}
+require('onedark').load()
+vim.opt.termguicolors = false
 
 -- gitsigns config
 require('gitsigns').setup()
