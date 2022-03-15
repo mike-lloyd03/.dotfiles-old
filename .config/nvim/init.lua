@@ -78,3 +78,4 @@ then
          ['+'] = {'ssh', 'mac', 'pbpaste'},
        },
     }
+end

@@ -11,3 +11,4 @@ doc/tags
 .vim/plugged
 .config/coc/suggest.txt
 .DS_Store
+venv-nvim

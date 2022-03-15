@@ -6,7 +6,9 @@ vim.diagnostic.config{
     severity_sort = true,
 }
 
-local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
+vim.g.python3_host_prog = '$HOME/.config/nvim/venv-nvim/bin/python'
+
+local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
     local hl = 'DiagnosticSign' .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -51,7 +53,9 @@ require('rust-tools').setup(opts)
 ----------------------------
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.gopls.setup{}
-require'lspconfig'.jedi_language_server.setup{}
+require'lspconfig'.jedi_language_server.setup{
+    -- cmd = {"$HOME/.config/nvim/venv-nvim/bin/jedi-language-server"},
+}
 
 require'lspconfig'.sumneko_lua.setup{
   settings = {
@@ -75,6 +79,10 @@ require'lspconfig'.sumneko_lua.setup{
     },
   },
 }
+--
+----------------------------
+-- Diagnostic Language Server Config
+----------------------------
 
 require'lspconfig'.diagnosticls.setup{
     -- on_attach = on_attach,
