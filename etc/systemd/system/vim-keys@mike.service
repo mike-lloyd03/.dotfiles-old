@@ -4,11 +4,10 @@ After=suspend.target
 
 [Service]
 User=mike
-Type=simple
+Type=oneshot
 Environment=DISPLAY=:0
-ExecStartPre=/usr/bin/sleep 15
+ExecStartPre=/usr/bin/sleep 1
 ExecStart=/home/mike/.config/xkbcomp/vim-keys-xkb.sh
-Restart=always
 
 [Install]
 WantedBy=multi-user.target
