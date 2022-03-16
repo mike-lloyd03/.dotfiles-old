@@ -3,9 +3,16 @@ local function nmap(shortcut, command, opts)
     vim.api.nvim_set_keymap('n', shortcut, command, opts)
 end
 
+local function imap(shortcut, command, opts)
+    opts = opts or {noremap = true}
+    vim.api.nvim_set_keymap('i', shortcut, command, opts)
+end
+
 -- Control j and h to scroll
 nmap("<C-j>", "<C-e>")
 nmap("<C-k>", "<C-y>")
+imap("<C-j>", "<C-e>")
+imap("<C-k>", "<C-y>")
 
 
 -- Telescope
@@ -39,18 +46,13 @@ nmap("<C-_>", "<CMD>nohlsearch<CR>")
 -- LSP/Diagnostics
 nmap("[g", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
 nmap("]g", "<CMD>lua vim.diagnostic.goto_next()<CR>")
--- nmap("gD", "<CMD>lua vim.lsp.buf.declaration()<CR>")
--- nmap("gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
 nmap("K", "<CMD>lua vim.lsp.buf.hover()<CR>")
 nmap("gi", "<CMD>lua vim.lsp.buf.implementation()<CR>")
--- nmap("<C-k>", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
 nmap("<space>wa", "<CMD>lua vim.lsp.buf.add_workspace_folder()<CR>")
 nmap("<space>wr", "<CMD>lua vim.lsp.buf.remove_workspace_folder()<CR>")
 nmap("<space>wl", "<CMD>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
 nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 nmap("<leader>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
--- nmap("<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>")
--- nmap("gr", "<CMD>lua vim.lsp.buf.references()<CR>")
 nmap("<space>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
 
 -- NERDTree
