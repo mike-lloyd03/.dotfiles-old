@@ -60,7 +60,7 @@ vim.cmd([[
 
 -- Format on Save
 vim.cmd([[
-  autocmd FileType rust BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType rust autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType go autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType python autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
