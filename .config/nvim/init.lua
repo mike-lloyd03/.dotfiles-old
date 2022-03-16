@@ -4,6 +4,7 @@ require('lsp')
 require('mappings')
 require('statusline')
 
+
 -- Command mode zsh-like autocompletion
 vim.opt.signcolumn = 'yes'
 vim.opt.wildmenu = true
@@ -59,9 +60,22 @@ vim.cmd([[
 
 -- Format on Save
 vim.cmd([[
-  autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType rust BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType go autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType python autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType json autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]])
+
+if vim.fn.hostname() == 'dev'
+then
+    vim.g.clipboard = {
+      name = "ssh",
+      copy = {
+         ['+'] = {'ssh', 'mac', 'pbcopy'},
+       },
+       paste = {
+         ['+'] = {'ssh', 'mac', 'pbpaste'},
+       },
+    }
+end

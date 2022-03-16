@@ -1,6 +1,7 @@
 window:
   decorations: none
-  opacity: .80
+  # opacity: .80
+  opacity: 1
   #title: Alacritty
   class:
     instance: alacritty
@@ -9,16 +10,20 @@ window:
 font:
   normal:
     family: "MesloLGS NF"
-    style: Regular
-  size: 9.0
+    family: "MesloLGM Nerd Font Mono"
+  size: 12.0
 
 live_config_reload: true
 
 key_bindings:
+  # Linux
   - {key: Q, mods: Control|Shift, action: Quit}
   - {key: W, mods: Control|Shift, action: Quit}
-  - {key: Q, mods: Command|Shift, action: Quit}
+  # Mac
   - {key: W, mods: Command|Shift, action: Quit}
+  - {key: C, mods: Command|Shift, action: Copy}
+  - {key: V, mods: Command|Shift, action: Paste}
+  - {key: Slash, mods: Control, chars: "\x1f"}
 
 # Colors (One Dark)
 colors:
