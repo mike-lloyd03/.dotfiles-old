@@ -18,6 +18,7 @@ vim.cmd([[
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'wfxr/minimap.vim'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
@@ -67,3 +68,6 @@ require('telescope').setup{
     },
 }
 require('telescope').load_extension('fzf')
+
+-- Minimap Config
+vim.g.minimap_width = 30
