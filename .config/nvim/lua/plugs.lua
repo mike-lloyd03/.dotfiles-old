@@ -19,6 +19,7 @@ vim.cmd([[
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'wfxr/minimap.vim'
+    Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
