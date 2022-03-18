@@ -118,6 +118,10 @@ require('telescope').setup{
 require('telescope').load_extension('fzf')
 
 -- Treesitter config
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 100
+
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,

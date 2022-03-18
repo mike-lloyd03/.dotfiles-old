@@ -54,7 +54,7 @@ nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 nmap("<leader>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
 nmap("<space>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
 
--- NERDTree
+-- NvimTree
 nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
 
 -- Minimap

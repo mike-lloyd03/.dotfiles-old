@@ -30,7 +30,7 @@ require('lualine').setup {
         '%{ObsessionStatus("tracking", "paused")}',
         'encoding',
         'fileformat',
-        {'filetype', colored = false}
+        {'filetype', colored = true}
     },
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -50,5 +50,4 @@ require('lualine').setup {
   },
   tabline = {
       },
-  -- extensions = {'nvim-tree'}
 }
