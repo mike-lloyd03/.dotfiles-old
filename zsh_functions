@@ -62,47 +62,16 @@ function h() {
   fi
 }
 
-function cargodep() {
-  if [ ! -f "Cargo.toml" ]; then
-    echo "Must be in a Cargo directory"
-    return 1
-  fi
-
-  search_term="$1"
-  if [ -z "$search_term" ]; then
-    echo "A search term must be provided"
-    return 1
-  fi
-
-  i=1
-  IFS=$'\n' crates=($(cargo search $search_term))
-
-  if [ ${#crates[@]} = 0 ]; then
-    echo "No crates named $search_term were found"
-    return 1
-  elif [ ${#crates[@]} = 1 ]; then
-    crate_num=1
-  else
-    echo
-    echo "Select crate:"
-
-    for crate in "${crates[@]}"; do
-      if [[ ! $crate =~ '^\.{3}.*' ]]; then
-        echo "$i. $crate"
-        i=$((i + 1))
-      fi
-    done
-
-    echo
-    echo -n "Crate number: "
-
-    read -r crate_num
-    if [ $crate_num -ge $i ] || [ $crate_num -lt 0 ]; then
-      $0 "$search_term"
+function vimrc() {
+    nvim_dir="$HOME/.config/nvim/lua"
+    edit_file="$1"
+    if [ "$edit_file" = "" ]; then
+        pushd $HOME/.config/nvim >/dev/null && vim "$HOME/.config/nvim/init.lua" && popd > /dev/null
     fi
-  fi
-
-  crate_version=$(echo "${crates[$crate_num]}" | awk '{print $1 " " $2 " " $3}')
-  echo "$crate_version" >>Cargo.toml
-  echo "$crate_version added to Cargo.toml"
+    
+    if find "$nvim_dir/" -name "*.lua" | grep -P "$nvim_dir/$edit_file.lua" > /dev/null; then
+        pushd $HOME/.config/nvim >/dev/null && vim "$nvim_dir/$edit_file.lua" && popd > /dev/null
+    else
+        echo "$edit_file.lua not found in nvim config directory"
+    fi
 }

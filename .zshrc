@@ -1,7 +1,6 @@
 ##!/bin/bash
 # Aliases
 alias zshrc='vim ~/.zshrc'
-alias vimrc='pushd ~/.config/nvim >/dev/null && vim init.lua && popd > /dev/null'
 alias sz='source ~/.zshrc'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo nvim'
