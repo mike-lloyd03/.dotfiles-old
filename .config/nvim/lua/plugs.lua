@@ -39,7 +39,7 @@ require('onedark').setup {
       colors = {
         green = '#88D988',
         blue = '#00B6FF',
-        cyan = '#00B6FF',
+        cyan = '#56B6C2',
         orange = '#DC8A61',
         red = '#FF618A',
 		purple = "#DB61DB",
@@ -61,6 +61,14 @@ require('onedark').setup {
     Pmenu = {fg = '$fg', bg = '$bg2'},
     PmenuSel = {fg = '$bg0', bg = '$bg_blue'},
     Search = {fg = '$bg0', bg = '$light_grey'},
+    Operator = {fg = '$purple'},
+
+    TSKeyword = {fg = '$red'},
+    TSInclude = {fg = '$red'},
+    TSFuncMacro = {fg = '$red'},
+    TSOperator = {fg = '$purple'},
+    TSParameter = {fg = '$light_grey'},
+    TSNamespace = {fg = '$blue'},
 
     TelescopeBorder = {fg = '$light_grey'},
     TelescopePromptBorder = {fg = '$light_grey'},
@@ -68,6 +76,11 @@ require('onedark').setup {
     TelescopePreviewBorder = {fg = '$light_grey'},
     TelescopeMatching = { fg = '$orange', fmt = "bold" },
     TelescopePromptPrefix = {fg = '$red'},
+
+    DiagnosticError = {fg = '$red'},
+    DiagnosticHint = {fg = '$purple'},
+    DiagnosticInfo = {fg = '$blue'},
+    DiagnosticWarn = {fg = '$yellow'},
   }
 }
 require('onedark').load()
@@ -105,7 +118,12 @@ require('telescope').setup{
 require('telescope').load_extension('fzf')
 
 -- Treesitter config
--- require'nvim-treesitter.configs'.setup {}
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    }
+}
 
 -- Minimap Config
 vim.g.minimap_width = 30
