@@ -83,6 +83,7 @@ require('onedark').setup {
 }
 require('onedark').load()
 -- vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 
 -- gitsigns config
 require('gitsigns').setup()
