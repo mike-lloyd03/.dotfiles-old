@@ -33,56 +33,44 @@ vim.cmd([[
     call plug#end()
 ]])
 
--- vim.cmd('colorscheme onedark')
--- vim.g.termguicolors = false
-
 -- Color scheme config
 require('onedark').setup {
     style = 'dark',
       colors = {
         green = '#88D988',
         blue = '#00B6FF',
+        cyan = '#00B6FF',
         orange = '#DC8A61',
         red = '#FF618A',
 		purple = "#DB61DB",
 		yellow = "#D7AF87",
-
-        black = "#181a1f",
-		bg0 = "#282c34",
-		bg1 = "#31353f",
-		bg2 = "#393f4a",
-		bg3 = "#3b3f4c",
-		bg_d = "#21252b",
-		bg_blue = "#73b8f1",
-		bg_yellow = "#ebd09c",
-		fg = "#abb2bf",
-		-- purple = "#c678dd",
-		-- green = "#98c379",
-		-- orange = "#d19a66",
-		-- blue = "#61afef",
-		-- yellow = "#e5c07b",
-		cyan = "#56b6c2",
-		-- red = "#e86671",
-		grey = "#5c6370",
-		light_grey = "#848b98",
-		dark_cyan = "#2b6f77",
-		dark_red = "#993939",
-		dark_yellow = "#93691d",
-		dark_purple = "#8a3fa0",
-		diff_add = "#31392b",
-		diff_delete = "#382b2c",
-		diff_change = "#1c3448",
-		diff_text = "#2c5372",
-
+		bg0 = "#1a1c23", -- main bg
+		bg1 = "#303030", -- active row bg
+		bg2 = "#393f4a", -- nothing
+		bg3 = "#3b3f4c", -- dividers and light gray status line bg
+		bg_d = "#21252b", -- dark background
+		bg_blue = "#00afff",
       },
   highlights = {
-    -- TSKeyword = {fg = '$green'},
-    -- TSString = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
     Function = {fg = '$blue'},
+    Keyword = {fg = '$red'},
+    Include = {fg = '$blue'},
+    NormalFloat = {fg = '$fg', bg = '$bg2'},
+    FloatBorder = {fg = '$grey', bg = '$bg0'},
+    MatchParen = {fg = '$red', bg = '$none', fmt = 'underline'},
+    Pmenu = {fg = '$fg', bg = '$bg2'},
+    PmenuSel = {fg = '$bg0', bg = '$bg_blue'},
+    Search = {fg = '$bg0', bg = '$light_grey'},
+
+    TelescopeBorder = {fg = '$light_grey'},
+    TelescopePromptBorder = {fg = '$light_grey'},
+    TelescopeResultsBorder = {fg = '$light_grey'},
+    TelescopePreviewBorder = {fg = '$light_grey'},
+    TelescopeMatching = { fg = '$orange', fmt = "bold" },
+    TelescopePromptPrefix = {fg = '$red'},
   }
 }
 require('onedark').load()
--- vim.opt.termguicolors = false
 vim.opt.termguicolors = true
 
 -- gitsigns config
