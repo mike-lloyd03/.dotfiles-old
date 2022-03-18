@@ -39,7 +39,8 @@ local opts = {
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
                 checkOnSave = {
-                    command = "clippy"
+                    command = "clippy",
+                    allFeatures = true,
                 },
             }
         }
@@ -72,7 +73,6 @@ require'lspconfig'.sumneko_lua.setup{
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
       },
-      -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
         enable = false,
       },

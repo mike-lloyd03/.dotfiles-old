@@ -1,7 +1,6 @@
 ##!/bin/bash
 # Aliases
 alias zshrc='vim ~/.zshrc'
-alias vimrc='pushd ~/.config/nvim >/dev/null && vim init.lua && popd > /dev/null'
 alias sz='source ~/.zshrc'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo nvim'
@@ -27,6 +26,7 @@ alias grs='git restore'
 alias gs='git status -s'
 alias gst='git status'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gsw='git switch'
 alias gco='git checkout'
 alias gcob='git checkout -b'

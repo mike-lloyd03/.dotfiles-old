@@ -7,7 +7,7 @@ require('lualine').setup {
     theme = 'onedark',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
+    disabled_filetypes = {'NvimTree'},
     always_divide_middle = true,
   },
   sections = {
@@ -30,7 +30,7 @@ require('lualine').setup {
         '%{ObsessionStatus("tracking", "paused")}',
         'encoding',
         'fileformat',
-        {'filetype', colored = false}
+        {'filetype', colored = true}
     },
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -50,5 +50,4 @@ require('lualine').setup {
   },
   tabline = {
       },
-  extensions = {}
 }
