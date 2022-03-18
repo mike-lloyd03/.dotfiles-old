@@ -51,7 +51,7 @@ vim.cmd([[
   autocmd FileType markdown setlocal spell spelllang=en_us
   autocmd FileType markdown call lexical#init()
 ]])
---
+
 -- sh tabs
 vim.cmd([[
   autocmd FileType sh lua vim.opt.tabstop = 2

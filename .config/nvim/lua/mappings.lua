@@ -57,9 +57,6 @@ nmap("<space>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
 -- NvimTree
 nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
 
--- Minimap
-nmap("<C-p>", "<CMD>MinimapToggle<CR>")
-
 -- gitsigns
 nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", {expr = true})
 nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", {expr = true})

@@ -12,12 +12,12 @@ vim.cmd([[
     Plug 'onsails/lspkind-nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground' "Depends on nvim-treesitter
     Plug 'lewis6991/gitsigns.nvim' "Depends on plenary
     Plug 'nvim-telescope/telescope.nvim' "Depends on plenary and apparently tree-sitter
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'wfxr/minimap.vim'
     Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'tpope/vim-commentary'
@@ -125,8 +125,8 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
+    },
+    playground = {
+        enable = true,
     }
 }
-
--- Minimap Config
-vim.g.minimap_width = 30
