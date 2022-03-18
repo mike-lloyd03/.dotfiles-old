@@ -18,33 +18,72 @@ vim.cmd([[
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'wfxr/minimap.vim'
+    Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-obsession'
     Plug 'tpope/vim-fugitive'
-    Plug 'joshdick/onedark.vim'
+    Plug 'navarasu/onedark.nvim'
+    " Plug 'joshdick/onedark.vim'
     Plug 'preservim/vim-lexical'
-    Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'dhruvasagar/vim-zoom'
 
     call plug#end()
 ]])
 
 -- Color scheme config
-vim.cmd([[
-    augroup colorscheme
-    autocmd!
-    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white })
-    colorscheme onedark
-    augroup end
-]])
+require('onedark').setup {
+    style = 'dark',
+      colors = {
+        green = '#88D988',
+        blue = '#00B6FF',
+        cyan = '#56B6C2',
+        orange = '#DC8A61',
+        red = '#FF618A',
+		purple = "#DB61DB",
+		yellow = "#D7AF87",
+		bg0 = "#1a1c23", -- main bg
+		bg1 = "#303030", -- active row bg
+		bg2 = "#393f4a", -- nothing
+		bg3 = "#3b3f4c", -- dividers and light gray status line bg
+		bg_d = "#21252b", -- dark background
+		bg_blue = "#00afff",
+      },
+  highlights = {
+    Function = {fg = '$blue'},
+    Keyword = {fg = '$red'},
+    Include = {fg = '$blue'},
+    NormalFloat = {fg = '$fg', bg = '$bg2'},
+    FloatBorder = {fg = '$grey', bg = '$bg0'},
+    MatchParen = {fg = '$red', bg = '$none', fmt = 'underline'},
+    Pmenu = {fg = '$fg', bg = '$bg2'},
+    PmenuSel = {fg = '$bg0', bg = '$bg_blue'},
+    Search = {fg = '$bg0', bg = '$light_grey'},
+    Operator = {fg = '$purple'},
 
--- NERDTree Config
-vim.g.NERDTreeMinimalUI = 1
-vim.g.NERDTreeDirArrows = 1
-vim.g.NERDTreeIgnore = { '__pycache__', '.session.vim' }
+    TSKeyword = {fg = '$red'},
+    TSInclude = {fg = '$red'},
+    TSFuncMacro = {fg = '$red'},
+    TSOperator = {fg = '$purple'},
+    TSParameter = {fg = '$light_grey'},
+    TSNamespace = {fg = '$blue'},
+
+    TelescopeBorder = {fg = '$light_grey'},
+    TelescopePromptBorder = {fg = '$light_grey'},
+    TelescopeResultsBorder = {fg = '$light_grey'},
+    TelescopePreviewBorder = {fg = '$light_grey'},
+    TelescopeMatching = { fg = '$orange', fmt = "bold" },
+    TelescopePromptPrefix = {fg = '$red'},
+
+    DiagnosticError = {fg = '$red'},
+    DiagnosticHint = {fg = '$purple'},
+    DiagnosticInfo = {fg = '$blue'},
+    DiagnosticWarn = {fg = '$yellow'},
+  }
+}
+require('onedark').load()
+vim.opt.termguicolors = true
 
 -- gitsigns config
 require('gitsigns').setup()
@@ -76,6 +115,18 @@ require('telescope').setup{
     },
 }
 require('telescope').load_extension('fzf')
+
+-- Treesitter config
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 100
+
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    }
+}
 
 -- Minimap Config
 vim.g.minimap_width = 30

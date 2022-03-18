@@ -1,6 +1,5 @@
 window:
   decorations: none
-  # opacity: .80
   opacity: 1
   #title: Alacritty
   class:
@@ -9,8 +8,8 @@ window:
 
 font:
   normal:
-    family: "MesloLGS NF"
     family: "MesloLGM Nerd Font Mono"
+    family: "MesloLGS NF"
   size: 12.0
 
 live_config_reload: true

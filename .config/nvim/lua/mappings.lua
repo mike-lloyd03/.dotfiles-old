@@ -3,10 +3,16 @@ local function nmap(shortcut, command, opts)
     vim.api.nvim_set_keymap('n', shortcut, command, opts)
 end
 
+local function imap(shortcut, command, opts)
+    opts = opts or {noremap = true}
+    vim.api.nvim_set_keymap('i', shortcut, command, opts)
+end
+
 -- Control j and h to scroll
 nmap("<C-j>", "<C-e>")
 nmap("<C-k>", "<C-y>")
-
+imap("<C-j>", "<C-e>")
+imap("<C-k>", "<C-y>")
 
 -- Telescope
 nmap("<C-b>", "<CMD>lua require('telescope.builtin').buffers{sort_lastused=true}<CR>")
@@ -19,6 +25,8 @@ nmap("z=", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>")
 nmap("<leader>ca", "<CMD>lua require('telescope.builtin').lsp_code_actions{}<CR>")
 nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>")
 nmap("gD", "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>")
+nmap("<Leader>vr", "<CMD>lua search_dotfiles()<CR>")
+nmap("<Leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
 
 function search_dotfiles()
 	require("telescope.builtin").find_files({
@@ -27,8 +35,6 @@ function search_dotfiles()
 		hidden = true,
     })
 end
-nmap("<Leader>vr", "<CMD>lua search_dotfiles()<CR>")
-nmap("<Leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
 
 -- Find and replace under cursor
 nmap("<Leader>s", ":%s/<C-r><C-w>/")
@@ -48,10 +54,10 @@ nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 nmap("<leader>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
 nmap("<space>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
 
--- NERDTree
-nmap("<C-n>", "<CMD>NERDTreeToggle<CR>")
---
--- NERDTree
+-- NvimTree
+nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
+
+-- Minimap
 nmap("<C-p>", "<CMD>MinimapToggle<CR>")
 
 -- gitsigns

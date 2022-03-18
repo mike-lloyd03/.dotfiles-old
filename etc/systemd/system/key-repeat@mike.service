@@ -1,5 +1,5 @@
 [Unit]
-Description=Vim keys X config
+Description=Key Repeat Configuration
 After=suspend.target
 
 [Service]
@@ -7,7 +7,7 @@ User=mike
 Type=oneshot
 Environment=DISPLAY=:0
 ExecStartPre=/usr/bin/sleep 1
-ExecStart=/home/mike/.config/xkbcomp/vim-keys-xkb.sh
+ExecStart=/home/mike/.config/xkbcomp/set-key-repeat
 
 [Install]
 WantedBy=multi-user.target
