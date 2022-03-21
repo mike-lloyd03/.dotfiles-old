@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# This script will copy all Obsession.vim files to the nvim auto-session directory
+
+session_dir="/home/mike/.local/share/nvim/sessions"
+
+cd ~
+files=($(fd -HIa '\.session\.vim'))
+
+for file in "${files[@]}"; do
+  newfilename="$(dirname "$file" | sed 's/\//%/g')"
+  # echo $newfilename
+  cp "$file" "${session_dir}/${newfilename}.vim"
+done
