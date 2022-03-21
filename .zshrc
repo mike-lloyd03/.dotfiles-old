@@ -4,7 +4,7 @@ alias zshrc='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias svenv='source .venv/bin/activate'
 alias svim='sudo nvim'
-alias chkjrn='sudo journalctl -xe'
+alias jc='sudo journalctl -xe'
 alias dcomp="docker compose"
 alias dotfiles="pushd $HOME/.dotfiles"
 

@@ -6,7 +6,9 @@ vim.diagnostic.config{
     severity_sort = true,
 }
 
-vim.g.python3_host_prog = '$HOME/.config/nvim/venv-nvim/bin/python'
+local python_venv = "$HOME/.config/nvim/venv-nvim"
+
+vim.g.python3_host_prog = python_venv .. "/bin/python"
 
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
@@ -19,7 +21,7 @@ end
 -- See https://github.com/simrat39/rust-tools.nvim#configuration
 ----------------------------
 
-local nvim_lsp = require'lspconfig'
+-- local nvim_lsp = require'lspconfig'
 
 local opts = {
     tools = { -- rust-tools options
@@ -41,6 +43,7 @@ local opts = {
                 checkOnSave = {
                     command = "clippy",
                     allFeatures = true,
+                    allTargets = true,
                 },
             }
         }
@@ -55,7 +58,7 @@ require('rust-tools').setup(opts)
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.jedi_language_server.setup{
-    -- cmd = {"$HOME/.config/nvim/venv-nvim/bin/jedi-language-server"},
+    -- cmd = {python_venv .. "/bin/jedi-language-server"},
 }
 
 require'lspconfig'.sumneko_lua.setup{
@@ -176,7 +179,7 @@ require'lspconfig'.diagnosticls.setup{
     },
     formatters = {
         black = {
-            command = "black",
+            command = "/home/mike/.config/nvim/venv-nvim/bin/black",
             args = {"--quiet", "-"}
         },
         clang_format = {
@@ -184,7 +187,7 @@ require'lspconfig'.diagnosticls.setup{
             args = {"--style=LLVM"}
         },
         isort = {
-            command = "isort",
+            command = python_venv .. "/bin/isort",
             args = {"--quiet", "-"}
         },
         prettier = {
