@@ -90,16 +90,5 @@ if [ ! -e $vim_plug_path ]; then
 fi
 $vim_cmd -c "PlugInstall | qa"
 
-# Setup global .gitignore file
-# Now that we're using a different session manager, we can probably
-# ditch this. But my system is probably littered with .session.vim
-# files so I'm gonna leave it for now.
-if [ -z "$(git config --global core.excludesfile)" ]; then
-  println "Setting global .gitignore variable"
-  git config --global core.excludesfile "$HOME/.gitignore-global"
-else
-  println "Global .gitignore variable already set." warn
-fi
-
 println "Done."
 exit 0
