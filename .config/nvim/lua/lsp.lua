@@ -180,7 +180,7 @@ require'lspconfig'.diagnosticls.setup{
     formatters = {
         black = {
             command = "/home/mike/.config/nvim/venv-nvim/bin/black",
-            args = {"--quiet", "-"}
+            args = {"--quiet", "--fast", "-"}
         },
         clang_format = {
             command = "clang-format",
