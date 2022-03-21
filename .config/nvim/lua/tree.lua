@@ -24,6 +24,7 @@ vim.g.nvim_tree_icons = {
       symlink_open = "",
       }
     }
+vim.g.nvim_tree_respect_buf_cwd = 0
 
 require'nvim-tree'.setup {
   disable_netrw       = true,
@@ -40,7 +41,7 @@ require'nvim-tree'.setup {
   },
   update_focused_file = {
     enable      = true,
-    update_cwd  = true,
+    update_cwd  = false,
     ignore_list = {}
   },
   system_open = {

@@ -3,6 +3,7 @@
 alias zshrc='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias svenv='source .venv/bin/activate'
+alias vim='nvim'
 alias svim='sudo nvim'
 alias jc='sudo journalctl -xe'
 alias dcomp="docker compose"

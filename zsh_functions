@@ -1,19 +1,19 @@
-# vim session management
-function vim() {
-  if command -v nvim &> /dev/null; then
-    vim_cmd=nvim
-  else
-    vim_cmd=vim
-  fi
+# # vim session management
+# function vim() {
+#   if command -v nvim &> /dev/null; then
+#     vim_cmd=nvim
+#   else
+#     vim_cmd=vim
+#   fi
 
-  if [ $# -gt 0 ]; then
-    env $vim_cmd "$@" #-c "Obsession .session.vim"
-  elif [ -f ".session.vim" ]; then
-    env $vim_cmd -S .session.vim
-  else
-    env $vim_cmd -c "Obsession .session.vim"
-  fi
-}
+#   if [ $# -gt 0 ]; then
+#     env $vim_cmd "$@" #-c "Obsession .session.vim"
+#   elif [ -f ".session.vim" ]; then
+#     env $vim_cmd -S .session.vim
+#   else
+#     env $vim_cmd -c "Obsession .session.vim"
+#   fi
+# }
 
 function dx() {
   service_name="$1"

@@ -19,10 +19,11 @@ vim.cmd([[
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'rmagatti/auto-session'
+
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-obsession'
     Plug 'tpope/vim-fugitive'
     Plug 'navarasu/onedark.nvim'
     " Plug 'joshdick/onedark.vim'
@@ -129,4 +130,12 @@ require'nvim-treesitter.configs'.setup {
     playground = {
         enable = true,
     }
+}
+
+-- auto-session Config
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
+vim.g.auto_session_pre_save_cmds = {"tabdo NvimTreeClose"}
+require('auto-session').setup {
+    log_level = 'info',
+    auto_session_suppress_dirs = {'~/'}
 }

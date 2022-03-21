@@ -83,14 +83,17 @@ if [ ! -e $vim_plug_path ]; then
   if [ "$vim_cmd" = "nvim" ]; then
     sh -c "curl -fLo '$HOME/.local/share/nvim/site/autoload/plug.vim' --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-   else
-     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  else
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 fi
 $vim_cmd -c "PlugInstall | qa"
 
 # Setup global .gitignore file
+# Now that we're using a different session manager, we can probably
+# ditch this. But my system is probably littered with .session.vim
+# files so I'm gonna leave it for now.
 if [ -z "$(git config --global core.excludesfile)" ]; then
   println "Setting global .gitignore variable"
   git config --global core.excludesfile "$HOME/.gitignore-global"

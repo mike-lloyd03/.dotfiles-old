@@ -1,3 +1,10 @@
+local function session_status()
+    if require('auto-session-library').current_session_name() then
+        return "tracking"
+    end
+    return "no session"
+end
+
 ----------------------------
 -- Lualine config
 ----------------------------
@@ -27,7 +34,7 @@ require('lualine').setup {
             }
     },
     lualine_x = {
-        '%{ObsessionStatus("tracking", "paused")}',
+        session_status,
         'encoding',
         'fileformat',
         {'filetype', colored = true}
