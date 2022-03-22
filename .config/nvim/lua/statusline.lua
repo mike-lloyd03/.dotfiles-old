@@ -18,20 +18,20 @@ require('lualine').setup {
     always_divide_middle = true,
   },
   sections = {
-      lualine_a = {{'mode', color = {gui='bold'}}},
+    lualine_a = {{'mode', color = {gui='bold'}}},
     lualine_b = {
-        'branch',
+        {
+            'filename',
+            file_status = true,
+            path = 1,
         },
+    },
     lualine_c = {
-            {
-                'filename',
-                file_status = true,
-                path = 1,
-            },
-            {
-                'diagnostics',
-                symbols = {error = ' ', warn = ' '}
-            }
+        'branch',
+        {
+            'diagnostics',
+            symbols = {error = ' ', warn = ' '}
+        }
     },
     lualine_x = {
         session_status,
