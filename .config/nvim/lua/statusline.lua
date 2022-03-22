@@ -27,7 +27,10 @@ require("lualine").setup({
             },
         },
         lualine_c = {
-            "branch",
+            {
+                "branch",
+                icon = { "", color = { fg = "#DB61DB" } },
+            },
             {
                 "diagnostics",
                 symbols = { error = " ", warn = " " },
