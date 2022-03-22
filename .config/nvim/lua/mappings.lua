@@ -25,6 +25,7 @@ nmap("z=", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>")
 nmap("<leader>ca", "<CMD>lua require('telescope.builtin').lsp_code_actions{}<CR>")
 nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>")
 nmap("gD", "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>")
+nmap("gt", "<CMD>lua require('telescope.builtin').treesitter{}<CR>")
 nmap("<Leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
 
 function search_dotfiles()

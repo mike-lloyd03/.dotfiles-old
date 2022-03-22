@@ -179,7 +179,7 @@ require'lspconfig'.diagnosticls.setup{
     },
     formatters = {
         black = {
-            command = "/home/mike/.config/nvim/venv-nvim/bin/black",
+            command = "black",
             args = {"--quiet", "--fast", "-"}
         },
         clang_format = {
@@ -187,7 +187,7 @@ require'lspconfig'.diagnosticls.setup{
             args = {"--style=LLVM"}
         },
         isort = {
-            command = python_venv .. "/bin/isort",
+            command = "isort",
             args = {"--quiet", "-"}
         },
         prettier = {

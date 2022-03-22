@@ -26,7 +26,6 @@ vim.cmd([[
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-fugitive'
     Plug 'navarasu/onedark.nvim'
-    " Plug 'joshdick/onedark.vim'
     Plug 'preservim/vim-lexical'
     Plug 'dhruvasagar/vim-zoom'
 
