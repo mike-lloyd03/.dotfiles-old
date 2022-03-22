@@ -1,17 +1,16 @@
 -- https://www.notonlycode.org/neovim-lua-config/
-require('plugs')
-require('lsp')
-require('mappings')
-require('statusline')
-require('tree')
-
+require("plugs")
+require("lsp")
+require("mappings")
+require("statusline")
+require("tree")
 
 -- Command mode zsh-like autocompletion
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.wildmenu = true
 vim.opt.wildignorecase = true
-vim.opt.wildmode="longest:full,full"
-vim.opt.wildignore="*.o,*~"
+vim.opt.wildmode = "longest:full,full"
+vim.opt.wildignore = "*.o,*~"
 
 -- Split panes open on the right or below
 vim.opt.splitright = true
@@ -63,20 +62,20 @@ vim.cmd([[
 vim.cmd([[
   autocmd FileType rust autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType go autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType lua autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType python autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType json autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]])
 
-if vim.fn.hostname() == 'dev'
-then
+if vim.fn.hostname() == "dev" then
     vim.g.clipboard = {
-      name = "ssh",
-      copy = {
-         ['+'] = {'ssh', 'mac', 'pbcopy'},
-       },
-       paste = {
-         ['+'] = {'ssh', 'mac', 'pbpaste'},
-       },
+        name = "ssh",
+        copy = {
+            ["+"] = { "ssh", "mac", "pbcopy" },
+        },
+        paste = {
+            ["+"] = { "ssh", "mac", "pbpaste" },
+        },
     }
 end

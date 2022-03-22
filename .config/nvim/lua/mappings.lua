@@ -1,11 +1,11 @@
 local function nmap(shortcut, command, opts)
-    opts = opts or {noremap = true}
-    vim.api.nvim_set_keymap('n', shortcut, command, opts)
+    opts = opts or { noremap = true }
+    vim.api.nvim_set_keymap("n", shortcut, command, opts)
 end
 
 local function imap(shortcut, command, opts)
-    opts = opts or {noremap = true}
-    vim.api.nvim_set_keymap('i', shortcut, command, opts)
+    opts = opts or { noremap = true }
+    vim.api.nvim_set_keymap("i", shortcut, command, opts)
 end
 
 -- Control j and h to scroll
@@ -29,10 +29,10 @@ nmap("gt", "<CMD>lua require('telescope.builtin').treesitter{}<CR>")
 nmap("<Leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
 
 function search_dotfiles()
-	require("telescope.builtin").find_files({
-		prompt_title = "< vimrc >",
-		cwd = "~/.config/nvim",
-		hidden = true,
+    require("telescope.builtin").find_files({
+        prompt_title = "< vimrc >",
+        cwd = "~/.config/nvim",
+        hidden = true,
     })
 end
 
@@ -60,5 +60,5 @@ nmap("<space>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
 nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
 
 -- gitsigns
-nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", {expr = true})
-nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", {expr = true})
+nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true })
+nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true })
