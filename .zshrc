@@ -46,6 +46,7 @@ alias scdr="sudo systemctl daemon-reload"
 
 
 export EDITOR='nvim'
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -82,6 +83,9 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]; then
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
   alias sed="gsed"
+  alias docker=podman
+  alias docker-compose=podman-compose
+  alias dcomp=podman-compose
 fi
 
 # Dev Machine Setup
