@@ -9,7 +9,7 @@ window:
 font:
   normal:
     family: "MesloLGS NF"
-    family: "MesloLGM Nerd Font Mono"
+    # family: "MesloLGM Nerd Font Mono"
   size: 12.0
 
 live_config_reload: true
@@ -94,4 +94,4 @@ color_schemes:
       cyan:    "0x0184bc"
       white:   "0x5c6370"
 
-colors: *one_light
+colors: *one_dark
