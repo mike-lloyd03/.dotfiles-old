@@ -23,6 +23,8 @@ key_bindings:
   - {key: C, mods: Command|Shift, action: Copy}
   - {key: V, mods: Command|Shift, action: Paste}
   - {key: Slash, mods: Control, chars: "\x1f"}
+  - {key: Left, mods: Command, chars: "\x1bOH"}
+  - {key: Right, mods: Command, chars: "\x1bOF"}
 
 # Colors (One Dark)
 color_schemes:
@@ -63,7 +65,7 @@ color_schemes:
   one_light: &one_light
     primary:
       foreground: '0x383a42'
-      background: '0xfafafa'
+      background: '0xd6d4d1'
 
     cursor:
       text: CellForeground
