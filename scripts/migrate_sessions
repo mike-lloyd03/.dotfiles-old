@@ -5,7 +5,7 @@
 session_dir="/home/mike/.local/share/nvim/sessions"
 
 cd ~
-files=($(fd -HIa '\.session\.vim'))
+files=($(fd -HIa '^\.session\.vim$'))
 
 for file in "${files[@]}"; do
   newfilename="$(dirname "$file" | sed 's/\//%/g')"
