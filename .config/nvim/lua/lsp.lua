@@ -204,7 +204,6 @@ require("lspconfig").diagnosticls.setup({
         },
     },
 })
-require("lspconfig").sqls.setup({})
 
 ----------------------------
 -- CMP Config
