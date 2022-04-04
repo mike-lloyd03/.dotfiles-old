@@ -7,7 +7,6 @@ vim.cmd([[
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-buffer'
-    Plug 'simrat39/rust-tools.nvim'
     Plug 'hrsh7th/vim-vsnip'
     Plug 'onsails/lspkind-nvim'
     Plug 'nvim-lua/plenary.nvim'
