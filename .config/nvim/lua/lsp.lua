@@ -17,44 +17,13 @@ for type, icon in pairs(signs) do
 end
 
 ----------------------------
--- Rust Config
--- See https://github.com/simrat39/rust-tools.nvim#configuration
-----------------------------
-
--- local nvim_lsp = require'lspconfig'
-
-local opts = {
-    tools = { -- rust-tools options
-        autoSetHints = false,
-        hover_with_actions = true,
-        inlay_hints = {
-            -- only_current_line = true,
-            show_parameter_hints = false,
-            -- parameter_hints_prefix = "",
-            -- other_hints_prefix = "",
-        },
-    },
-
-    -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
-    server = {
-        settings = {
-            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-            ["rust-analyzer"] = {
-                checkOnSave = {
-                    command = "clippy",
-                    allFeatures = true,
-                    allTargets = true,
-                },
-            },
-        },
-    },
-}
-
-require("rust-tools").setup(opts)
-
-----------------------------
 -- Defaul LSP Config
 ----------------------------
+require("lspconfig").rust_analyzer.setup({
+    check_on_save = {
+        command = "clippy",
+    },
+})
 require("lspconfig").bashls.setup({})
 require("lspconfig").gopls.setup({})
 require("lspconfig").jedi_language_server.setup({
