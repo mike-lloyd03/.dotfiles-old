@@ -20,6 +20,8 @@ vim.cmd([[
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'rmagatti/auto-session'
+    Plug 'folke/which-key.nvim'
+    Plug ' windwp/nvim-autopairs'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
@@ -27,6 +29,7 @@ vim.cmd([[
     Plug 'navarasu/onedark.nvim'
     Plug 'preservim/vim-lexical'
     Plug 'dhruvasagar/vim-zoom'
+
 
     call plug#end()
 ]])
@@ -86,3 +89,16 @@ require("auto-session").setup({
     log_level = "info",
     auto_session_suppress_dirs = { "~/" },
 })
+
+-- which-key.nvim config
+require("which-key").setup({
+    layout = {
+        height = { min = 4, max = 25 }, -- min and max height of the columns
+        width = { min = 20, max = 50 }, -- min and max width of the columns
+        spacing = 3, -- spacing between columns
+        align = "right", -- align columns left, center or right
+    },
+})
+
+-- nvim-autopairs config
+require("nvim-autopairs").setup({})

@@ -1,8 +1,15 @@
 theme = "onedark"
 
 [editor]
+scrolloff = 1
 line-number = "relative"
 true-color = true
 
-# [editor.cursor-shape]
-# insert = "bar"
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal]
+C-j = "scroll_down"
+C-k = "scroll_up"
+"[" = { g = "goto_prev_diag"}
+"]" = { g = "goto_next_diag"}
