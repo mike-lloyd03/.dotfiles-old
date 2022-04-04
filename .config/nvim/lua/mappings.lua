@@ -13,6 +13,7 @@ nmap("<C-j>", "<C-e>")
 nmap("<C-k>", "<C-y>")
 imap("<C-j>", "<C-e>")
 imap("<C-k>", "<C-y>")
+imap("U", "<C-r>")
 
 -- Helix inspiration
 nmap("gh", "0")

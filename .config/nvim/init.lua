@@ -1,4 +1,3 @@
--- https://www.notonlycode.org/neovim-lua-config/
 require("plugs")
 require("lsp")
 require("mappings")

@@ -21,7 +21,7 @@ vim.cmd([[
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'rmagatti/auto-session'
     Plug 'folke/which-key.nvim'
-    Plug ' windwp/nvim-autopairs'
+    Plug 'windwp/nvim-autopairs'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
