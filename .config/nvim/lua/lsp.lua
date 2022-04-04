@@ -19,6 +19,13 @@ end
 ----------------------------
 -- Defaul LSP Config
 ----------------------------
+require("lspconfig").bashls.setup({})
+require("lspconfig").gopls.setup({})
+require("lspconfig").jedi_language_server.setup({})
+
+----------------------------
+-- Rust Config
+----------------------------
 require("lspconfig").rust_analyzer.setup({
     settings = {
         ["rust-analyzer"] = {
@@ -30,12 +37,10 @@ require("lspconfig").rust_analyzer.setup({
         },
     },
 })
-require("lspconfig").bashls.setup({})
-require("lspconfig").gopls.setup({})
-require("lspconfig").jedi_language_server.setup({
-    -- cmd = {python_venv .. "/bin/jedi-language-server"},
-})
 
+----------------------------
+-- Lua Config
+----------------------------
 require("lspconfig").sumneko_lua.setup({
     settings = {
         Lua = {
