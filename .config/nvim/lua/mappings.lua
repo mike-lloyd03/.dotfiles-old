@@ -8,17 +8,24 @@ local function imap(shortcut, command, opts)
     vim.api.nvim_set_keymap("i", shortcut, command, opts)
 end
 
+local function vmap(shortcut, command, opts)
+    opts = opts or { noremap = true }
+    vim.api.nvim_set_keymap("v", shortcut, command, opts)
+end
+
 -- Control j and h to scroll
 nmap("<C-j>", "<C-e>")
 nmap("<C-k>", "<C-y>")
 imap("<C-j>", "<C-e>")
 imap("<C-k>", "<C-y>")
-imap("U", "<C-r>")
 
 -- Helix inspiration
 nmap("gh", "0")
 nmap("gl", "$")
+vmap("gh", "0")
+vmap("gl", "$")
 nmap("<space>w", "<C-w>")
+nmap("U", "<C-r>")
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{sort_lastused=true}<CR>")

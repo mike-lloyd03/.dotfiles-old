@@ -209,6 +209,7 @@ require("lspconfig").diagnosticls.setup({
 -- CMP Config
 -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
 ----------------------------
+
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 cmp.setup({
@@ -245,4 +246,11 @@ cmp.setup({
         { name = "path" },
         { name = "buffer" },
     },
+    -- Fix rust cmp sorting snippets over functions
+    -- sorting = {
+    --     priority_weight = 2,
+    --     comparators = {
+    --         cmp.config.compare.score,
+    --     },
+    -- },
 })

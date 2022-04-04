@@ -22,6 +22,7 @@ vim.cmd([[
     Plug 'rmagatti/auto-session'
     Plug 'folke/which-key.nvim'
     Plug 'windwp/nvim-autopairs'
+    Plug 'stevearc/dressing.nvim'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
@@ -40,6 +41,7 @@ require("theme")
 require("gitsigns").setup()
 
 -- Telescope config
+require("telescope").load_extension("fzf")
 require("telescope").setup({
     defaults = {
         mappings = {
@@ -65,7 +67,6 @@ require("telescope").setup({
         },
     },
 })
-require("telescope").load_extension("fzf")
 
 -- Treesitter config
 vim.opt.foldmethod = "expr"
@@ -92,11 +93,13 @@ require("auto-session").setup({
 
 -- which-key.nvim config
 require("which-key").setup({
+    plugins = {
+        spelling = {
+            enabled = false,
+        },
+    },
     layout = {
-        height = { min = 4, max = 25 }, -- min and max height of the columns
-        width = { min = 20, max = 50 }, -- min and max width of the columns
-        spacing = 3, -- spacing between columns
-        align = "right", -- align columns left, center or right
+        align = "center",
     },
 })
 
