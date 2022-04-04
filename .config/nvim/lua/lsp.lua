@@ -20,8 +20,12 @@ end
 -- Defaul LSP Config
 ----------------------------
 require("lspconfig").rust_analyzer.setup({
-    check_on_save = {
-        command = "clippy",
+    {
+        ["rust-analyzer"] = {
+            checkOnSave = {
+                command = "clippy",
+            },
+        },
     },
 })
 require("lspconfig").bashls.setup({})
