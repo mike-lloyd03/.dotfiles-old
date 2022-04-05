@@ -1,4 +1,13 @@
 ##!/bin/bash
+# ZSH Config
+export ZSH_DISABLE_COMPFIX=true
+HYPHEN_INSENSITIVE="true"
+plugins=(vi-mode)
+VI_MODE_SET_CURSOR=true
+export ZSH="$HOME/.dotfiles/ohmyzsh"
+source "$ZSH/oh-my-zsh.sh"
+source $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
@@ -115,15 +124,6 @@ if [ "$(uname -n)" = dev ]; then
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
 fi
-
-# ZSH Config
-export ZSH_DISABLE_COMPFIX=true
-HYPHEN_INSENSITIVE="true"
-plugins=(vi-mode)
-VI_MODE_SET_CURSOR=true
-export ZSH="$HOME/.dotfiles/ohmyzsh"
-source "$ZSH/oh-my-zsh.sh"
-source $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.dotfiles/zsh_functions
 
