@@ -26,6 +26,8 @@ vmap("gh", "0")
 vmap("gl", "$")
 nmap("<space>w", "<C-w>")
 nmap("U", "<C-r>")
+vmap(">", ">gv")
+vmap("<", "<gv")
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{sort_lastused=true}<CR>")
