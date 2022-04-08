@@ -22,6 +22,7 @@ end
 require("lspconfig").bashls.setup({})
 require("lspconfig").gopls.setup({})
 require("lspconfig").jedi_language_server.setup({})
+require("lspconfig").ansiblels.setup({})
 
 ----------------------------
 -- Rust Config
