@@ -49,7 +49,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][17][Configuration]
-PreloadWeight=52
+PreloadWeight=97
 
 [Containments][2][Applets][17][Configuration][Appearance]
 showSeconds=true
@@ -64,7 +64,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
 DialogHeight=540
@@ -187,7 +187,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][35][Applets][42][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][35][Applets][42][Configuration][ConfigDialog]
 DialogHeight=540
@@ -196,6 +196,9 @@ DialogWidth=720
 [Containments][35][Applets][43]
 immutability=1
 plugin=org.kde.plasma.clipboard
+
+[Containments][35][Applets][43][Configuration]
+PreloadWeight=55
 
 [Containments][35][Applets][44]
 immutability=1
@@ -211,6 +214,9 @@ showPercentage=true
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
+[Containments][35][Applets][45][Configuration]
+PreloadWeight=55
+
 [Containments][35][Applets][46]
 immutability=1
 plugin=org.kde.plasma.bluetooth
@@ -225,9 +231,14 @@ plugin=org.kde.plasma.mediacontroller
 [Containments][35][Applets][50][Configuration]
 PreloadWeight=0
 
+[Containments][35][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][35][General]
 extraItems=org.kde.plasma.keyboardindicator,org.kde.plasma.printmanager,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.clipboard
 knownItems=org.kde.plasma.keyboardindicator,org.kde.plasma.printmanager,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.clipboard
+shownItems=org.kde.plasma.battery
 
 [Containments][51]
 ItemGeometries-1920x1080=
