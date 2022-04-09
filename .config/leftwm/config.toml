@@ -14,11 +14,11 @@ focus_behaviour = "ClickTo"
 focus_new_windows = true
 
 keybind = [
-    # { modifier = ["modkey"], key = "p", command = "Execute", value = "dmenu_run" },
-    { modifier = ["modkey"], key = "p", command = "Execute", value = "synapse" },
+    { modifier = ["modkey"], key = "p", command = "Execute", value = "dmenu_run" },
+    # { modifier = ["modkey"], key = "p", command = "Execute", value = "synapse" },
     # { modifier = ["Control"], key = "Space", command = "Execute", value = "dmenu_run" },
     { modifier = ["modkey", "Shift"], key = "Return", command = "Execute", value = "alacritty" },
-    { modifier = ["modkey", "Shift"], key = "q", command = "CloseWindow" },
+    { modifier = ["modkey", "Control"], key = "q", command = "CloseWindow" },
     { modifier = ["modkey", "Alt", "Shift"], key = "r", command = "HardReload" },
     { modifier = ["modkey", "Shift"], key = "r", command = "SoftReload" },
     { modifier = ["modkey", "Shift"], key = "x", command = "Execute", value = "loginctl kill-session $XDG_SESSION_ID" },
@@ -39,6 +39,7 @@ keybind = [
     { modifier = ["Alt"], key = "h", command = "FocusPreviousTag" },
     { modifier = ["modkey"], key = "Right", command = "FocusNextTag" },
     { modifier = ["modkey"], key = "Left", command = "FocusPreviousTag" },
+    { modifier = ["Control"], key = "Tab", command = "ReturnToLastTag" },
     { modifier = ["modkey"], key = "1", command = "GotoTag", value = "1" },
     { modifier = ["modkey"], key = "2", command = "GotoTag", value = "2" },
     { modifier = ["modkey"], key = "3", command = "GotoTag", value = "3" },
