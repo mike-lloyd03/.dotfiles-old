@@ -22,6 +22,7 @@ vim.cmd([[
     Plug 'folke/which-key.nvim'
     Plug 'windwp/nvim-autopairs'
     Plug 'stevearc/dressing.nvim'
+    Plug 'rcarriga/nvim-notify'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
@@ -104,3 +105,6 @@ require("which-key").setup({
 
 -- nvim-autopairs config
 require("nvim-autopairs").setup({})
+
+-- nvim-notify config
+vim.notify = require("notify")
