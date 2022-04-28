@@ -22,7 +22,6 @@ end
 require("lspconfig").bashls.setup({})
 require("lspconfig").gopls.setup({})
 require("lspconfig").jedi_language_server.setup({})
-require("lspconfig").ansiblels.setup({})
 
 ----------------------------
 -- Rust Config
@@ -59,6 +58,9 @@ require("lspconfig").sumneko_lua.setup({
             },
             telemetry = {
                 enable = false,
+            },
+            format = {
+                enable = true,
             },
         },
     },
@@ -234,4 +236,20 @@ cmp.setup({
     --         cmp.config.compare.score,
     --     },
     -- },
+})
+
+----------------------------
+-- Ansible Config
+----------------------------
+require("lspconfig").ansiblels.setup({
+    settings = {
+        ansible = {
+            ansible = {
+                useFullyQualifiedCollectionNames = false,
+            },
+            ansibleLint = {
+                arguments = "-x fqcn-builtins",
+            },
+        },
+    },
 })

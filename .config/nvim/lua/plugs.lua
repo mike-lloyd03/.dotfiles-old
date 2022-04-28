@@ -23,6 +23,7 @@ vim.cmd([[
     Plug 'windwp/nvim-autopairs'
     Plug 'stevearc/dressing.nvim'
     Plug 'rcarriga/nvim-notify'
+    Plug 'windwp/nvim-ts-autotag'
 
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
@@ -79,6 +80,9 @@ require("nvim-treesitter.configs").setup({
         additional_vim_regex_highlighting = false,
     },
     playground = {
+        enable = true,
+    },
+    autotag = {
         enable = true,
     },
 })
