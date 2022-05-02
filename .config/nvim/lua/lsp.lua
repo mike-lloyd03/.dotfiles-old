@@ -77,7 +77,7 @@ require("lspconfig").diagnosticls.setup({
         "css",
         "html",
         "json",
-        "lua",
+        -- "lua",
         "python",
         "sh",
     },

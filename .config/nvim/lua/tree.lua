@@ -34,10 +34,6 @@ require("nvim-tree").setup({
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = false,
-    update_to_buf_dir = {
-        enable = false,
-        auto_open = true,
-    },
     update_focused_file = {
         enable = true,
         update_cwd = false,
@@ -61,7 +57,6 @@ require("nvim-tree").setup({
         height = 35,
         hide_root_folder = false,
         side = "left",
-        auto_resize = true,
         mappings = {
             custom_only = false,
             list = {
@@ -79,5 +74,4 @@ require("nvim-tree").setup({
         cmd = "trash",
         require_confirm = true,
     },
-    disable_window_picker = true,
 })
