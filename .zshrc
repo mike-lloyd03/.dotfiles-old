@@ -123,6 +123,7 @@ if [ "$(uname -n)" = dev ]; then
   alias kprod='kubectl config use-context appsec-prod'
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias ls="exa"
+  alias psql="psql -U postgres"
 fi
 
 source $HOME/.dotfiles/zsh_functions
