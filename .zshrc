@@ -17,6 +17,7 @@ alias svim='sudo nvim'
 alias jc='sudo journalctl -xe'
 alias dcomp="docker compose"
 alias dotfiles="cd $HOME/.dotfiles"
+alias rgih="rg --no-ignore --hidden"
 
 # git Aliases
 alias g="git"
