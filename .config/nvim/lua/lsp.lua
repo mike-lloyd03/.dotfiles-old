@@ -83,10 +83,32 @@ require("lspconfig").diagnosticls.setup({
     },
     init_options = {
         filetypes = {
-            python = "pylint",
+            python = { "pylint", "mypy" },
             sh = "shellcheck",
         },
         linters = {
+            mypy = {
+                sourceName = "mypy",
+                command = "mypy",
+                args = { "--no-color-output",
+                    "--no-error-summary",
+                    "--show-column-numbers",
+                    "--follow-imports=silent",
+                    "--ignore-missing-imports",
+                    "%file"
+                },
+                formatPattern = { "^.*:(\\d+?):(\\d+?): ([a-z]+?): (.*)$",
+                    {
+                        line = 1,
+                        column = 2,
+                        security = 3,
+                        message = 4
+                    }
+                },
+                securities = {
+                    error = "error"
+                }
+            },
             pylint = {
                 sourceName = "pylint",
                 command = "pylint",

@@ -62,10 +62,6 @@ require("telescope").setup({
             layout_strategy = "cursor",
             sorting_strategy = "ascending",
         },
-        lsp_code_actions = {
-            layout_strategy = "cursor",
-            sorting_strategy = "ascending",
-        },
     },
 })
 
