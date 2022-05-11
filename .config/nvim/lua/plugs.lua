@@ -84,8 +84,20 @@ require("nvim-treesitter.configs").setup({
 })
 
 -- auto-session Config
+function _G.close_all_floating_wins()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local config = vim.api.nvim_win_get_config(win)
+        if config.relative ~= '' then
+            vim.api.nvim_win_close(win, false)
+        end
+    end
+end
+
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
-vim.g.auto_session_pre_save_cmds = { "tabdo NvimTreeClose" }
+vim.g.auto_session_pre_save_cmds = {
+    _G.close_all_floating_wins,
+    "tabdo NvimTreeClose"
+}
 require("auto-session").setup({
     log_level = "info",
     auto_session_suppress_dirs = { "~/" },
