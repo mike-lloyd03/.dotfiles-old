@@ -394,6 +394,74 @@
               "value": 1
             }
           ]
+        },
+        {
+          "description": "e to end current word",
+          "type": "basic",
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": ["option"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "caps_lock_pressed",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "b to start current word",
+          "type": "basic",
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": ["option"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "caps_lock_pressed",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "w to start next word",
+          "type": "basic",
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": ["option"]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": ["option"]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": ["option"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "caps_lock_pressed",
+              "value": 1
+            }
+          ]
         }
       ]
     },
