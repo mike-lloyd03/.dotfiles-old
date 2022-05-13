@@ -1157,7 +1157,12 @@
                                 ],
                                 "description": "e to end current word",
                                 "from": {
-                                    "key_code": "e"
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -1179,7 +1184,12 @@
                                 ],
                                 "description": "b to start current word",
                                 "from": {
-                                    "key_code": "b"
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -1201,7 +1211,12 @@
                                 ],
                                 "description": "w to start next word",
                                 "from": {
-                                    "key_code": "w"
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
