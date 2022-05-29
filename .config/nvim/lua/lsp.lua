@@ -80,6 +80,7 @@ require("lspconfig").diagnosticls.setup({
         -- "lua",
         "python",
         "sh",
+        "zsh",
     },
     init_options = {
         filetypes = {
@@ -180,6 +181,7 @@ require("lspconfig").diagnosticls.setup({
             },
             sh = "shfmt",
             yaml = "prettier",
+            zsh = "shfmt",
         },
         formatters = {
             black = {

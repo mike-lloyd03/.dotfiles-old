@@ -67,6 +67,7 @@ vim.cmd([[
   autocmd FileType json autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType html autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType yaml autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd FileType zsh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]])
 
 if vim.fn.hostname() == "dev" then

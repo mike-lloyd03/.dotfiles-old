@@ -9,13 +9,16 @@ focus_behaviour = "ClickTo"
 focus_new_windows = true
 max_window_width = 2400
 
+
 keybind = [
     { modifier = ["Control"], key = "space", command = "Execute", value = "rofi -modi drun,run -show drun" },
     { modifier = ["modkey", "Shift"], key = "Return", command = "Execute", value = "WINIT_X11_SCALE_FACTOR=1 alacritty" },
-    { modifier = ["modkey", "Shift"], key = "w", command = "CloseWindow" },
-    { modifier = ["modkey", "Shift"], key = "c", command = "HardReload" },
+    { modifier = ["Control", "Shift"], key = "q", command = "CloseWindow" },
     { modifier = ["modkey", "Control"], key = "x", command = "Execute", value = "autorandr -c" },
+    { modifier = ["modkey", "Control"], key = "m", command = "Execute", value = "/home/mike/scripts/setkeys" },
+    { modifier = ["modkey", "Control"], key = "p", command = "Execute", value = "pkill picom" },
     { modifier = ["modkey", "Shift"], key = "r", command = "SoftReload" },
+    { modifier = ["modkey", "Shift"], key = "c", command = "HardReload" },
     { modifier = ["modkey", "Shift"], key = "x", command = "Execute", value = "loginctl kill-session $XDG_SESSION_ID" },
     { modifier = ["modkey", "Control"], key = "l", command = "Execute", value = "slock" },
     { modifier = ["modkey"], key = "w", command = "SwapTags" },
@@ -30,45 +33,57 @@ keybind = [
     { modifier = ["modkey"], key = "t", command = "SetLayout", value = "MainAndVertStack" },
     { modifier = ["modkey"], key = "m", command = "SetLayout", value = "Monocle" },
     { modifier = ["modkey"], key = "f", command = "ToggleFloating" },
+    { modifier = ["modkey"], key = "s", command = "ToggleFullScreen" },
     { modifier = ["Alt"], key = "l", command = "FocusNextTag" },
     { modifier = ["Alt"], key = "h", command = "FocusPreviousTag" },
     { modifier = ["modkey"], key = "Right", command = "FocusNextTag" },
     { modifier = ["modkey"], key = "Left", command = "FocusPreviousTag" },
     { modifier = ["Control"], key = "Tab", command = "ReturnToLastTag" },
-    { modifier = ["Alt"], key = "Tab", command = "Execute", value = "rofi -show window -kb-accept-entry '!Ctrl-Tab,Return' -kb-row-down 'Ctrl-Tab' kb-row-up 'Ctrl-Shift-Tab' -kb-cancel 'Ctrl-Escape,Escape'" },
-    { modifier = ["modkey"], key = "1", command = "GotoTag", value = "1" },
-    { modifier = ["modkey"], key = "2", command = "GotoTag", value = "2" },
-    { modifier = ["modkey"], key = "3", command = "GotoTag", value = "3" },
-    { modifier = ["modkey"], key = "4", command = "GotoTag", value = "4" },
-    { modifier = ["modkey"], key = "5", command = "GotoTag", value = "5" },
-    { modifier = ["modkey"], key = "6", command = "GotoTag", value = "6" },
-    { modifier = ["modkey"], key = "7", command = "GotoTag", value = "7" },
-    { modifier = ["modkey"], key = "8", command = "GotoTag", value = "8" },
-    { modifier = ["modkey"], key = "9", command = "GotoTag", value = "9" },
-    { modifier = ["modkey", "Shift"], key = "1", command = "MoveToTag", value = "1" },
-    { modifier = ["modkey", "Shift"], key = "2", command = "MoveToTag", value = "2" },
-    { modifier = ["modkey", "Shift"], key = "3", command = "MoveToTag", value = "3" },
-    { modifier = ["modkey", "Shift"], key = "4", command = "MoveToTag", value = "4" },
-    { modifier = ["modkey", "Shift"], key = "5", command = "MoveToTag", value = "5" },
-    { modifier = ["modkey", "Shift"], key = "6", command = "MoveToTag", value = "6" },
-    { modifier = ["modkey", "Shift"], key = "7", command = "MoveToTag", value = "7" },
-    { modifier = ["modkey", "Shift"], key = "8", command = "MoveToTag", value = "8" },
-    { modifier = ["modkey", "Shift"], key = "9", command = "MoveToTag", value = "9" },
-    { key = "XF86XK_AudioRaiseVolume", command = "Execute", value = "pactl set-sink-volume @DEFAULT_SINK@ +5%" },
-    { key = "XF86XK_AudioLowerVolume", command = "Execute", value = "pactl set-sink-volume @DEFAULT_SINK@ -5%" },
-    { key = "XF86XK_AudioMute", command = "Execute", value = "pactl set-sink-mute @DEFAULT_SINK@ toggle" },
-    { key = "XF86XK_MonBrightnessUp", command = "Execute", value = "sudo xbacklight -inc 10" },
-    { key = "XF86XK_MonBrightnessDown", command = "Execute", value = "sudo xbacklight -dec 10" },
+    { modifier = ["Alt"], key = "Tab", command = "Execute", value = "rofi -show window -show-icons -selected-row 1 -kb-accept-entry '!Alt-Tab,Return' -kb-row-down 'Alt-Tab' kb-row-up 'Alt-Shift-Tab' -kb-cancel 'Alt-Escape,Escape'" },
+    { modifier = ["Alt"], key = "1", command = "GotoTag", value = "1" },
+    { modifier = ["Alt"], key = "2", command = "GotoTag", value = "2" },
+    { modifier = ["Alt"], key = "3", command = "GotoTag", value = "3" },
+    { modifier = ["Alt"], key = "4", command = "GotoTag", value = "4" },
+    { modifier = ["Alt"], key = "5", command = "GotoTag", value = "5" },
+    { modifier = ["Alt"], key = "6", command = "GotoTag", value = "6" },
+    { modifier = ["Alt"], key = "7", command = "GotoTag", value = "7" },
+    { modifier = ["Alt"], key = "8", command = "GotoTag", value = "8" },
+    { modifier = ["Alt"], key = "9", command = "GotoTag", value = "9" },
+    { modifier = ["Alt", "Shift"], key = "1", command = "MoveToTag", value = "1" },
+    { modifier = ["Alt", "Shift"], key = "2", command = "MoveToTag", value = "2" },
+    { modifier = ["Alt", "Shift"], key = "3", command = "MoveToTag", value = "3" },
+    { modifier = ["Alt", "Shift"], key = "4", command = "MoveToTag", value = "4" },
+    { modifier = ["Alt", "Shift"], key = "5", command = "MoveToTag", value = "5" },
+    { modifier = ["Alt", "Shift"], key = "6", command = "MoveToTag", value = "6" },
+    { modifier = ["Alt", "Shift"], key = "7", command = "MoveToTag", value = "7" },
+    { modifier = ["Alt", "Shift"], key = "8", command = "MoveToTag", value = "8" },
+    { modifier = ["Alt", "Shift"], key = "9", command = "MoveToTag", value = "9" },
+    { key = "XF86XK_AudioRaiseVolume", command = "Execute", value = ".config/leftwm/scripts/volume up" },
+    { key = "XF86XK_AudioLowerVolume", command = "Execute", value = ".config/leftwm/scripts/volume down" },
+    { key = "XF86XK_AudioMute", command = "Execute", value = ".config/leftwm/scripts/volume mute" },
+    { key = "XF86XK_MonBrightnessUp", command = "Execute", value = ".config/leftwm/scripts/brightness up" },
+    { key = "XF86XK_MonBrightnessDown", command = "Execute", value = ".config/leftwm/scripts/brightness down" },
     { modifier = ["Control", "Shift"], key = "3", command = "Execute", value = "spectacle -fbi" },
-    { modifier = ["Shift"], key = "XF86XK_AudioRaiseVolume", command = "Execute", value = "/home/mike/scripts/resync_a2dp" },
-    { modifier = ["Shift"], key = "XF86XK_AudioLowerVolume", command = "Execute", value = "/home/mike/scripts/resync_hfp" },
+    { modifier = ["Control", "Mod4", "Shift"], key = "3", command = "Execute", value = "spectacle -fbic" },
+    { modifier = ["Control", "Shift"], key = "4", command = "Execute", value = "spectacle -rbi" },
+    { modifier = ["Control", "Mod4", "Shift"], key = "4", command = "Execute", value = "spectacle -rbic" },
+    { modifier = ["Shift"], key = "XF86XK_AudioRaiseVolume", command = "Execute", value = "scripts/resync_a2dp" },
+    { modifier = ["Shift"], key = "XF86XK_AudioLowerVolume", command = "Execute", value = "scripts/resync_hfp" },
     { modifier = ["Alt"], key = "t", command = "ToggleScratchPad", value = "Alacritty" },
+]
+
+window_rules = [
+    {window_title = "Steam", spawn_floating = false},
+    {window_class = "Steam.Steam", spawn_floating = true},
+    # {window_class = "nextcloud", spawn_floating = true},
+    {window_title = "Picture-in-Picture", spawn_floating = true},
 ]
 
 [[scratchpad]]
 name = "Alacritty"
-value = 'WINIT_X11_SCALE_FACTOR=1 alacritty -o window.opacity=0.8 -e bash -c "tmux a -t scratch || tmux \"new-session;\" rename-session scratch"'
+value = 'WINIT_X11_SCALE_FACTOR=1 alacritty -t "Alacritty - Scratch" -o window.opacity=0.8 -e bash -c "tmux a -t scratch || tmux \"new-session;\" rename-session scratch"'
 x = 0.05
-y = 37
-height = 0.60
+y = 35
+height = 0.50
 width =  0.9
+
