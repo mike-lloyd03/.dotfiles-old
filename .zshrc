@@ -94,18 +94,20 @@ prepend_path "$HOME/.cargo/bin"
 prepend_path "$HOME/.go/bin"
 prepend_path "$HOME/.local/bin"
 
+if [ "$(uname)" = "Linux" ]; then
+  alias xcopy="xclip -rmlastnl -in -selection clipboard"
+  alias xpaste="xclip -out -selection clipboard"
+fi
+
 # Personal Machine Setup
 if [ "$(uname -n)" = kratos ] || [ "$(uname -n)" = dev ]; then
   prepend_path "$HOME/.nvm/versions/node/v12.16.1/bin"
   prepend_path "$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
   prepend_path "$HOME/.local/share/gem/ruby/2.7.0/bin"
 
-  alias xmap='sh ~/.config/xkbcomp/vim-keys-xkb.sh'
   alias om=optimus-manager
   alias pacman-ls-orphan="sudo pacman -Qdtq"
   alias pacman-rm-deps="sudo pacman -Rcns"
-  alias xcopy="xclip -r -i -selection clipboard"
-  alias xpaste="xclip -o -selection clipboard"
 fi
 
 # Work Machine Setup
