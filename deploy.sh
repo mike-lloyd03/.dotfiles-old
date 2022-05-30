@@ -32,7 +32,6 @@ script_location="$(cd "$(dirname "$0")" && pwd -P)"
 dotfiles=(.tmux .tmux.conf .zshrc .config/starship.toml .gitignore-global)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
-vim_dotfiles=(.vim .vimrc .config/coc)
 nvim_dotfiles=(.config/nvim)
 
 if [ "$(uname -s)" = Linux ]; then
@@ -42,15 +41,6 @@ elif [ "$(uname -s)" = Darwin ]; then
 else
   println "Cannot deploy on this system" error
   exit 1
-fi
-
-if command -v nvim &>/dev/null; then
-  println "neovim detected"
-  vim_cmd=nvim
-  dotfiles+=("${nvim_dotfiles[@]}")
-else
-  vim_cmd=vim
-  dotfiles+=("${vim_dotfiles[@]}")
 fi
 
 println "Deploying .dotfiles..."
@@ -76,19 +66,13 @@ for f in "${dotfiles[@]}"; do
 done
 
 # Install vim-plugs
-println "Installing $vim_cmd plugs"
-vim_plug_path="$HOME/.local/share/nvim/site/autoload/plug.vim"
-if [ ! -e $vim_plug_path ]; then
+println "Installing nvim plugs"
+plug_path="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+if [ ! -e $plug_path ]; then
   println "vim-plug not intalled. Installing" warn
-  if [ "$vim_cmd" = "nvim" ]; then
-    sh -c "curl -fLo '$HOME/.local/share/nvim/site/autoload/plug.vim' --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  else
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  fi
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim $plug_path
 fi
-$vim_cmd -c "PlugInstall | qa"
+nvim -c "PackerSync | qa!"
 
 println "Done."
 exit 0
