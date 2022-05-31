@@ -229,6 +229,8 @@ cmp.setup({
     mapping = {
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.scroll_docs(4),
         ["<C-k>"] = cmp.mapping.scroll_docs(-4),
         ["<C-Space>"] = cmp.mapping.complete(),
