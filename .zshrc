@@ -43,6 +43,7 @@ if command -v git &>/dev/null; then
   alias gr='git remote'
   alias gra='git remote add'
   alias grs='git restore'
+  alias grss='git restore --staged'
   alias gs='git status -s'
   alias gst='git status'
   alias gd='git diff --ignore-all-space'
