@@ -76,6 +76,7 @@ require("lspconfig").diagnosticls.setup({
         "cpp",
         "css",
         "html",
+        -- "go",
         "json",
         -- "lua",
         "python",
@@ -84,10 +85,32 @@ require("lspconfig").diagnosticls.setup({
     },
     init_options = {
         filetypes = {
+            go = { "golangci_lint" },
             python = { "pylint", "mypy" },
             sh = "shellcheck",
         },
         linters = {
+            golangci_lint = {
+                command = "golangci-lint",
+                rootPatterns = { ".git", "go.mod" },
+                debounce = 100,
+                args = {
+                    "run",
+                    "--out-format",
+                    "json",
+                    "--enable",
+                    "revive"
+                },
+                sourceName = "golangci-lint",
+                parseJson = {
+                    sourceName = "Pos.Filename",
+                    sourceNameFilter = true,
+                    errorsRoot = "Issues",
+                    line = "Pos.Line",
+                    column = "Pos.Column",
+                    message = "${Text} [${FromLinter}]",
+                }
+            },
             mypy = {
                 sourceName = "mypy",
                 command = "mypy",
