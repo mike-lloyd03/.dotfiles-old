@@ -76,17 +76,41 @@ require("lspconfig").diagnosticls.setup({
         "cpp",
         "css",
         "html",
+        -- "go",
         "json",
         -- "lua",
         "python",
         "sh",
+        "zsh",
     },
     init_options = {
         filetypes = {
+            go = { "golangci_lint" },
             python = { "pylint", "mypy" },
             sh = "shellcheck",
         },
         linters = {
+            golangci_lint = {
+                command = "golangci-lint",
+                rootPatterns = { ".git", "go.mod" },
+                debounce = 100,
+                args = {
+                    "run",
+                    "--out-format",
+                    "json",
+                    "--enable",
+                    "revive"
+                },
+                sourceName = "golangci-lint",
+                parseJson = {
+                    sourceName = "Pos.Filename",
+                    sourceNameFilter = true,
+                    errorsRoot = "Issues",
+                    line = "Pos.Line",
+                    column = "Pos.Column",
+                    message = "${Text} [${FromLinter}]",
+                }
+            },
             mypy = {
                 sourceName = "mypy",
                 command = "mypy",
@@ -180,6 +204,7 @@ require("lspconfig").diagnosticls.setup({
             },
             sh = "shfmt",
             yaml = "prettier",
+            zsh = "shfmt",
         },
         formatters = {
             black = {
@@ -227,6 +252,8 @@ cmp.setup({
     mapping = {
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.scroll_docs(4),
         ["<C-k>"] = cmp.mapping.scroll_docs(-4),
         ["<C-Space>"] = cmp.mapping.complete(),
@@ -239,7 +266,7 @@ cmp.setup({
 
     formatting = {
         format = lspkind.cmp_format({
-            mode = "symbol_text", -- show only symbol annotations
+            mode = "symbol_text",
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
         }),
     },
@@ -251,13 +278,6 @@ cmp.setup({
         { name = "path" },
         { name = "buffer" },
     },
-    -- Fix rust cmp sorting snippets over functions
-    -- sorting = {
-    --     priority_weight = 2,
-    --     comparators = {
-    --         cmp.config.compare.score,
-    --     },
-    -- },
 })
 
 ----------------------------

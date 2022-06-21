@@ -39,7 +39,7 @@ nmap("<space>s", "<CMD>lua require('telescope.builtin').lsp_document_symbols{}<C
 nmap("<space>S", "<CMD>lua require('telescope.builtin').lsp_workspace_symbols{}<CR>")
 nmap("<space>a", "<CMD>lua vim.lsp.buf.code_action()<CR>")
 nmap("gr", "<CMD>lua require('telescope.builtin').lsp_references{}<CR>")
-nmap("z=", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>")
+nmap("<space>z", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>")
 nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>")
 nmap("gD", "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>")
 nmap("<leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")

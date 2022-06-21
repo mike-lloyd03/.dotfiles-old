@@ -1,31 +1,3 @@
-vim.g.nvim_tree_icon_padding = " "
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-        unstaged = "!",
-        staged = "+",
-        unmerged = "",
-        renamed = "»",
-        untracked = "?",
-        deleted = "✘",
-        ignored = "",
-    },
-    folder = {
-        arrow_open = "",
-        arrow_closed = "",
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = "",
-        symlink_open = "",
-    },
-}
-vim.g.nvim_tree_respect_buf_cwd = 0
-
 require("nvim-tree").setup({
     disable_netrw = true,
     hijack_netrw = true,
@@ -34,14 +6,11 @@ require("nvim-tree").setup({
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = false,
+    respect_buf_cwd = false,
     update_focused_file = {
         enable = true,
         update_cwd = false,
         ignore_list = {},
-    },
-    system_open = {
-        cmd = nil,
-        args = {},
     },
     filters = {
         dotfiles = false,
@@ -65,14 +34,41 @@ require("nvim-tree").setup({
                 { key = "i", action = "split" },
                 { key = "t", action = "tabnew" },
                 { key = "?", action = "toggle_help" },
+                { key = "c", action = "cd" },
             },
         },
         number = false,
         relativenumber = false,
         signcolumn = "no",
     },
-    trash = {
-        cmd = "trash",
-        require_confirm = true,
-    },
+    renderer = {
+        group_empty = true,
+        highlight_opened_files = "name",
+        icons = {
+            padding = " ",
+            glyphs = {
+                default = "",
+                symlink = "",
+                git = {
+                    unstaged = "!",
+                    staged = "+",
+                    unmerged = "",
+                    renamed = "»",
+                    untracked = "?",
+                    deleted = "✘",
+                    ignored = "",
+                },
+                folder = {
+                    arrow_open = "",
+                    arrow_closed = "",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+            }
+        },
+    }
 })

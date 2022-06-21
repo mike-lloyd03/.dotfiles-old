@@ -1,40 +1,47 @@
-vim.cmd([[
-    call plug#begin('~/.local/share/nvim/plugs')
-
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-vsnip'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/vim-vsnip'
-    Plug 'onsails/lspkind-nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/playground' "Depends on nvim-treesitter
-    Plug 'lewis6991/gitsigns.nvim' "Depends on plenary
-    Plug 'nvim-telescope/telescope.nvim' "Depends on plenary and apparently tree-sitter
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-    Plug 'nvim-lualine/lualine.nvim'
-    Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'rmagatti/auto-session'
-    Plug 'folke/which-key.nvim'
-    Plug 'windwp/nvim-autopairs'
-    Plug 'stevearc/dressing.nvim'
-    Plug 'rcarriga/nvim-notify'
-    Plug 'windwp/nvim-ts-autotag'
-
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-fugitive'
-    Plug 'navarasu/onedark.nvim'
-    Plug 'preservim/vim-lexical'
-    Plug 'dhruvasagar/vim-zoom'
-
-
-    call plug#end()
-]])
+require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/vim-vsnip'
+    use 'onsails/lspkind-nvim'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use 'nvim-treesitter/playground'
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
+    }
+    use 'nvim-lualine/lualine.nvim'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'rmagatti/auto-session'
+    use 'folke/which-key.nvim'
+    use 'windwp/nvim-autopairs'
+    use 'stevearc/dressing.nvim'
+    use 'rcarriga/nvim-notify'
+    use 'windwp/nvim-ts-autotag'
+    use 'tpope/vim-commentary'
+    use 'tpope/vim-surround'
+    use 'tpope/vim-fugitive'
+    use 'navarasu/onedark.nvim'
+    use 'preservim/vim-lexical'
+    use 'dhruvasagar/vim-zoom'
+    use 'junegunn/goyo.vim'
+end)
 
 require("theme")
 
