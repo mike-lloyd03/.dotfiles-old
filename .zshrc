@@ -52,7 +52,7 @@ if command -v git &>/dev/null; then
   alias gco='git checkout'
   alias gcob='git checkout -b'
   alias gb='git branch'
-  alias gsm='git submodule'
+  alias gsu='git submodule update'
 fi
 
 # systemctl Aliases
@@ -95,7 +95,7 @@ function prepend_path() {
 }
 
 prepend_path "$HOME/.cargo/bin"
-prepend_path "$HOME/.go/bin"
+prepend_path "$HOME/go/bin"
 prepend_path "$HOME/.local/bin"
 
 if [ "$(uname)" = "Linux" ]; then
