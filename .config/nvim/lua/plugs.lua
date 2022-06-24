@@ -40,6 +40,7 @@ require('packer').startup(function(use)
     use 'preservim/vim-lexical'
     use 'dhruvasagar/vim-zoom'
     use 'junegunn/goyo.vim'
+    use 'chrisbra/csv.vim'
 end)
 
 require("theme")
