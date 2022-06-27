@@ -138,6 +138,7 @@ if [ "$(uname -n)" = dev ]; then
   alias kprod='kubectl config use-context appsec-prod'
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias psql="psql -U postgres"
+  alias fixdate="sudo date \"$(ssh mac date '+%m%d%H%M%Y.%S')\""
 fi
 
 # Launch tmux
