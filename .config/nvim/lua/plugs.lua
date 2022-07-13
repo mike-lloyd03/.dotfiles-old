@@ -69,6 +69,14 @@ require("telescope").setup({
             layout_strategy = "cursor",
             sorting_strategy = "ascending",
         },
+        buffers = {
+            sort_lastused = true,
+            mappings = {
+                i = {
+                    ["<C-d>"] = require("telescope.actions").delete_buffer,
+                },
+            },
+        }
     },
 })
 

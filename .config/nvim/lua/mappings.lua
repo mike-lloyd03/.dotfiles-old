@@ -30,7 +30,7 @@ vmap(">", ">gv")
 vmap("<", "<gv")
 
 -- Telescope
-nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{sort_lastused=true}<CR>")
+nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
 nmap("<space>f", "<CMD>Telescope find_files<CR>")
 nmap("<space>g", "<CMD>Telescope live_grep<CR>")
 nmap("<space>h", "<CMD>Telescope help_tags<CR>")
