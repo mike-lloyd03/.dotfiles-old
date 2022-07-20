@@ -52,7 +52,7 @@ if command -v git &>/dev/null; then
   alias gco='git checkout'
   alias gcob='git checkout -b'
   alias gb='git branch'
-  alias gsu='git submodule update'
+  alias gsu='git submodule update --recursive --remote'
 fi
 
 # systemctl Aliases
