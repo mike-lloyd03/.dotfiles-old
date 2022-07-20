@@ -52,7 +52,7 @@ if command -v git &>/dev/null; then
   alias gco='git checkout'
   alias gcob='git checkout -b'
   alias gb='git branch'
-  alias gsm='git submodule'
+  alias gsu='git submodule update'
 fi
 
 # systemctl Aliases
@@ -95,7 +95,7 @@ function prepend_path() {
 }
 
 prepend_path "$HOME/.cargo/bin"
-prepend_path "$HOME/.go/bin"
+prepend_path "$HOME/go/bin"
 prepend_path "$HOME/.local/bin"
 
 if [ "$(uname)" = "Linux" ]; then
@@ -138,6 +138,7 @@ if [ "$(uname -n)" = dev ]; then
   alias kprod='kubectl config use-context appsec-prod'
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
   alias psql="psql -U postgres"
+  alias fixdate="sudo date \"$(ssh mac date '+%m%d%H%M%Y.%S')\""
 fi
 
 # Launch tmux

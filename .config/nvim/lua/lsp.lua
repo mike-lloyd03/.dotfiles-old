@@ -65,7 +65,7 @@ require("lspconfig").sumneko_lua.setup({
         },
     },
 })
---
+
 ----------------------------
 -- Diagnostic Language Server Config
 ----------------------------

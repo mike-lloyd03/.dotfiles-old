@@ -3,10 +3,9 @@ require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/vim-vsnip'
+    use { 'hrsh7th/vim-vsnip', 'hrsh7th/cmp-vsnip', 'golang/vscode-go', 'rust-lang/vscode-rust' }
     use 'onsails/lspkind-nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -41,6 +40,7 @@ require('packer').startup(function(use)
     use 'preservim/vim-lexical'
     use 'dhruvasagar/vim-zoom'
     use 'junegunn/goyo.vim'
+    use 'chrisbra/csv.vim'
 end)
 
 require("theme")
@@ -69,6 +69,14 @@ require("telescope").setup({
             layout_strategy = "cursor",
             sorting_strategy = "ascending",
         },
+        buffers = {
+            sort_lastused = true,
+            mappings = {
+                i = {
+                    ["<C-d>"] = require("telescope.actions").delete_buffer,
+                },
+            },
+        }
     },
 })
 
