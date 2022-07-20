@@ -57,26 +57,11 @@ vim.cmd([[
   autocmd FileType sh lua vim.opt.shiftwidth = 2
 ]])
 
-function FormatAndOrgImports(wait_ms)
-    vim.lsp.buf.formatting_seq_sync(nil, wait_ms)
-    local params = vim.lsp.util.make_range_params()
-    params.context = { only = { "source.organizeImports" } }
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
-    for _, res in pairs(result or {}) do
-        for _, r in pairs(res.result or {}) do
-            if r.edit then
-                vim.lsp.util.apply_workspace_edit(r.edit, "UTF-8")
-            else
-                vim.lsp.buf.execute_command(r.command)
-            end
-        end
-    end
-end
 
 -- Format on Save
 vim.cmd([[
   autocmd FileType rust autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType go autocmd BufWritePre * lua FormatAndOrgImports(1000)
+  autocmd FileType go autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType lua autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType python autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
   autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)

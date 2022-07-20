@@ -137,7 +137,7 @@ if [ "$(uname -n)" = dev ]; then
   alias kdev='kubectl config use-context appsec-dev'
   alias kprod='kubectl config use-context appsec-prod'
   alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
-  alias psql="psql -U postgres"
+  alias psql="psql postgres://postgres:postgres@localhost"
   alias fixdate="sudo date \"$(ssh mac date '+%m%d%H%M%Y.%S')\""
 fi
 
