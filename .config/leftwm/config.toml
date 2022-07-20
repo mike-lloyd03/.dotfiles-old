@@ -67,8 +67,10 @@ keybind = [
     { modifier = ["Control", "Mod4", "Shift"], key = "3", command = "Execute", value = "spectacle -fbic" },
     { modifier = ["Control", "Shift"], key = "4", command = "Execute", value = "spectacle -rbi" },
     { modifier = ["Control", "Mod4", "Shift"], key = "4", command = "Execute", value = "spectacle -rbic" },
-    { modifier = ["Shift"], key = "XF86XK_AudioRaiseVolume", command = "Execute", value = "scripts/resync_a2dp" },
-    { modifier = ["Shift"], key = "XF86XK_AudioLowerVolume", command = "Execute", value = "scripts/resync_hfp" },
+    # { modifier = ["Shift"], key = "XF86XK_AudioRaiseVolume", command = "Execute", value = "scripts/resync_a2dp" },
+    # { modifier = ["Shift"], key = "XF86XK_AudioLowerVolume", command = "Execute", value = "scripts/resync_hfp" },
+    { modifier = ["Shift"], key = "F12", command = "Execute", value = "scripts/resync_a2dp" },
+    { modifier = ["Shift"], key = "F11", command = "Execute", value = "scripts/resync_hfp" },
     { modifier = ["Alt"], key = "t", command = "ToggleScratchPad", value = "Alacritty" },
 ]
 
