@@ -55,6 +55,8 @@ require("telescope").setup({
         mappings = {
             i = {
                 ["<esc>"] = require("telescope.actions").close,
+                ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+                ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
             },
         },
         layout_config = {
@@ -62,6 +64,7 @@ require("telescope").setup({
                 width = 60,
                 height = 10,
             },
+            scroll_speed = 1,
         },
     },
     pickers = {
