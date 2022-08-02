@@ -28,6 +28,9 @@ nmap("<space>w", "<C-w>")
 nmap("U", "<C-r>")
 vmap(">", ">gv")
 vmap("<", "<gv")
+vmap("<space>y", '"+y')
+nmap("<space>p", '"+p')
+nmap("<space>P", '"+P')
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
@@ -116,6 +119,10 @@ wk.register({
         wp = { "Print workspace folders" },
         wr = { "Remove workspace folders" },
         ["'"] = { "Open last picker" },
+        y = { "Yank selection to system clipboard" },
+        p = { "Paste system clipboard after cursor" },
+        P = { "Paste system clipboard before cursor" },
+        z = { "Show spelling suggestions" },
     },
     g = {
         c = { "Toggle comment" },

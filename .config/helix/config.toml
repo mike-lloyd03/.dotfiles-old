@@ -6,12 +6,15 @@ line-number = "relative"
 true-color = true
 
 [editor.cursor-shape]
+normal = "block"
 insert = "bar"
+select = "block"
 
 [keys.normal]
-C-j = "scroll_down"
-C-k = "scroll_up"
+"C-j" = "scroll_down"
+"C-k" = "scroll_up"
 "[" = { g = "goto_prev_diag"}
 "]" = { g = "goto_next_diag"}
 "0" = "goto_line_start"
 "$" = "goto_line_end"
+"D" = "kill_to_line_end"
