@@ -1,46 +1,47 @@
-require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-buffer'
-    use { 'hrsh7th/vim-vsnip', 'hrsh7th/cmp-vsnip', 'golang/vscode-go', 'rust-lang/vscode-rust' }
-    use 'onsails/lspkind-nvim'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use 'nvim-treesitter/playground'
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
-    }
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
-    }
-    use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-    }
-    use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'rmagatti/auto-session'
-    use 'folke/which-key.nvim'
-    use 'windwp/nvim-autopairs'
-    use 'stevearc/dressing.nvim'
-    use 'rcarriga/nvim-notify'
-    use 'windwp/nvim-ts-autotag'
-    use 'tpope/vim-commentary'
-    use 'tpope/vim-surround'
-    use 'tpope/vim-fugitive'
-    use 'navarasu/onedark.nvim'
-    use 'preservim/vim-lexical'
-    use 'dhruvasagar/vim-zoom'
-    use 'junegunn/goyo.vim'
-    use 'chrisbra/csv.vim'
+require("packer").startup(function(use)
+    use("wbthomason/packer.nvim")
+    use("neovim/nvim-lspconfig")
+    use("hrsh7th/nvim-cmp")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-path")
+    use("hrsh7th/cmp-buffer")
+    use({ "hrsh7th/vim-vsnip", "hrsh7th/cmp-vsnip", "golang/vscode-go", "rust-lang/vscode-rust" })
+    use("onsails/lspkind-nvim")
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    })
+    use("nvim-treesitter/playground")
+    use({
+        "lewis6991/gitsigns.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+    })
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+    })
+    use({
+        "nvim-telescope/telescope-fzf-native.nvim",
+        run = "make",
+    })
+    use("nvim-lualine/lualine.nvim")
+    use("kyazdani42/nvim-web-devicons")
+    use("kyazdani42/nvim-tree.lua")
+    use("rmagatti/auto-session")
+    use("folke/which-key.nvim")
+    use("windwp/nvim-autopairs")
+    use("stevearc/dressing.nvim")
+    use("rcarriga/nvim-notify")
+    use("windwp/nvim-ts-autotag")
+    use("tpope/vim-commentary")
+    use("tpope/vim-surround")
+    use("tpope/vim-fugitive")
+    use("navarasu/onedark.nvim")
+    use("preservim/vim-lexical")
+    use("dhruvasagar/vim-zoom")
+    use("junegunn/goyo.vim")
+    use("chrisbra/csv.vim")
+    use("mhartington/formatter.nvim")
 end)
 
 require("theme")
@@ -79,7 +80,7 @@ require("telescope").setup({
                     ["<C-d>"] = require("telescope.actions").delete_buffer,
                 },
             },
-        }
+        },
     },
 })
 
@@ -105,7 +106,7 @@ require("nvim-treesitter.configs").setup({
 function _G.close_all_floating_wins()
     for _, win in ipairs(vim.api.nvim_list_wins()) do
         local config = vim.api.nvim_win_get_config(win)
-        if config.relative ~= '' then
+        if config.relative ~= "" then
             vim.api.nvim_win_close(win, false)
         end
     end
@@ -114,7 +115,7 @@ end
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 vim.g.auto_session_pre_save_cmds = {
     _G.close_all_floating_wins,
-    "tabdo NvimTreeClose"
+    "tabdo NvimTreeClose",
 }
 require("auto-session").setup({
     log_level = "info",
@@ -138,3 +139,46 @@ require("nvim-autopairs").setup({})
 
 -- nvim-notify config
 vim.notify = require("notify")
+
+-- formatter.nvim config
+function Shfmt()
+    return {
+        exe = "shfmt",
+        args = {
+            "-i",
+            "4",
+        },
+        stdin = true,
+    }
+end
+
+function Stylua()
+    return {
+        exe = "stylua",
+        args = {
+            "--indent-type",
+            "spaces",
+            "-",
+        },
+        stdin = true,
+    }
+end
+
+require("formatter").setup({
+    filetype = {
+        css = require("formatter.defaults.prettier"),
+        go = require("formatter.filetypes.go").gofmt,
+        html = require("formatter.defaults.prettier"),
+        json = require("formatter.defaults.prettier"),
+        lua = { Stylua },
+        python = {
+            require("formatter.filetypes.python").black,
+            require("formatter.filetypes.python").isort,
+        },
+        rust = require("formatter.filetypes.rust").rustfmt,
+        sh = { Shfmt },
+        toml = require("formatter.filetypes.toml").taplo,
+        yaml = require("formatter.defaults.prettier"),
+        zsh = { Shfmt },
+    },
+})

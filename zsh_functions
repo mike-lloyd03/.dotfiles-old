@@ -52,6 +52,7 @@ function vimrc() {
   edit_file="$1"
   if [ "$edit_file" = "" ]; then
     pushd $HOME/.config/nvim >/dev/null && vim "$HOME/.config/nvim/init.lua" && popd >/dev/null
+    return 0
   fi
 
   if find "$nvim_dir/" -name "*.lua" | grep -P "$nvim_dir/$edit_file.lua" >/dev/null; then

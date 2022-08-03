@@ -36,6 +36,19 @@ vim.opt.cursorline = true
 -- Smart case when searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+--
+-- Clipboard handling
+if vim.fn.hostname() == "dev" then
+	vim.g.clipboard = {
+		name = "ssh",
+		copy = {
+			["+"] = { "ssh", "mac", "pbcopy" },
+		},
+		paste = {
+			["+"] = { "ssh", "mac", "pbpaste" },
+		},
+	}
+end
 
 -----------
 -- Auto Commands
@@ -50,35 +63,7 @@ vim.cmd([[
   autocmd FileType markdown call lexical#init()
 ]])
 
--- sh tabs
-vim.cmd([[
-  autocmd FileType sh lua vim.opt.tabstop = 2
-  autocmd FileType sh lua vim.opt.softtabstop = 2
-  autocmd FileType sh lua vim.opt.shiftwidth = 2
-]])
-
-
 -- Format on Save
 vim.cmd([[
-  autocmd FileType rust autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType go autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType lua autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType python autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType sh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType json autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType html autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType yaml autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
-  autocmd FileType zsh autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+    autocmd BufWritePost * FormatWrite
 ]])
-
-if vim.fn.hostname() == "dev" then
-    vim.g.clipboard = {
-        name = "ssh",
-        copy = {
-            ["+"] = { "ssh", "mac", "pbcopy" },
-        },
-        paste = {
-            ["+"] = { "ssh", "mac", "pbpaste" },
-        },
-    }
-end

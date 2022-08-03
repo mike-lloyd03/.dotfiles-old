@@ -191,47 +191,6 @@ require("lspconfig").diagnosticls.setup({
                 },
             },
         },
-        formatFiletypes = {
-            c = "clang_format",
-            cpp = "clang_format",
-            css = "prettier",
-            html = "prettier",
-            json = "prettier",
-            lua = "stylua",
-            python = {
-                "black",
-                "isort",
-            },
-            sh = "shfmt",
-            yaml = "prettier",
-            zsh = "shfmt",
-        },
-        formatters = {
-            black = {
-                command = "black",
-                args = { "--quiet", "--fast", "-" },
-            },
-            clang_format = {
-                command = "clang-format",
-                args = { "--style=LLVM" },
-            },
-            isort = {
-                command = "isort",
-                args = { "--quiet", "-" },
-            },
-            stylua = {
-                command = "stylua",
-                args = { "--indent-type", "spaces", "-" },
-            },
-            prettier = {
-                command = "prettier",
-                args = { "--stdin-filepath", "%filepath" },
-            },
-            shfmt = {
-                command = "shfmt",
-                args = { "-i", "2" },
-            },
-        },
     },
 })
 
