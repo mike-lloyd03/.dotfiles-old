@@ -31,6 +31,7 @@ nmap("U", "<C-r>")
 vmap(">", ">gv")
 vmap("<", "<gv")
 vmap("<space>y", '"+y')
+nmap("<space>y", '"+y')
 nmap("<space>p", '"+p')
 nmap("<space>P", '"+P')
 
