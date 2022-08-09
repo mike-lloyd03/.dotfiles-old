@@ -62,6 +62,7 @@ nmap("<leader>vr", "<CMD>lua search_dotfiles()<CR>")
 
 -- Find and replace under cursor
 nmap("<leader>s", ":%s/<C-r><C-w>/")
+vmap("<leader>s", '"ry:%s/<C-r>r/')
 
 -- Clear hightlight after search
 nmap("<C-_>", "<CMD>nohlsearch<CR>")
@@ -76,7 +77,6 @@ nmap("<space>wr", "<CMD>lua vim.lsp.buf.remove_workspace_folder()<CR>")
 nmap("<space>wp", "<CMD>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
 nmap("<space>D", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 nmap("<space>r", "<CMD>lua vim.lsp.buf.rename()<CR>")
-
 
 -- Go Imports
 function FormatAndOrgImports(wait_ms)

@@ -164,6 +164,17 @@ function Stylua()
     }
 end
 
+function Rustfmt()
+    return {
+        exe = "rustfmt",
+        args = {
+            "--edition",
+            "2021",
+        },
+        stdin = true,
+    }
+end
+
 require("formatter").setup({
     filetype = {
         css = require("formatter.defaults.prettier"),
@@ -175,7 +186,7 @@ require("formatter").setup({
             require("formatter.filetypes.python").black,
             require("formatter.filetypes.python").isort,
         },
-        rust = require("formatter.filetypes.rust").rustfmt,
+        rust = { Rustfmt },
         sh = { Shfmt },
         toml = require("formatter.filetypes.toml").taplo,
         yaml = require("formatter.defaults.prettier"),
