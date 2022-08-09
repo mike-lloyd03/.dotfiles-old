@@ -21,7 +21,8 @@ end
 ----------------------------
 require("lspconfig").bashls.setup({})
 require("lspconfig").gopls.setup({})
-require("lspconfig").jedi_language_server.setup({})
+-- require("lspconfig").jedi_language_server.setup({})
+require("lspconfig").pyright.setup({})
 
 ----------------------------
 -- Rust Config
@@ -80,7 +81,7 @@ require("lspconfig").diagnosticls.setup({
         "json",
         -- "lua",
         "python",
-        "sh",
+        -- "sh",
         "zsh",
     },
     init_options = {
@@ -99,7 +100,7 @@ require("lspconfig").diagnosticls.setup({
                     "--out-format",
                     "json",
                     "--enable",
-                    "revive"
+                    "revive",
                 },
                 sourceName = "golangci-lint",
                 parseJson = {
@@ -109,29 +110,31 @@ require("lspconfig").diagnosticls.setup({
                     line = "Pos.Line",
                     column = "Pos.Column",
                     message = "${Text} [${FromLinter}]",
-                }
+                },
             },
             mypy = {
                 sourceName = "mypy",
                 command = "mypy",
-                args = { "--no-color-output",
+                args = {
+                    "--no-color-output",
                     "--no-error-summary",
                     "--show-column-numbers",
                     "--follow-imports=silent",
                     "--ignore-missing-imports",
-                    "%file"
+                    "%file",
                 },
-                formatPattern = { "^.*:(\\d+?):(\\d+?): ([a-z]+?): (.*)$",
+                formatPattern = {
+                    "^.*:(\\d+?):(\\d+?): ([a-z]+?): (.*)$",
                     {
                         line = 1,
                         column = 2,
                         security = 3,
-                        message = 4
-                    }
+                        message = 4,
+                    },
                 },
                 securities = {
-                    error = "error"
-                }
+                    error = "error",
+                },
             },
             pylint = {
                 sourceName = "pylint",
@@ -167,14 +170,14 @@ require("lspconfig").diagnosticls.setup({
                 formatLines = 1,
             },
             shellcheck = {
+                sourceName = "shellcheck",
                 command = "shellcheck",
-                debounce = 100,
+                -- debounce = 100,
                 args = {
                     "--format",
                     "json",
                     "-",
                 },
-                sourceName = "shellcheck",
                 parseJson = {
                     line = "line",
                     column = "column",
