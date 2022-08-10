@@ -3,3 +3,12 @@ name = "rust"
 
 [language.config.checkOnSave]
 command = "clippy"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'<' = '>'
