@@ -138,6 +138,10 @@ require("which-key").setup({
 require("nvim-autopairs").setup({})
 
 -- nvim-notify config
+require("notify").setup({
+    max_width = 80,
+    max_height = 5,
+})
 vim.notify = require("notify")
 
 -- formatter.nvim config

@@ -34,6 +34,8 @@ vmap("<space>y", '"+y')
 nmap("<space>y", '"+y')
 nmap("<space>p", '"+p')
 nmap("<space>P", '"+P')
+vmap("<space>p", '"+p')
+vmap("<space>P", '"+P')
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
