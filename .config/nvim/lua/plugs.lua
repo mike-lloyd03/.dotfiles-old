@@ -34,7 +34,7 @@ require("packer").startup(function(use)
     use("rcarriga/nvim-notify")
     use("windwp/nvim-ts-autotag")
     use("tpope/vim-commentary")
-    use("tpope/vim-surround")
+    -- use("tpope/vim-surround")
     use("tpope/vim-fugitive")
     use("navarasu/onedark.nvim")
     use("preservim/vim-lexical")
@@ -42,6 +42,7 @@ require("packer").startup(function(use)
     use("junegunn/goyo.vim")
     use("chrisbra/csv.vim")
     use("mhartington/formatter.nvim")
+    use("kylechui/nvim-surround")
 end)
 
 require("theme")
@@ -129,8 +130,26 @@ require("which-key").setup({
             enabled = false,
         },
     },
+    window = {
+        border = "none", -- none, single, double, shadow
+        position = "bottom", -- bottom, top
+        -- margin = { 0, 100, 1, 0 }, -- extra window margin [top, right, bottom, left]
+        -- padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
+    },
+    icons = {
+        breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+        separator = "", -- symbol used between a key and it's label
+        group = "+", -- symbol prepended to a group
+    },
     layout = {
-        align = "center",
+        height = { min = 20, max = 50 }, -- min and max height of the columns
+        width = { min = 5, max = 50 }, -- min and max width of the columns
+        spacing = 1, -- spacing between columns
+        align = "right", -- align columns left, center or right
+    },
+    popup_mappings = {
+        scroll_down = "<c-j>", -- binding to scroll down inside the popup
+        scroll_up = "<c-k>", -- binding to scroll up inside the popup
     },
 })
 
@@ -180,6 +199,7 @@ function Rustfmt()
 end
 
 require("formatter").setup({
+    logging = false,
     filetype = {
         css = require("formatter.defaults.prettier"),
         go = require("formatter.filetypes.go").gofmt,
@@ -195,5 +215,21 @@ require("formatter").setup({
         toml = require("formatter.filetypes.toml").taplo,
         yaml = require("formatter.defaults.prettier"),
         zsh = { Shfmt },
+    },
+})
+
+-- nvim.surround setup
+require("nvim-surround").setup({
+    keymaps = {
+        insert = "<C-g>s",
+        insert_line = "<C-g>S",
+        normal = "ms",
+        normal_cur = "mss",
+        normal_line = "mS",
+        normal_cur_line = "mSS",
+        visual = "ms",
+        visual_line = "mS",
+        delete = "md",
+        change = "mr",
     },
 })

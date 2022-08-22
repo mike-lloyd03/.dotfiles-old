@@ -36,6 +36,7 @@ nmap("<space>p", '"+p')
 nmap("<space>P", '"+P')
 vmap("<space>p", '"+p')
 vmap("<space>P", '"+P')
+nmap("mm", "%")
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
@@ -51,6 +52,7 @@ nmap("<space>z", "<CMD>lua require('telescope.builtin').spell_suggest{}<CR>")
 nmap("gd", "<CMD>lua require('telescope.builtin').lsp_definitions{}<CR>")
 nmap("gD", "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsplit'}<CR>")
 nmap("<leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
+nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>")
 
 function search_dotfiles()
     require("telescope.builtin").find_files({
@@ -150,5 +152,11 @@ wk.register({
         sv = { "Source vimrc" },
         vr = { "Search dotfiles" },
         ts = { "onedark theme toggle" },
+    },
+    ["m"] = {
+        m = { "Goto matching bracket" },
+        s = { "Surround add" },
+        r = { "Surround replace" },
+        d = { "Surround delete" },
     },
 })
