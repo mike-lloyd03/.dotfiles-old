@@ -1,6 +1,9 @@
 require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
-    use("neovim/nvim-lspconfig")
+    use({
+        "neovim/nvim-lspconfig",
+        commit = "607ff48b970b89c3e4e3825b88d9cfd05b7aaea5",
+    })
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-path")
@@ -34,7 +37,6 @@ require("packer").startup(function(use)
     use("rcarriga/nvim-notify")
     use("windwp/nvim-ts-autotag")
     use("tpope/vim-commentary")
-    -- use("tpope/vim-surround")
     use("tpope/vim-fugitive")
     use("navarasu/onedark.nvim")
     use("preservim/vim-lexical")

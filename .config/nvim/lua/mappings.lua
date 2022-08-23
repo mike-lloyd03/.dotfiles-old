@@ -13,6 +13,9 @@ local function vmap(shortcut, command, opts)
     vim.api.nvim_set_keymap("v", shortcut, command, opts)
 end
 
+-- This always screws me up
+nmap("q:", "")
+
 -- Control j and h to scroll
 nmap("<C-j>", "<C-e>")
 nmap("<C-k>", "<C-y>")
