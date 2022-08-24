@@ -46,6 +46,7 @@ require("packer").startup(function(use)
     use("mhartington/formatter.nvim")
     use("kylechui/nvim-surround")
     use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
+    use("simrat39/rust-tools.nvim")
 end)
 
 require("theme")
@@ -239,3 +240,17 @@ require("nvim-surround").setup({
 
 -- trouble.nvim setup
 require("trouble").setup({})
+
+-- rust-tools setup
+local rt = require("rust-tools")
+
+rt.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+        end,
+    },
+})
