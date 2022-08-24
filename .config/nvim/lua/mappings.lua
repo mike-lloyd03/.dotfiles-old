@@ -110,6 +110,14 @@ nmap("<C-n>", "<CMD>NvimTreeToggle<CR>")
 nmap("]c", "&diff ? ']c' : '<CMD>Gitsigns next_hunk<CR>'", { expr = true })
 nmap("[c", "&diff ? '[c' : '<CMD>Gitsigns prev_hunk<CR>'", { expr = true })
 
+-- Trouble
+nmap("<space>t", "<cmd>TroubleToggle<cr>")
+nmap("<space>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>")
+nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>")
+nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>")
+nmap("<space>tl", "<cmd>TroubleToggle loclist<cr>")
+nmap("gR", "<cmd>TroubleToggle lsp_references<cr>")
+
 -- Register which-key names
 local wk = require("which-key")
 wk.register({

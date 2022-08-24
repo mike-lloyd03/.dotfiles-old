@@ -45,6 +45,7 @@ require("packer").startup(function(use)
     use("chrisbra/csv.vim")
     use("mhartington/formatter.nvim")
     use("kylechui/nvim-surround")
+    use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 end)
 
 require("theme")
@@ -235,3 +236,6 @@ require("nvim-surround").setup({
         change = "mr",
     },
 })
+
+-- trouble.nvim setup
+require("trouble").setup({})
