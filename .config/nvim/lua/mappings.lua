@@ -40,6 +40,7 @@ nmap("<space>P", '"+P')
 vmap("<space>p", '"+p')
 vmap("<space>P", '"+P')
 nmap("mm", "%")
+vmap("mm", "%")
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")
