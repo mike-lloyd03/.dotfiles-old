@@ -146,7 +146,7 @@ require("which-key").setup({
         group = "+", -- symbol prepended to a group
     },
     layout = {
-        height = { min = 20, max = 50 }, -- min and max height of the columns
+        height = { min = 1, max = 50 }, -- min and max height of the columns
         width = { min = 5, max = 50 }, -- min and max width of the columns
         spacing = 1, -- spacing between columns
         align = "right", -- align columns left, center or right
@@ -252,5 +252,69 @@ rt.setup({
             -- Code action groups
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
         end,
+    },
+})
+
+-- vsnip setup
+vim.g.vsnip_snippet_dir = "~/.config/nvim/vsnip"
+
+-- CMP Config
+local feedkey = function(key, mode)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
+local cmp = require("cmp")
+local lspkind = require("lspkind")
+cmp.setup({
+    -- Enable LSP snippets
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
+    mapping = {
+        -- ["<Tab>"] = cmp.mapping.select_next_item(),
+        -- ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
+        ["<C-j>"] = cmp.mapping.scroll_docs(4),
+        ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.close(),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = false,
+        }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if vim.fn["vsnip#jumpable"](1) == 1 then
+                feedkey("<Plug>(vsnip-jump-next)", "")
+            elseif cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function()
+            if vim.fn["vsnip#jumpable"](-1) == 1 then
+                feedkey("<Plug>(vsnip-jump-prev)", "")
+            elseif cmp.visible() then
+                cmp.select_prev_item()
+            end
+        end, { "i", "s" }),
+    },
+
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        }),
+    },
+
+    -- Installed sources
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "vsnip" },
+        { name = "path" },
+        { name = "buffer" },
     },
 })

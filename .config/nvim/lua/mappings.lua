@@ -24,6 +24,12 @@ imap("<C-k>", "<C-y>")
 vmap("<C-j>", "<C-e>")
 vmap("<C-k>", "<C-y>")
 
+-- Better indentation
+vmap(".", ">gv")
+vmap(",", "<gv")
+nmap(".", ">>")
+nmap(",", "<<")
+
 -- Helix inspiration
 nmap("gh", "0")
 nmap("gl", "$")
@@ -118,6 +124,17 @@ nmap("<space>td", "<cmd>TroubleToggle document_diagnostics<cr>")
 nmap("<space>tq", "<cmd>TroubleToggle quickfix<cr>")
 nmap("<space>tl", "<cmd>TroubleToggle loclist<cr>")
 nmap("gR", "<cmd>TroubleToggle lsp_references<cr>")
+
+-- Format
+nmap("<C-f>", "<CMD>Format<CR>")
+
+-- vsnip
+vim.cmd([[
+    imap <expr> <TAB> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'
+    smap <expr> <TAB> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'
+    imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+    smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+]])
 
 -- Register which-key names
 local wk = require("which-key")
