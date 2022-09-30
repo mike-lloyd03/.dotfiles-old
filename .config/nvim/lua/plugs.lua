@@ -47,6 +47,8 @@ require("packer").startup(function(use)
     use("kylechui/nvim-surround")
     use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
     use("simrat39/rust-tools.nvim")
+    use("ron-rs/ron.vim")
+    use("karb94/neoscroll.nvim")
 end)
 
 require("theme")
@@ -210,6 +212,7 @@ require("formatter").setup({
         html = require("formatter.defaults.prettier"),
         json = require("formatter.defaults.prettier"),
         lua = { Stylua },
+        markdown = require("formatter.defaults.prettier"),
         python = {
             require("formatter.filetypes.python").black,
             require("formatter.filetypes.python").isort,
@@ -258,7 +261,7 @@ rt.setup({
 -- vsnip setup
 vim.g.vsnip_snippet_dir = "~/.config/nvim/vsnip"
 
--- CMP Config
+-- CMP setup
 local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
@@ -273,8 +276,6 @@ cmp.setup({
         end,
     },
     mapping = {
-        -- ["<Tab>"] = cmp.mapping.select_next_item(),
-        -- ["<S-Tab>"] = cmp.mapping.select_prev_item(),
         ["<Down>"] = cmp.mapping.select_next_item(),
         ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.scroll_docs(4),
@@ -318,3 +319,15 @@ cmp.setup({
         { name = "buffer" },
     },
 })
+
+-- neoscroll setup
+require("neoscroll").setup({
+    easing_function = "cubic",
+    mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+    cursor_scrolls_alone = false,
+})
+
+local t = {}
+t["<C-k>"] = { "scroll", { "-10", "true", "250" } }
+t["<C-j>"] = { "scroll", { "10", "true", "250" } }
+require("neoscroll.config").set_mappings(t)

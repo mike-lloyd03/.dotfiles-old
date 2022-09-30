@@ -24,21 +24,6 @@ require("lspconfig").gopls.setup({})
 require("lspconfig").pyright.setup({})
 
 ----------------------------
--- Rust Config
-----------------------------
--- require("lspconfig").rust_analyzer.setup({
---     settings = {
---         ["rust-analyzer"] = {
---             checkOnSave = {
---                 command = "clippy",
---                 allFeatures = true,
---                 allTargets = true,
---             },
---         },
---     },
--- })
-
-----------------------------
 -- Lua Config
 ----------------------------
 require("lspconfig").sumneko_lua.setup({

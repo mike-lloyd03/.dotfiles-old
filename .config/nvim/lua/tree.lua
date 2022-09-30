@@ -14,7 +14,7 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = false,
-        custom = { ".git", '__pycache__', '.venv', '.pytest_cache' },
+        custom = { ".git", "__pycache__", ".venv", ".pytest_cache" },
         exclude = {},
     },
     git = {
@@ -24,7 +24,6 @@ require("nvim-tree").setup({
     },
     view = {
         width = 35,
-        height = 35,
         hide_root_folder = false,
         side = "left",
         mappings = {
@@ -68,7 +67,7 @@ require("nvim-tree").setup({
                     symlink = "",
                     symlink_open = "",
                 },
-            }
+            },
         },
-    }
+    },
 })

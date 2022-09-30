@@ -17,12 +17,12 @@ end
 nmap("q:", "")
 
 -- Control j and h to scroll
-nmap("<C-j>", "<C-e>")
-nmap("<C-k>", "<C-y>")
-imap("<C-j>", "<C-e>")
-imap("<C-k>", "<C-y>")
-vmap("<C-j>", "<C-e>")
-vmap("<C-k>", "<C-y>")
+-- nmap("<C-j>", "<C-e>")
+-- nmap("<C-k>", "<C-y>")
+-- imap("<C-j>", "<C-e>")
+-- imap("<C-k>", "<C-y>")
+-- vmap("<C-j>", "<C-e>")
+-- vmap("<C-k>", "<C-y>")
 
 -- Better indentation
 vmap(".", ">gv")
