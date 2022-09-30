@@ -67,3 +67,9 @@ compdef '_values desc lsp mappings plugs statusline theme tree' vimrc
 function fixdate() {
     sudo date $(ssh mac date '+%m%d%H%M%Y.%S')
 }
+
+function cdm() {
+    mkdir -p $1
+    cd $1
+}
+
