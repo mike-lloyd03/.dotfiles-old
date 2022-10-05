@@ -14,11 +14,12 @@ alias zshrc='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias svenv='source .venv/bin/activate'
 alias dotfiles="cd $HOME/.dotfiles"
-alias hx=helix
+command -v helix &>/dev/null && alias hx=helix
 command -v docker &>/dev/null && alias dcomp="docker compose"
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v exa &>/dev/null && alias ls="exa"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
+command -v nvimpager &>/dev/null && alias vess='nvimpager -p'
 
 if command -v nvim &>/dev/null; then
     alias vim='nvim'
