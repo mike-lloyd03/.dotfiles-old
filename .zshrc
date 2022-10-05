@@ -19,7 +19,12 @@ command -v docker &>/dev/null && alias dcomp="docker compose"
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v exa &>/dev/null && alias ls="exa"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
-command -v nvimpager &>/dev/null && alias vess='nvimpager -p'
+
+if command -v nvimpager &>/dev/null; then
+    alias less='nvimpager -p'
+    alias lesss='/usr/bin/less'
+    export PAGER='nvimpager -p'
+fi
 
 if command -v nvim &>/dev/null; then
     alias vim='nvim'
