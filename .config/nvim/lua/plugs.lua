@@ -140,8 +140,6 @@ require("which-key").setup({
     window = {
         border = "none", -- none, single, double, shadow
         position = "bottom", -- bottom, top
-        -- margin = { 0, 100, 1, 0 }, -- extra window margin [top, right, bottom, left]
-        -- padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
     },
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -158,6 +156,7 @@ require("which-key").setup({
         scroll_down = "<c-j>", -- binding to scroll down inside the popup
         scroll_up = "<c-k>", -- binding to scroll up inside the popup
     },
+    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
 })
 
 -- nvim-autopairs config

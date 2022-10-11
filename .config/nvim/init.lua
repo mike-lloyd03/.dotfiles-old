@@ -36,7 +36,7 @@ vim.opt.cursorline = true
 -- Smart case when searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
---
+
 -- Clipboard handling
 if vim.fn.hostname() == "dev" then
 	vim.g.clipboard = {
@@ -49,6 +49,9 @@ if vim.fn.hostname() == "dev" then
 		},
 	}
 end
+
+-- Disable mouse
+vim.opt.mouse = ""
 
 -----------
 -- Auto Commands
