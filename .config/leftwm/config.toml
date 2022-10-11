@@ -72,6 +72,7 @@ keybind = [
     { modifier = ["Shift"], key = "F12", command = "Execute", value = "scripts/resync_a2dp" },
     { modifier = ["Shift"], key = "F11", command = "Execute", value = "scripts/resync_hfp" },
     { modifier = ["Alt"], key = "t", command = "ToggleScratchPad", value = "Alacritty" },
+    { modifier = ["Control", "Alt"], key = "Escape", command = "Execute", value = "xkill" },
 ]
 
 window_rules = [

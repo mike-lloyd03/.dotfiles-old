@@ -49,6 +49,7 @@ require("packer").startup(function(use)
     use("simrat39/rust-tools.nvim")
     use("ron-rs/ron.vim")
     use("karb94/neoscroll.nvim")
+    use("lukas-reineke/indent-blankline.nvim")
 end)
 
 require("theme")
@@ -331,3 +332,12 @@ local t = {}
 t["<C-k>"] = { "scroll", { "-5", "false", "250" } }
 t["<C-j>"] = { "scroll", { "5", "false", "250" } }
 require("neoscroll.config").set_mappings(t)
+
+-- indent-blankline setup
+-- vim.cmd([[highlight IndentBlanklineContextChar guifg=#61afef gui=nocombine]])
+-- require("indent_blankline").setup({
+--     space_char_blankline = " ",
+--     show_current_context = true,
+--     show_current_context_start = false,
+--     use_treesitter_scope = true,
+-- })
