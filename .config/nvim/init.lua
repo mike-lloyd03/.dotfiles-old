@@ -50,6 +50,14 @@ if vim.fn.hostname() == "dev" then
 	}
 end
 
+-- Neovide settings
+if vim.fn.has('macunix') == 1 then
+    vim.opt.guifont = "MesloLGM Nerd Font Mono"
+else
+    vim.opt.guifont = "MesloLGS NF"
+end
+vim.g.neovide_cursor_animation_length=0
+
 -- Disable mouse
 vim.opt.mouse = ""
 
