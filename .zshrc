@@ -9,6 +9,11 @@ export ZSH="$HOME/.dotfiles/ohmyzsh"
 source "$ZSH/oh-my-zsh.sh"
 source $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+if [ -d /usr/share/skim ]; then
+    source /usr/share/skim/key-bindings.zsh
+    source /usr/share/skim/completion.zsh
+fi
+
 # Aliases
 alias zshrc='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
@@ -23,7 +28,7 @@ command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 if command -v nvimpager &>/dev/null; then
     alias less='nvimpager -p'
     alias lesss='/usr/bin/less'
-    export PAGER='nvimpager -p'
+    export PAGER='nvimpager'
 fi
 
 if command -v nvim &>/dev/null; then
