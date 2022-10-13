@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nvimpager -p <&0

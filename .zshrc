@@ -28,7 +28,7 @@ command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 if command -v nvimpager &>/dev/null; then
     alias less='nvimpager -p'
     alias lesss='/usr/bin/less'
-    export PAGER='nvimpager'
+    export PAGER="$HOME/.dotfiles/scripts/nvimpagerp"
 fi
 
 if command -v nvim &>/dev/null; then

@@ -24,7 +24,7 @@ require("onedark").setup({
         -- Include = { fg = "$blue" },
         -- NormalFloat = { fg = "$fg", bg = "$bg2" },
         -- FloatBorder = { fg = "$grey", bg = "$bg0" },
-        -- MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
+        MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
         -- Pmenu = { fg = "$fg", bg = "$bg2" },
         -- PmenuSel = { fg = "$bg0", bg = "$bg_blue" },
         -- Search = { fg = "$bg0", bg = "$light_grey" },

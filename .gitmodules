@@ -19,7 +19,7 @@
 
 [submodule "tmux-power"]
 	path = .tmux/plugins/tmux-power/
-	url = git@github.com:wfxr/tmux-power.git
+	url = https://github.com/wfxr/tmux-power.git
 
 ###############
 # zsh plugs
