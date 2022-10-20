@@ -91,6 +91,7 @@ if command -v kubectl &>/dev/null; then
     alias kgn="kubectl get nodes"
     alias kgd="kubectl get deployments"
     alias kgj="kubectl get jobs"
+    alias kgcj="kubectl get cronjobs"
     alias kd="kubectl describe"
     alias kdd="kubectl describe deployments"
     alias kdp="kubectl describe pods"
