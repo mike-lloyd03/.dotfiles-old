@@ -73,3 +73,21 @@ function cdm() {
     cd $1
 }
 
+function unzipd() {
+    ZIP_FILE="$1"
+    FILE_NAME="$(basename --suffix .zip $ZIP_FILE)"
+
+    if [ "${2: -1}" = "/" ]; then
+        OUT_DIR="$2/$FILE_NAME"
+    else
+        OUT_DIR="$2"
+    fi
+
+    if [ ! -d "$OUT_DIR" ]; then
+        mkdir "$OUT_DIR"
+    fi
+
+    echo $OUT_DIR $ZIP_FILE
+
+    unzip -d "$OUT_DIR" "$ZIP_FILE"
+}

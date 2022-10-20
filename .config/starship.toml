@@ -103,7 +103,17 @@ format = "[@$hostname]($style):"
 style = "bold #5192df"
 
 [java]
+format = "| [${symbol}(${version} )]($style)"
 symbol = " "
+detect_extensions = ["java", "class", "jar", "cljs", "cljc"]
+detect_files = [
+  "pom.xml",
+  "build.sbt",
+  ".java-version",
+  "deps.edn",
+  "project.clj",
+  "build.boot",
+]
 
 [kubernetes]
 disabled = false
@@ -157,8 +167,6 @@ style_user = "bold #5192df"
 [vagrant]
 format = "| [$symbol($version )]($style) "
 
-[custom.vim]
-files = [".session.vim"]
-symbol = ""
-style = "green"
-format = "| [$symbol]($style) "
+[kotlin]
+format = "| [$symbol($version )]($style)"
+symbol = " "
