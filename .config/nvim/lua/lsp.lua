@@ -22,6 +22,7 @@ end
 require("lspconfig").bashls.setup({})
 require("lspconfig").gopls.setup({})
 require("lspconfig").pyright.setup({})
+require("lspconfig").kotlin_language_server.setup({})
 
 ----------------------------
 -- Lua Config

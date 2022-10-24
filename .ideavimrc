@@ -56,6 +56,6 @@ nmap ]g <Action>(GotoNextError)
 nmap <space>r  <Action>(RenameElement)
 
 " Telescopeish
-map gg <Action>(FindInPath)
-map gf <Action>(GotoFile)
+map <space>g <Action>(FindInPath)
+map <space>f <Action>(GotoFile)
 map <space>a <Action>(ShowIntentionActions)
