@@ -42,14 +42,15 @@ require("packer").startup(function(use)
     use("preservim/vim-lexical")
     use("dhruvasagar/vim-zoom")
     use("junegunn/goyo.vim")
-    use({ "chrisbra/csv.vim", ft = { "csv" } })
+    use("chrisbra/csv.vim")
     use("mhartington/formatter.nvim")
     use("kylechui/nvim-surround")
     use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
-    use({ "simrat39/rust-tools.nvim", ft = { "rs" } })
-    use({ "ron-rs/ron.vim", ft = { "ron" } })
+    use("simrat39/rust-tools.nvim")
+    use("ron-rs/ron.vim")
     use("karb94/neoscroll.nvim")
     use("lukas-reineke/indent-blankline.nvim")
+    use("ggandor/leap.nvim")
 end)
 
 require("theme")
@@ -333,10 +334,16 @@ t["<C-j>"] = { "scroll", { "5", "false", "250" } }
 require("neoscroll.config").set_mappings(t)
 
 -- indent-blankline setup
--- vim.cmd([[highlight IndentBlanklineContextChar guifg=#61afef gui=nocombine]])
 require("indent_blankline").setup({
     space_char_blankline = " ",
-    -- show_current_context = true,
-    -- show_current_context_start = false,
     use_treesitter_scope = true,
 })
+
+-- leap setup
+require("leap").add_default_mappings()
+-- require("leap").opts.highlight_unlabeled_phase_one_targets = true
+require("leap").opts.special_keys = {
+    next_target = { "<tab>" },
+    prev_target = { "<S-tab>" },
+}
+vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "SpellBad" })
