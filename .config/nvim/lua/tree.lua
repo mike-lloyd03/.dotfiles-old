@@ -44,6 +44,7 @@ require("nvim-tree").setup({
         group_empty = true,
         highlight_opened_files = "name",
         icons = {
+            git_placement = "after",
             padding = " ",
             glyphs = {
                 default = "",
