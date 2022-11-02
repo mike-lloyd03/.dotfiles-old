@@ -554,6 +554,35 @@
               "modifiers": ["left_control"]
             }
           ]
+        },
+        {
+          "description": "C-d",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.apple\\.Terminal$",
+                "^org\\.vim\\.MacVim$",
+                "^io\\.alacritty$",
+                "^com\\.neovide\\.neovide$",
+                "^com\\.jetbrains\\.intellij\\.ce$"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": ["left_command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "d",
+              "modifiers": ["left_control"]
+            }
+          ]
         }
       ]
     }
