@@ -14,6 +14,7 @@ local function vmap(shortcut, command, opts)
 end
 
 -- This always screws me up
+nmap("<C-R>", "q:")
 nmap("q:", "")
 
 -- Control j and h to scroll

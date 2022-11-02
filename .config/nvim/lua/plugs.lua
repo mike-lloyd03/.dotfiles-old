@@ -346,4 +346,5 @@ require("leap").opts.special_keys = {
     next_target = { "<tab>" },
     prev_target = { "<S-tab>" },
 }
-vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "SpellBad" })
+-- get highlight groups with :so $VIMRUNTIME/syntax/hitest.vim
+vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "debugBreakpoint" })
