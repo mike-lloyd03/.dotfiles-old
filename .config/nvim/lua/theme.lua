@@ -19,16 +19,12 @@ require("onedark").setup({
     toggle_style_key = "<leader>ts",
     -- toggle_style_list = { "dark", "light" },
     highlights = {
-        -- Function = { fg = "$blue" },
-        -- Keyword = { fg = "$red" },
-        -- Include = { fg = "$blue" },
         -- NormalFloat = { fg = "$fg", bg = "$bg2" },
         -- FloatBorder = { fg = "$grey", bg = "$bg0" },
         MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
         -- Pmenu = { fg = "$fg", bg = "$bg2" },
         -- PmenuSel = { fg = "$bg0", bg = "$bg_blue" },
         -- Search = { fg = "$bg0", bg = "$light_grey" },
-        -- Operator = { fg = "$purple" },
 
         TSKeyword = { fg = "$red" },
         TSInclude = { fg = "$red" },
@@ -49,11 +45,10 @@ require("onedark").setup({
         DiagnosticInfo = { fg = "$blue" },
         DiagnosticWarn = { fg = "$yellow" },
     },
-    -- diagnostics = {
-    --     darker = true, -- darker colors for diagnostic
-    --     undercurl = true, -- use undercurl instead of underline for diagnostics
-    --     background = true, -- use background color for virtual text
-    -- },
+    diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true, -- use undercurl instead of underline for diagnostics
+        -- background = true, -- use background color for virtual text
+    },
 })
 require("onedark").load()
--- vim.opt.termguicolors = true
