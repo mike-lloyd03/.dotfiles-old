@@ -94,9 +94,9 @@ require("telescope").setup({
 })
 
 -- Treesitter config
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 100
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 100
 
 require("nvim-treesitter.configs").setup({
     highlight = {
@@ -249,6 +249,15 @@ require("trouble").setup({})
 local rt = require("rust-tools")
 
 rt.setup({
+    tools = {
+        inlay_hints = {
+            only_current_line = true,
+            show_parameter_hints = false,
+            -- highlight = "VertSplit",
+            -- highlight = "lualine_a_mode_inactive",
+            highlight = "DevIconDoc",
+        },
+    },
     server = {
         on_attach = function(_, bufnr)
             -- Hover actions
@@ -256,6 +265,13 @@ rt.setup({
             -- Code action groups
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
         end,
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = {
+                    command = "clippy",
+                },
+            },
+        },
     },
 })
 

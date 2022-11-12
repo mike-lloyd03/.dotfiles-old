@@ -58,5 +58,20 @@ require("lualine").setup({
         lualine_y = {},
         lualine_z = {},
     },
-    tabline = {},
+    tabline = {
+        lualine_a = {
+            {
+                "tabs",
+                mode = 1,
+                tabs_color = {
+                    active = "lualine_a_insert", -- Color for active tab.
+                    inactive = "lualine_b_normal", -- Color for inactive tab.
+                },
+            },
+        },
+    },
 })
+
+-- Sets tabline to only show if more than one tab is open
+-- Must be after lualine setup
+vim.cmd("set showtabline=1")

@@ -129,6 +129,9 @@ nmap("gR", "<cmd>TroubleToggle lsp_references<cr>")
 -- Format
 nmap("<C-f>", "<CMD>Format<CR>")
 
+-- Lualine
+nmap("<C-w>,", ":LualineRenameTab ")
+
 -- vsnip
 vim.cmd([[
     imap <expr> <TAB> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'
