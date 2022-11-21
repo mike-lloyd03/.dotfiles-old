@@ -34,7 +34,7 @@ require("packer").startup(function(use)
     use("folke/which-key.nvim")
     use("windwp/nvim-autopairs")
     use("stevearc/dressing.nvim")
-    use("rcarriga/nvim-notify")
+    -- use("rcarriga/nvim-notify")
     use("windwp/nvim-ts-autotag")
     use("tpope/vim-commentary")
     use("tpope/vim-fugitive")
@@ -51,6 +51,7 @@ require("packer").startup(function(use)
     use("karb94/neoscroll.nvim")
     use("lukas-reineke/indent-blankline.nvim")
     use("ggandor/leap.nvim")
+    use("leafOfTree/vim-svelte-plugin")
 end)
 
 require("theme")
@@ -164,11 +165,11 @@ require("which-key").setup({
 require("nvim-autopairs").setup({})
 
 -- nvim-notify config
-require("notify").setup({
-    max_width = 80,
-    max_height = 5,
-})
-vim.notify = require("notify")
+-- require("notify").setup({
+--     max_width = 80,
+--     max_height = 5,
+-- })
+-- vim.notify = require("notify")
 
 -- formatter.nvim config
 function Shfmt()
@@ -211,6 +212,7 @@ require("formatter").setup({
         css = require("formatter.defaults.prettier"),
         go = require("formatter.filetypes.go").gofmt,
         html = require("formatter.defaults.prettier"),
+        javascript = require("formatter.defaults.prettier"),
         json = require("formatter.defaults.prettier"),
         lua = { Stylua },
         markdown = require("formatter.defaults.prettier"),
@@ -220,6 +222,8 @@ require("formatter").setup({
         },
         rust = { Rustfmt },
         sh = { Shfmt },
+        svelte = require("formatter.defaults.prettier"),
+        typescript = require("formatter.defaults.prettier"),
         toml = require("formatter.filetypes.toml").taplo,
         yaml = require("formatter.defaults.prettier"),
         zsh = { Shfmt },
