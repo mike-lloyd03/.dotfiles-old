@@ -52,6 +52,7 @@ require("packer").startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
     use("ggandor/leap.nvim")
     use("leafOfTree/vim-svelte-plugin")
+    use("LhKipp/nvim-nu")
 end)
 
 require("theme")
@@ -368,3 +369,6 @@ require("leap").opts.special_keys = {
 }
 -- get highlight groups with :so $VIMRUNTIME/syntax/hitest.vim
 vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "debugBreakpoint" })
+
+-- nvim-nu setup
+require("nu").setup({})

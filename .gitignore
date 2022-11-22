@@ -13,3 +13,4 @@ doc/tags
 .DS_Store
 venv-nvim
 .config/nvim/plugin
+.config/nushell/history.txt

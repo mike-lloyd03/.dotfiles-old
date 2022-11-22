@@ -69,9 +69,11 @@ format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
 disabled = true
 
 [character]
-success_symbol = '[\[I\]](bold green) [▶](bold green)'
-error_symbol = '[\[I\]](bold green) [▶](bold red)'
-vicmd_symbol = '[\[N\]](bold red) [▶](bold green)'
+# success_symbol = '[\[I\]](bold green) [▶](bold green)'
+# error_symbol = '[\[I\]](bold green) [▶](bold red)'
+# vicmd_symbol = '[\[N\]](bold red) [▶](bold green)'
+success_symbol = '[ ▶](bold green)'
+error_symbol = '[ ▶](bold red)'
 
 [cmd_duration]
 disabled = true
