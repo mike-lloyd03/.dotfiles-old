@@ -2,6 +2,11 @@
 
 let-env STARSHIP_SHELL = "nu"
 let-env EDITOR = "nvim"
+let-env PAGER = if not (which nvimpager | is-empty) {
+    "nvimpager"
+} else {
+    "less"
+}
 
 let-env PATH = ($env.PATH | prepend '~/.cargo/bin')
 let-env PATH = ($env.PATH | prepend '~/go/bin')

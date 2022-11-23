@@ -10,11 +10,9 @@ module functions {
         if $file == null {
             cd $nvim_dir
             nvim $"([$nvim_dir, 'init.lua'] | path join)"
-            cd -
         } else if ($file_path | path exists) {
             cd $nvim_dir
             nvim $file_path
-            cd -
         } else {
             echo $"File '($file).lua' not found"
         }
@@ -31,11 +29,9 @@ module functions {
         if $file == null {
             cd $nu_dir
             nvim $"([$nu_dir, 'config.nu'] | path join)"
-            cd -
         } else if ($file_path | path exists) {
             cd $nu_dir
             nvim $file_path
-            cd -
         } else {
             echo $"File '($file).nu' not found"
         }
@@ -50,12 +46,32 @@ module functions {
             cargo help $remainder | run-external $env.PAGER
         } else if $primary == "go" {
             go help $remainder | run-external $env.PAGER
-        # } else if (man -w $full | null; $env.LAST_EXIT_CODE == 0) {
-        #     man $full
+        } else if (man -w $full | null; $env.LAST_EXIT_CODE == 0) {
+            man $full
         } else if (run-external $full "--help" | null; $env.LAST_EXIT_CODE == 0) {
             run-external $full "--help" | run-external $env.PAGER
         } else {
             echo "no man page or --help option available for '$cmd'"
         }
+    }
+
+    export def-env cdm [dir: path] {
+        mkdir $dir
+        cd $dir
+    }
+
+    export def unzipd [zip_file: path, dest_dir: path] {
+        let file_name = ($zip_file | path basename | str replace ".zip" "")
+        let out_dir = if ($"($dest_dir)" | str ends-with "/") {
+            ($dest_dir | path join $file_name)
+        } else {
+            $dest_dir
+        }
+
+        if not ($out_dir | path exists) {
+            mkdir $out_dir
+        }
+
+        unzip -d $out_dir $zip_file
     }
 }

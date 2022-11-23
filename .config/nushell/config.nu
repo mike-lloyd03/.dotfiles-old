@@ -7,24 +7,13 @@ source ~/.config/nushell/functions.nu
 use completions *
 use functions *
 
-if (uname | str trim) == "Linux" {
-    alias xcopy = xclip -rmlastnl -in -selection clipboard
-    alias xpaste = xclip -out -selection clipboard
-}
-
-if (which nvimpager | get arg | ignore; $env.LAST_EXIT_CODE == 0) {
-    alias less = nvimpager -p
-    alias lesss = /usr/bin/less
-    let-env PAGER = ~/.dotfiles/scripts/nvimpagerp
-}
-
 # External completer example
 let carapace_completer = {|spans| 
     carapace $spans.0 nushell $spans | from json
 }
 
 let-env config = {
-  external_completer: carapace_completer
+  external_completer: $carapace_completer
   filesize_metric: false
   table_mode: rounded
   use_ls_colors: true

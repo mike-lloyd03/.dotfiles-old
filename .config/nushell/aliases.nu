@@ -4,6 +4,16 @@ alias dotfiles = cd ~/.dotfiles
 alias dcomp = docker compose
 alias jc = sudo journalctl -xe
 
+# if (uname | str trim) == "Linux" {
+    alias xcopy = xclip -rmlastnl -in -selection clipboard
+    alias xpaste = xclip -out -selection clipboard
+# }
+
+# if not (which nvimpager | is-empty) {
+    alias less = nvimpager -p
+    alias lesss = /usr/bin/less
+# }
+
 # git
 alias g = git
 alias gundo = git reset --soft HEAD~1
