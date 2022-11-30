@@ -1,4 +1,5 @@
 alias vim = nvim
+alias svim = sudo nvim
 alias sn = source ~/.config/nushell/config.nu
 alias dotfiles = cd ~/.dotfiles
 alias dcomp = docker compose
