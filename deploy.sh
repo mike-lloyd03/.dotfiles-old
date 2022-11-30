@@ -68,7 +68,7 @@ done
 println "Installing nvim plugs"
 plug_path="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 if [ ! -e $plug_path ]; then
-  println "vim-plug not intalled. Installing" warn
+  println "Packer not intalled. Installing" warn
   git clone --depth 1 https://github.com/wbthomason/packer.nvim $plug_path
 fi
 nvim -c "PackerSync | qa!"
