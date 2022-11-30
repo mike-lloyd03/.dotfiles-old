@@ -13,37 +13,60 @@ let carapace_completer = {|spans|
 }
 
 let-env config = {
-  external_completer: $carapace_completer
-  filesize_metric: false
-  table_mode: rounded
-  use_ls_colors: true
-  rm_always_trash: false
   color_config: $dark_theme
   use_grid_icons: true
   footer_mode: "25"
-  quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
-  partial_completions: true  # set this to false to prevent partial filling of the prompt
-  completion_algorithm: "prefix"  # prefix, fuzzy
   float_precision: 2
   use_ansi_coloring: true
-  filesize_format: "auto"
   edit_mode: vi
-  max_history_size: 10000
-  sync_history_on_enter: true
-  history_file_format: "plaintext"
   shell_integration: true
-  table_index_mode: auto
-  cd_with_abbreviations: false
-  case_sensitive_completions: false
-  enable_external_completion: true
-  max_external_completion_results: 100
-  table_trim: {
-    methodology: wrapping,
-    wrapping_try_keep_words: true,
-  }
   show_banner: false
-  show_clickable_links_in_ls: true
   render_right_prompt_on_last_line: true
+
+  ls: {
+      use_ls_colors: true
+      clickable_links: true
+  }
+
+  rm: {
+      always_trash: false
+  }
+
+  cd: {
+      abbreviations: false
+  }
+
+  history: {
+      max_size: 10000
+      sync_on_enter: true
+      file_format: "plaintext"
+  }
+
+  filesize: {
+      metric: false
+      format: "auto"
+  }
+
+  completions: {
+      case_sensitive: false
+      quick: true  # set this to false to prevent auto-selecting completions when only one remains
+      partial: true  # set this to false to prevent partial filling of the prompt
+      algorithm: "prefix"  # prefix, fuzzy
+      external: {
+          enable: true
+          completer: $carapace_completer
+          max_results: 100
+      }
+  }
+
+  table: {
+      mode: rounded
+      index_mode: auto
+      trim: {
+        methodology: wrapping,
+        wrapping_try_keep_words: true,
+      }
+  }
 
   hooks: {
     pre_prompt: [{
