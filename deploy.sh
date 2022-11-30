@@ -29,7 +29,7 @@ function println() {
 
 script_location="$(cd "$(dirname "$0")" && pwd -P)"
 
-dotfiles=(.tmux .tmux.conf .zshrc .config/nvim .config/starship.toml .gitignore-global)
+dotfiles=(.tmux .tmux.conf .config/nushell .config/nvim .config/starship.toml .gitignore-global)
 linux_dotfiles=(.config/xkbcomp)
 mac_dotfiles=(.config/karabiner)
 
