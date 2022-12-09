@@ -1,10 +1,10 @@
 # Nushell Config File
 source ~/.config/nushell/aliases.nu
 source ~/.config/nushell/themes.nu
-source ~/.config/nushell/completions.nu
+# source ~/.config/nushell/completions.nu
 source ~/.config/nushell/functions.nu
 
-use completions *
+# use completions *
 use functions *
 
 # External completer example

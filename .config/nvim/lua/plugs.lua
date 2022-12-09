@@ -36,7 +36,6 @@ require("packer").startup(function(use)
     use("stevearc/dressing.nvim")
     -- use("rcarriga/nvim-notify")
     use("windwp/nvim-ts-autotag")
-    use("tpope/vim-commentary")
     use("tpope/vim-fugitive")
     use("navarasu/onedark.nvim")
     use("preservim/vim-lexical")
@@ -53,6 +52,7 @@ require("packer").startup(function(use)
     use("ggandor/leap.nvim")
     use("leafOfTree/vim-svelte-plugin")
     use("LhKipp/nvim-nu")
+    use({ "JoosepAlviste/nvim-ts-context-commentstring", requires = "terrortylor/nvim-comment" })
 end)
 
 require("theme")
@@ -96,10 +96,6 @@ require("telescope").setup({
 })
 
 -- Treesitter config
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldlevel = 100
-
 require("nvim-treesitter.configs").setup({
     highlight = {
         enable = true,
@@ -109,6 +105,9 @@ require("nvim-treesitter.configs").setup({
         enable = true,
     },
     autotag = {
+        enable = true,
+    },
+    context_commentstring = {
         enable = true,
     },
 })
@@ -372,3 +371,14 @@ vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "debugBreakpoint" })
 
 -- nvim-nu setup
 require("nu").setup({})
+
+-- nvim_comment setup
+require("nvim_comment").setup({
+    comment_empty = false,
+    hook = function()
+        if vim.api.nvim_buf_get_option(0, "filetype") == "svelte" then
+            ---@diagnostic disable-next-line: missing-parameter
+            require("ts_context_commentstring.internal").update_commentstring()
+        end
+    end,
+})

@@ -34,8 +34,13 @@ nmap(",", "<<")
 -- Helix inspiration
 nmap("gh", "0")
 nmap("gl", "$")
+nmap("gs", "_")
+nmap("ge", "G")
+nmap("g.", "g;")
 vmap("gh", "0")
 vmap("gl", "$")
+vmap("gs", "_")
+vmap("ge", "G")
 nmap("<space>w", "<C-w>")
 nmap("U", "<C-r>")
 vmap(">", ">gv")
@@ -171,6 +176,9 @@ wk.register({
         r = { "Go to references" },
         h = { "Line start" },
         l = { "Line end" },
+        s = { "First non-blank in line" },
+        e = { "Last line" },
+        ["."] = { "Last modification" },
     },
     ["["] = {
         c = { "Previous hunk" },
