@@ -74,4 +74,20 @@ module functions {
 
         unzip -d $out_dir $zip_file
     }
+
+    def zellij_session [session_name: string] {
+        if (do -i { zellij ls | grep $session_name; $env.LAST_EXIT_CODE == 0}) {
+            zellij attach $session_name
+        } else {
+            zellij -s $session_name
+        }
+    }
+
+    export def zm [] {
+        zellij_session "main"
+    }
+
+    export def zs [] {
+        zellij_session "scratch"
+    }
 }

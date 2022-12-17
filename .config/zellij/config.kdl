@@ -1,0 +1,116 @@
+default_layout "compact"
+
+keybinds {
+    session {
+        bind "Ctrl o" { SwitchToMode "Normal"; }
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "d" { Detach; }
+    }
+    tmux {
+        unbind "Ctrl b"
+        unbind "\""
+        unbind "%"
+        bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
+        bind "b" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "a" { ToggleTab; SwitchToMode "Normal"; }
+        bind "w" { SwitchToMode "Tab"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "Ctrl h" { Resize "Left"; }
+        bind "Ctrl j" { Resize "Down"; }
+        bind "Ctrl k" { Resize "Up"; }
+        bind "Ctrl l" { Resize "Right"; }
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+    }
+    shared_except "locked" {
+        unbind "Alt h"
+        unbind "Alt j"
+        unbind "Alt k"
+        unbind "Alt l"
+        unbind "Left"
+        unbind "Right"
+        unbind "Down"
+        unbind "Up"
+        bind "Alt H" { MoveFocusOrTab "Left"; }
+        bind "Alt J" { MoveFocus "Down"; }
+        bind "Alt K" { MoveFocus "Up"; }
+        bind "Alt L" { MoveFocusOrTab "Right"; }
+    }
+    shared_except "resize" "locked" {
+        unbind "Ctrl n"
+        bind "Ctrl e" { SwitchToMode "Resize"; }
+    }
+    shared_except "move" "locked" {
+        unbind "Ctrl h"
+        bind "Ctrl m" { SwitchToMode "Move"; }
+    }
+    shared_except "tmux" "locked" {
+        unbind "Ctrl b"
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+}
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+}
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
+themes {
+    dracula {
+        fg 249 248 242
+        bg 40 42 54
+        red 255 85 85
+        green 80 250 123
+        yellow 241 250 140
+        blue 98 114 164
+        magenta 255 121 198
+        orange 255 184 108
+        cyan 139 233 253
+        black 0 0 0
+        white 255 255 255
+    }
+    one-half-dark {
+        fg 220 223 228
+        bg 40 44 52
+        black 27 29 35
+        red 227 63 76
+        green 152 195 121
+        yellow 229 192 123
+        blue 97 175 239
+        magenta 198 120 221
+        cyan 86 182 194
+        white 233 225 254
+        orange 216 133 76
+    }
+    onedark-deep {
+        fg 147 164 195
+        bg 69 85 116
+        black 12 14 21
+        red 246 88 102
+        green 139 205 91
+        yellow 239 189 93
+        blue 65 167 252
+        magenta 199 90 232
+        cyan 52 191 208
+        white 233 225 254
+        orange 221 144 70
+    }
+}
+
+theme "onedark-deep"
