@@ -2,7 +2,7 @@ alias vim = nvim
 alias svim = sudo nvim
 alias sn = source ~/.config/nushell/config.nu
 alias dotfiles = cd ~/.dotfiles
-alias dcomp = docker compose
+alias dc = docker compose
 alias jc = sudo journalctl -xe
 
 # if (uname | str trim) == "Linux" {
