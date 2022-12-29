@@ -7,6 +7,9 @@ keybinds {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
     }
+    move {
+        bind "Ctrl h" { SwitchToMode "Normal"; }
+    }
     tmux {
         unbind "Ctrl b"
         unbind "\""
@@ -50,8 +53,7 @@ keybinds {
         bind "Ctrl e" { SwitchToMode "Resize"; }
     }
     shared_except "move" "locked" {
-        unbind "Ctrl h"
-        bind "Ctrl m" { SwitchToMode "Move"; }
+        bind "Ctrl h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         unbind "Ctrl b"
