@@ -2,7 +2,8 @@ default_layout "compact"
 
 keybinds {
     session {
-        bind "Ctrl o" { SwitchToMode "Normal"; }
+        unbind "Ctrl o"
+        bind "Ctrl d" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
     }
@@ -56,6 +57,10 @@ keybinds {
         unbind "Ctrl b"
         bind "Ctrl a" { SwitchToMode "Tmux"; }
     }
+    shared_except "session" "locked" {
+        unbind "Ctrl o"
+        bind "Ctrl d" { SwitchToMode "Session"; }
+    }
 }
 
 plugins {
@@ -72,40 +77,16 @@ ui {
 }
 
 themes {
-    dracula {
-        fg 249 248 242
-        bg 40 42 54
-        red 255 85 85
-        green 80 250 123
-        yellow 241 250 140
-        blue 98 114 164
-        magenta 255 121 198
-        orange 255 184 108
-        cyan 139 233 253
-        black 0 0 0
-        white 255 255 255
-    }
-    one-half-dark {
-        fg 220 223 228
-        bg 40 44 52
-        black 27 29 35
-        red 227 63 76
-        green 152 195 121
-        yellow 229 192 123
-        blue 97 175 239
-        magenta 198 120 221
-        cyan 86 182 194
-        white 233 225 254
-        orange 216 133 76
-    }
     onedark-deep {
         fg 147 164 195
         bg 69 85 116
         black 12 14 21
         red 246 88 102
-        green 139 205 91
+        // green 139 205 91
+        blue 139 205 91
         yellow 239 189 93
-        blue 65 167 252
+        // blue 65 167 252
+        green 65 167 252
         magenta 199 90 232
         cyan 52 191 208
         white 233 225 254

@@ -156,12 +156,12 @@ if [ "$(uname -n)" = dev ]; then
 fi
 
 # Launch tmux
-if [ ! -v TMUX ] &&
-    [ "$DISPLAY" = ":0" ] &&
-    [ "$(whoami)" != "root" ]; then
-    tmux attach || tmux
-    echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
-fi
+# if [ ! -v TMUX ] &&
+#     [ "$DISPLAY" = ":0" ] &&
+#     [ "$(whoami)" != "root" ]; then
+#     tmux attach || tmux
+#     echo -ne "\e[?1004l']" # For dealing with dumb focus issues.
+# fi
 
 source $HOME/.dotfiles/zsh_functions
 
