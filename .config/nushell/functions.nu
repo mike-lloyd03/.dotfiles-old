@@ -90,4 +90,9 @@ module functions {
     export def zs [] {
         zellij_session "scratch"
     }
+
+    export def serde [] {
+        echo $"(ansi red)Rust Data(ansi reset) (ansi green)-- Serialize ---->(ansi reset) (ansi blue)JSON Data(ansi reset)"
+        echo $"(ansi blue)JSON Data(ansi reset) (ansi green)-- Deserialize -->(ansi reset) (ansi red)Rust Data(ansi reset)"
+    }
 }

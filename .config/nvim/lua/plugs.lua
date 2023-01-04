@@ -274,6 +274,7 @@ rt.setup({
                 checkOnSave = {
                     command = "clippy",
                 },
+                inlayHints = { locationLinks = false },
             },
         },
     },

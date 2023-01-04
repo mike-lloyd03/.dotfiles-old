@@ -219,13 +219,13 @@ let-env config = {
       mode: [emacs, vi_normal, vi_insert] # Note: You can add the same keybinding to all modes by using a list
       event: { send: menuprevious }
     }
-    {
-      name: history_menu
-      modifier: control
-      keycode: char_r
-      mode: vi_normal
-      event: { send: menu name: history_menu }
-    }
+    # {
+    #   name: history_menu
+    #   modifier: control
+    #   keycode: char_r
+    #   mode: vi_normal
+    #   event: { send: menu name: history_menu }
+    # }
     {
       name: next_page
       modifier: control
@@ -299,6 +299,16 @@ let-env config = {
       keycode: char_s
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: commands_with_description }
+    }
+    {
+      name: skim_history
+      modifier: control
+      keycode: char_r
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        send: executehostcommand
+        cmd: "commandline (history | each { |it| $it.command } | uniq | reverse | str collect (char -i 0) | fzf --read0 --layout=reverse --height=40% -q (commandline) | decode utf-8 | str trim)"
+      }
     }
   ]
 }

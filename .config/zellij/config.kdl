@@ -10,6 +10,10 @@ keybinds {
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
     }
+    pane {
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+    }
     tmux {
         unbind "Ctrl b"
         unbind "\""
