@@ -51,3 +51,23 @@ alias sce = sudo systemctl enable
 alias scen = sudo systemctl enable --now
 alias scstat = sudo systemctl status
 alias scdr = sudo systemctl daemon-reload
+
+# kubectl
+alias k = kubectl
+alias kc = kubectl create
+alias kcd = kubectl create deployment
+alias kcj = kubectl create job
+alias kg = kubectl get
+alias kgp = kubectl get pods
+alias kgn = kubectl get nodes
+alias kgd = kubectl get deployments
+alias kgj = kubectl get jobs
+alias kgcj = kubectl get cronjobs
+alias kd = kubectl describe
+alias kdd = kubectl describe deployments
+alias kdp = kubectl describe pods
+alias kdn = kubectl describe nodes
+alias kl = kubectl logs
+alias ke = kubectl exec
+alias keit = kubectl exec -it
+alias kdl = kubectl delete

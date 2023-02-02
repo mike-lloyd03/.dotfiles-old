@@ -39,19 +39,19 @@ vim.opt.smartcase = true
 
 -- Clipboard handling
 if vim.fn.hostname() == "dev" then
-	vim.g.clipboard = {
-		name = "ssh",
-		copy = {
-			["+"] = { "ssh", "mac", "pbcopy" },
-		},
-		paste = {
-			["+"] = { "ssh", "mac", "pbpaste" },
-		},
-	}
+    vim.g.clipboard = {
+        name = "ssh",
+        copy = {
+            ["+"] = { "ssh", "mac", "pbcopy" },
+        },
+        paste = {
+            ["+"] = { "ssh", "mac", "pbpaste" },
+        },
+    }
 end
 
 -- Neovide settings
-if vim.fn.has('macunix') == 1 then
+if vim.fn.has("macunix") == 1 then
     vim.opt.guifont = "MesloLGM Nerd Font Mono"
 else
     vim.opt.guifont = "MesloLGS NF"

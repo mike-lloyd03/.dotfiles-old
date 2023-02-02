@@ -1,6 +1,5 @@
 layout_dir "/home/mike/.config/zellij/layouts"
 default_layout "compact"
-//default_layout "mike"
 
 keybinds {
     session {
