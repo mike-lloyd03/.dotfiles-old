@@ -34,7 +34,7 @@ require("packer").startup(function(use)
     use("folke/which-key.nvim")
     use("windwp/nvim-autopairs")
     use("stevearc/dressing.nvim")
-    -- use("rcarriga/nvim-notify")
+    use("rcarriga/nvim-notify")
     use("windwp/nvim-ts-autotag")
     use("tpope/vim-fugitive")
     use("navarasu/onedark.nvim")
@@ -53,6 +53,7 @@ require("packer").startup(function(use)
     use("leafOfTree/vim-svelte-plugin")
     use("LhKipp/nvim-nu")
     use({ "JoosepAlviste/nvim-ts-context-commentstring", requires = "terrortylor/nvim-comment" })
+    use({ "akinsho/flutter-tools.nvim", requires = { "nvim-lua/plenary.nvim", "dart-lang/dart-vim-plugin" } })
 end)
 
 require("theme")
@@ -62,6 +63,7 @@ require("gitsigns").setup()
 
 -- Telescope config
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("flutter")
 require("telescope").setup({
     defaults = {
         mappings = {
@@ -77,6 +79,9 @@ require("telescope").setup({
                 height = 10,
             },
             scroll_speed = 1,
+        },
+        file_ignore_patterns = {
+            "package-lock\\.json",
         },
     },
     pickers = {
@@ -165,11 +170,11 @@ require("which-key").setup({
 require("nvim-autopairs").setup({})
 
 -- nvim-notify config
--- require("notify").setup({
---     max_width = 80,
---     max_height = 5,
--- })
--- vim.notify = require("notify")
+require("notify").setup({
+    max_width = 80,
+    max_height = 5,
+})
+vim.notify = require("notify")
 
 -- formatter.nvim config
 function Shfmt()
@@ -210,6 +215,7 @@ require("formatter").setup({
     logging = false,
     filetype = {
         css = require("formatter.defaults.prettier"),
+        dart = require("formatter.filetypes.dart").dartformat,
         go = require("formatter.filetypes.go").gofmt,
         html = require("formatter.defaults.prettier"),
         javascript = require("formatter.defaults.prettier"),
@@ -382,4 +388,11 @@ require("nvim_comment").setup({
             require("ts_context_commentstring.internal").update_commentstring()
         end
     end,
+})
+
+-- flutter-tools
+require("flutter-tools").setup({
+    ui = {
+        notification_style = "native",
+    },
 })

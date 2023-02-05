@@ -24,6 +24,7 @@ require("lspconfig").gopls.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").svelte.setup({})
 require("lspconfig").tsserver.setup({})
+require("lspconfig").eslint.setup({})
 
 ----------------------------
 -- Lua Config
