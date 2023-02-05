@@ -1,5 +1,0 @@
-# move window from other session to current session
-move-window -s <session-name>:<window-index>
-
-# Split current pane and move window from other window into it 
-join-pane -h -s <session-name>:<window-index>

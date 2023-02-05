@@ -78,6 +78,10 @@ error_symbol = '[ ▶](bold red)'
 [cmd_duration]
 disabled = true
 
+[dart]
+format = "| [$symbol($version )]($style)"
+symbol = " "
+
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style) "
 read_only = " "
@@ -116,6 +120,10 @@ detect_files = [
   "project.clj",
   "build.boot",
 ]
+
+[kotlin]
+format = "| [$symbol($version )]($style)"
+symbol = " "
 
 [kubernetes]
 disabled = false
@@ -168,7 +176,3 @@ style_user = "bold #5192df"
 
 [vagrant]
 format = "| [$symbol($version )]($style) "
-
-[kotlin]
-format = "| [$symbol($version )]($style)"
-symbol = " "
