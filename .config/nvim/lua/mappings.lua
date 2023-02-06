@@ -71,6 +71,10 @@ nmap("gD", "<CMD>lua require('telescope.builtin').lsp_definitions{jump_type='vsp
 nmap("<leader>sv", "<CMD>source ~/.config/nvim/init.lua<CR>")
 nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>")
 
+-- nvim.notify
+nmap("<space>nn", "<CMD>Telescope notify<CR>")
+nmap("<space>nd", "<CMD>lua require('notify').dismiss()<CR>")
+
 function search_dotfiles()
     require("telescope.builtin").find_files({
         prompt_title = "< vimrc >",

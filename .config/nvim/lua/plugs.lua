@@ -64,6 +64,8 @@ require("gitsigns").setup()
 -- Telescope config
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("flutter")
+require("telescope").load_extension("notify")
+
 require("telescope").setup({
     defaults = {
         mappings = {
@@ -172,7 +174,7 @@ require("nvim-autopairs").setup({})
 -- nvim-notify config
 require("notify").setup({
     max_width = 80,
-    max_height = 5,
+    top_down = false,
 })
 vim.notify = require("notify")
 
