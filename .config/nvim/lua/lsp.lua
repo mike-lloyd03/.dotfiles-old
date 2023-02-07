@@ -16,12 +16,18 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+local navic = require("nvim-navic")
+
 ----------------------------
 -- Defaul LSP Config
 ----------------------------
 require("lspconfig").bashls.setup({})
 require("lspconfig").gopls.setup({})
-require("lspconfig").pyright.setup({})
+require("lspconfig").pyright.setup({
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end,
+})
 require("lspconfig").svelte.setup({})
 require("lspconfig").tsserver.setup({})
 require("lspconfig").eslint.setup({})
@@ -30,6 +36,9 @@ require("lspconfig").eslint.setup({})
 -- Lua Config
 ----------------------------
 require("lspconfig").sumneko_lua.setup({
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end,
     settings = {
         Lua = {
             runtime = {

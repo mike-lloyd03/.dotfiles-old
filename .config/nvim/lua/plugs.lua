@@ -54,6 +54,7 @@ require("packer").startup(function(use)
     use("LhKipp/nvim-nu")
     use({ "JoosepAlviste/nvim-ts-context-commentstring", requires = "terrortylor/nvim-comment" })
     use({ "akinsho/flutter-tools.nvim", requires = { "nvim-lua/plenary.nvim", "dart-lang/dart-vim-plugin" } })
+    use("SmiteshP/nvim-navic")
 end)
 
 require("theme")
@@ -136,7 +137,7 @@ vim.g.auto_session_pre_save_cmds = {
 }
 require("auto-session").setup({
     log_level = "info",
-    auto_session_suppress_dirs = { "~/" },
+    auto_session_suppress_dirs = { "~/", "/tmp/", "/" },
 })
 
 -- which-key.nvim config
@@ -398,3 +399,6 @@ require("flutter-tools").setup({
         notification_style = "native",
     },
 })
+
+-- nvim-navic
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
