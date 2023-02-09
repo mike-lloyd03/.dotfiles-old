@@ -272,11 +272,12 @@ rt.setup({
         },
     },
     server = {
-        on_attach = function(_, bufnr)
+        on_attach = function(client, bufnr)
             -- Hover actions
             vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+            require("nvim-navic").attach(client, bufnr)
         end,
         settings = {
             ["rust-analyzer"] = {
@@ -398,7 +399,15 @@ require("flutter-tools").setup({
     ui = {
         notification_style = "native",
     },
+    lsp = {
+        on_attach = function(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
+    },
 })
 
 -- nvim-navic
+require("nvim-navic").setup({
+    highlight = true,
+})
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

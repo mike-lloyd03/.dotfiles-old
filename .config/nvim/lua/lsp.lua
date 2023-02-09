@@ -16,29 +16,37 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local navic = require("nvim-navic")
+local function navic_attach(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+        require("nvim-navic").attach(client, bufnr)
+    end
+end
 
 ----------------------------
 -- Defaul LSP Config
 ----------------------------
-require("lspconfig").bashls.setup({})
-require("lspconfig").gopls.setup({})
-require("lspconfig").pyright.setup({
-    on_attach = function(client, bufnr)
-        navic.attach(client, bufnr)
-    end,
+require("lspconfig").bashls.setup({
+    on_attach = navic_attach,
 })
-require("lspconfig").svelte.setup({})
-require("lspconfig").tsserver.setup({})
+require("lspconfig").gopls.setup({
+    on_attach = navic_attach,
+})
+require("lspconfig").pyright.setup({
+    on_attach = navic_attach,
+})
+require("lspconfig").svelte.setup({
+    on_attach = navic_attach,
+})
+require("lspconfig").tsserver.setup({
+    on_attach = navic_attach,
+})
 require("lspconfig").eslint.setup({})
 
 ----------------------------
 -- Lua Config
 ----------------------------
 require("lspconfig").sumneko_lua.setup({
-    on_attach = function(client, bufnr)
-        navic.attach(client, bufnr)
-    end,
+    on_attach = navic_attach,
     settings = {
         Lua = {
             runtime = {
