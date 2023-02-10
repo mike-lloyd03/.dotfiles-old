@@ -84,11 +84,11 @@ module functions {
     }
 
     export def zm [] {
-        zellij_session "main"
+        zellij_session $"main-(hostname)"
     }
 
     export def zs [] {
-        zellij_session "scratch"
+        zellij_session $"scratch-(hostname)"
     }
 
     export def serde [] {
