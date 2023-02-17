@@ -55,6 +55,7 @@ require("packer").startup(function(use)
     use({ "JoosepAlviste/nvim-ts-context-commentstring", requires = "terrortylor/nvim-comment" })
     use({ "akinsho/flutter-tools.nvim", requires = { "nvim-lua/plenary.nvim", "dart-lang/dart-vim-plugin" } })
     use("SmiteshP/nvim-navic")
+    use("tpope/vim-abolish")
 end)
 
 require("theme")

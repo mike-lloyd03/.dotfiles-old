@@ -199,10 +199,20 @@ wk.register({
         vr = { "Search dotfiles" },
         ts = { "onedark theme toggle" },
     },
-    ["m"] = {
+    m = {
         m = { "Goto matching bracket" },
         s = { "Surround add" },
         r = { "Surround replace" },
         d = { "Surround delete" },
+    },
+    cr = {
+        c = { "Coerse to camelCase" },
+        m = { "Coerce to MixedCase" },
+        s = { "Coerse to snake_case" },
+        t = { "Coerse to Title Case" },
+        u = { "Coerse to UPPER_SNAKE_CASE" },
+        ["-"] = { "Coerse to dash-case" },
+        ["."] = { "Coerse to dot.case" },
+        [" "] = { "Coerse to space case" },
     },
 })

@@ -86,3 +86,16 @@ require("lspconfig").ansiblels.setup({
         },
     },
 })
+
+----------------------------
+-- null-ls Config
+----------------------------
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.revive.with({
+            args = { "-formatter", "json", "-config", "/home/mike/.config/revive.toml", "./..." },
+        }),
+    },
+})
