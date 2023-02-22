@@ -56,6 +56,7 @@ require("packer").startup(function(use)
     use({ "akinsho/flutter-tools.nvim", requires = { "nvim-lua/plenary.nvim", "dart-lang/dart-vim-plugin" } })
     use("SmiteshP/nvim-navic")
     use("tpope/vim-abolish")
+    use("jose-elias-alvarez/null-ls.nvim")
 end)
 
 require("theme")
