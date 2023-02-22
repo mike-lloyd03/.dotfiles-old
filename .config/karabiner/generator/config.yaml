@@ -1,0 +1,33 @@
+title: "Control Key Rebinding for Terminal Emulators"
+description: "Command to Control in terminal apps"
+bundle_identifiers:
+  - "^com\\.googlecode\\.iterm2$"
+  - "^com\\.apple\\.Terminal$"
+  - "^org\\.vim\\.MacVim$"
+  - "^org\\.alacritty$"
+  - "^com\\.neovide\\.neovide$"
+  - "^com\\.jetbrains\\.intellij\\.ce$"
+  - "^net\\.kovidgoyal\\.kitty$"
+keys:
+  - c
+  - v
+  - a
+  - r
+  - j
+  - k
+  - w
+  - z
+  - n
+  - h
+  - l
+  - t
+  - i
+  - o
+  - b
+  - s
+  - slash
+  - q
+  - d
+  - e
+  - p
+  - g

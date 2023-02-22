@@ -1,5 +1,6 @@
 {
     "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false,
@@ -640,9 +641,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -673,9 +675,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -706,9 +709,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -739,9 +743,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -772,9 +777,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -805,9 +811,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -838,9 +845,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -871,9 +879,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -904,9 +913,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -937,42 +947,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "C-r",
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "r",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
-                                            "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1003,9 +981,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1036,9 +1015,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1069,9 +1049,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1102,9 +1083,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1135,9 +1117,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1168,9 +1151,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1201,14 +1185,15 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "C-/",
+                                "description": "C-slash",
                                 "from": {
                                     "key_code": "slash",
                                     "modifiers": {
@@ -1234,9 +1219,10 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.MacVim$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$"
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1253,6 +1239,108 @@
                                 "to": [
                                     {
                                         "key_code": "q",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.vim\\.MacVim$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.neovide\\.neovide$",
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "C-d",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.vim\\.MacVim$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.neovide\\.neovide$",
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "C-e",
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.vim\\.MacVim$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.neovide\\.neovide$",
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "C-p",
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "p",
                                         "modifiers": [
                                             "left_control"
                                         ]
