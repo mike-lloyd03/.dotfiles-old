@@ -51,6 +51,14 @@ alias sce = sudo systemctl enable
 alias scen = sudo systemctl enable --now
 alias scstat = sudo systemctl status
 alias scdr = sudo systemctl daemon-reload
+alias scu = systemctl --user
+alias scur = systemctl --user restart
+alias scustart = systemctl --user start
+alias scustop = systemctl --user stop
+alias scue = systemctl --user enable
+alias scuen = systemctl --user enable --now
+alias scustat = systemctl --user status
+alias scudr = systemctl --user daemon-reload
 
 # kubectl
 alias k = kubectl
