@@ -32,7 +32,7 @@ function fishconf
     end
 end
 
-complete -c fishconf -a "$(cd ~/.config/fish && ls *.fish | string replace '.fish' '')" -f
+complete -c fishconf -a "$(ls ~/.config/fish/ | grep -P '.*\.fish$' | string replace '.fish' '')" -f
 
 function zm
     set session_name "main-$(hostname)"
