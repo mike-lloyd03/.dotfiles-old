@@ -233,6 +233,7 @@ require("formatter").setup({
         },
         rust = { Rustfmt },
         sh = { Shfmt },
+        -- sql = { "formatter.filetypes.sql" },
         svelte = require("formatter.defaults.prettier"),
         typescript = require("formatter.defaults.prettier"),
         toml = require("formatter.filetypes.toml").taplo,

@@ -4,6 +4,13 @@ alias sn = source ~/.config/nushell/config.nu
 alias dotfiles = cd ~/.dotfiles
 alias dc = docker compose
 alias jc = sudo journalctl -xe
+alias om = optimus-manager
+
+# builtin overrides
+alias du = ^du
+alias cp = ^cp
+alias date = ^date
+alias watch = ^watch
 
 # if (uname | str trim) == "Linux" {
     alias xcopy = xclip -rmlastnl -in -selection clipboard
