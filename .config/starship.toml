@@ -50,8 +50,6 @@ $openstack\
 $env_var\
 $crystal\
 $cmd_duration\
-$fill\
-${custom.endline}\
 $endline\
 $line_break\
 $lua\
@@ -77,15 +75,6 @@ vimcmd_replace_one_symbol = '[ ❯](bold red)'
 vimcmd_replace_symbol = '[ ❯](bold red)'
 success_symbol = '[ ❯](bold blue)'
 error_symbol = '[!❯](bold red)'
-
-[fill]
-symbol = '─'
-style = 'bold gray'
-
-[custom.endline]
-symbol = '╮'
-style = 'bold gray'
-when = true
 
 [cmd_duration]
 disabled = true
