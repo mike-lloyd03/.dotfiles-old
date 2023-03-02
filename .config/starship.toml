@@ -49,8 +49,10 @@ $gcloud\
 $openstack\
 $env_var\
 $crystal\
-$custom\
 $cmd_duration\
+$fill\
+${custom.endline}\
+$endline\
 $line_break\
 $lua\
 $jobs\
@@ -69,11 +71,21 @@ format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
 disabled = true
 
 [character]
-# success_symbol = '[\[I\]](bold green) [▶](bold green)'
-# error_symbol = '[\[I\]](bold green) [▶](bold red)'
-# vicmd_symbol = '[\[N\]](bold red) [▶](bold green)'
-success_symbol = '[ ▶](bold green)'
-error_symbol = '[ ▶](bold red)'
+vimcmd_symbol = '[ ❯](bold green)'
+vimcmd_visual_symbol = '[ ❯](bold purple)'
+vimcmd_replace_one_symbol = '[ ❯](bold red)'
+vimcmd_replace_symbol = '[ ❯](bold red)'
+success_symbol = '[ ❯](bold blue)'
+error_symbol = '[!❯](bold red)'
+
+[fill]
+symbol = '─'
+style = 'bold gray'
+
+[custom.endline]
+symbol = '╮'
+style = 'bold gray'
+when = true
 
 [cmd_duration]
 disabled = true
