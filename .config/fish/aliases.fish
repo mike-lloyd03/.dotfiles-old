@@ -20,6 +20,16 @@ if command -v nvimpager &> /dev/null
     alias lesss="/usr/bin/less"
 end
 
+if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
+    alias kdev='kubectl config use-context appsec-dev'
+    alias kprod='kubectl config use-context appsec-prod'
+    alias pip="pip3"
+    alias python="python3"
+    alias release='~/go/src/github.td.teradata.com/Application-Security/shared/common/release.sh'
+    alias sed=gsed
+    alias grep=ggrep
+end
+
 # git
 alias g=git
 alias gundo="git reset --soft HEAD~1"
