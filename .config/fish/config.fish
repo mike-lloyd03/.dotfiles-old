@@ -9,8 +9,8 @@ set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 
 # Environment
-set -U PAGER nvimpager
-set -U EDITOR nvim
+set -Ux PAGER nvimpager
+set -Ux EDITOR nvim
 set -U fish_greeting ""
 
 if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
