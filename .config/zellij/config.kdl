@@ -68,6 +68,9 @@ keybinds {
         unbind "Ctrl o"
         bind "Ctrl d" { SwitchToMode "Session"; }
     }
+    shared {
+        unbind "Ctrl q"
+    }
 }
 
 plugins {
