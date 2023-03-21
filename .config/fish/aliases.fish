@@ -10,6 +10,11 @@ command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v exa &>/dev/null && alias ls="exa" && alias ll="exa -lg"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 
+function last_history_item
+    echo $history[1]
+end
+abbr -a !! --position anywhere --function last_history_item
+
 if [ (uname) = "Linux" ]
     alias xcopy="xclip -rmlastnl -in -selection clipboard"
     alias xpaste="xclip -out -selection clipboard"
