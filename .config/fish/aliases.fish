@@ -7,7 +7,7 @@ alias jc="sudo journalctl -xe"
 alias om=optimus-manager
 alias sf="source ~/.config/fish/config.fish"
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
-command -v exa &>/dev/null && alias ls="exa" && alias ll="exa -lg"
+command -v exa &>/dev/null && alias ls="exa" && alias ll="exa -lg" && alias la="exa -lga"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 
 function last_history_item
