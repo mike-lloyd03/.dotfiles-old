@@ -20,7 +20,8 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
 end
 
 # Keybinds
-bind \co edit_command_buffer
+bind --mode default \co edit_command_buffer
+bind --mode insert \co edit_command_buffer
 
 if type --quiet skim_key_bindings
     skim_key_bindings
