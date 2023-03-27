@@ -13,7 +13,7 @@ set -Ux PAGER nvimpager
 set -Ux EDITOR nvim
 set -U fish_greeting ""
 
-if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
+if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
     fish_add_path "/usr/local/opt/gnubin:/usr/local/bin"
     # set -x MANPATH /usr/local/opt/gnuman:${MANPATH:-/usr/share/man}
     set -x KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config-dev"
@@ -31,4 +31,8 @@ end
 fish_add_path $HOME/.local/bin
 
 # Prompt
-starship init fish | source
+if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
+    /usr/local/bin/starship init fish | source
+else
+    starship init fish | source
+end
