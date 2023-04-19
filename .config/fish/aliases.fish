@@ -35,6 +35,11 @@ if [ "$(uname -n)" = TD-C02FK3H8MD6T ]
     alias grep=ggrep
 end
 
+if [ "$(uname -n)" = dev ]
+    alias kdev='kubectl config use-context appsec-dev'
+    alias kprod='kubectl config use-context appsec-prod'
+end
+
 # git
 alias g=git
 alias gundo="git reset --soft HEAD~1"

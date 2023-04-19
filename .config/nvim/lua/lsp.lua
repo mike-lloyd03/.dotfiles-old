@@ -41,6 +41,9 @@ require("lspconfig").tsserver.setup({
     on_attach = navic_attach,
 })
 require("lspconfig").eslint.setup({})
+require("lspconfig").jsonls.setup({
+    on_attach = navic_attach,
+})
 
 ----------------------------
 -- Lua Config

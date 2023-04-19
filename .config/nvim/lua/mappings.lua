@@ -17,14 +17,6 @@ end
 nmap("<C-R>", "q:")
 nmap("q:", "")
 
--- Control j and h to scroll
--- nmap("<C-j>", "<C-e>")
--- nmap("<C-k>", "<C-y>")
--- imap("<C-j>", "<C-e>")
--- imap("<C-k>", "<C-y>")
--- vmap("<C-j>", "<C-e>")
--- vmap("<C-k>", "<C-y>")
-
 -- Better indentation
 vmap(".", ">gv")
 vmap(",", "<gv")
@@ -53,6 +45,7 @@ vmap("<space>p", '"+p')
 vmap("<space>P", '"+P')
 nmap("mm", "%")
 vmap("mm", "%")
+nmap("<space>ya", "<CMD>%y+<CR>")
 
 -- Telescope
 nmap("<space>b", "<CMD>lua require('telescope.builtin').buffers{}<CR>")

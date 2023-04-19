@@ -23,6 +23,10 @@ if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
     set -x KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config-dev"
 end
 
+if [ "$(uname -n)" = dev ]
+    set -x KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config-dev"
+end
+
 # Keybinds
 bind --mode default \co edit_command_buffer
 bind --mode insert \co edit_command_buffer
