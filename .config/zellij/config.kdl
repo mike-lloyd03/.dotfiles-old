@@ -8,6 +8,12 @@ keybinds {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
     }
+    scroll {
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "Ctrl j" { HalfPageScrollDown; }
+        bind "Ctrl k" { HalfPageScrollUp; }
+    }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
     }
