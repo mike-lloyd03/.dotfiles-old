@@ -19,6 +19,7 @@ end
 local function navic_attach(client, bufnr)
     if client.server_capabilities.documentSymbolProvider then
         require("nvim-navic").attach(client, bufnr)
+        -- require("nvim-navbuddy").attach(client, bufnr)
     end
 end
 
@@ -26,7 +27,7 @@ end
 -- Defaul LSP Config
 ----------------------------
 require("lspconfig").bashls.setup({
-    on_attach = navic_attach,
+    -- on_attach = navic_attach,
 })
 require("lspconfig").gopls.setup({
     on_attach = navic_attach,

@@ -8,6 +8,12 @@ xset r rate 250 30
 
 if xrandr --current | grep "DP-1-0 connected"; then
     feh --bg-center "$wallpaper"
+elif xrandr --current | grep "DP-1-4 connected"; then
+    feh --bg-center "$wallpaper"
+elif xrandr --current | grep "DP-0 connected primary"; then
+    feh --bg-center "$wallpaper"
+elif xrandr --current | grep "DP-4 connected primary"; then
+    feh --bg-center "$wallpaper"
 else
     feh --bg-center "$wallpaper_small"
 fi
@@ -47,3 +53,9 @@ fi
 if ! pgrep -f /usr/bin/clipmenud; then
     CM_SELECTIONS=clipboard clipmenud &
 fi
+
+# setup autorandr
+udev_rules_dir="$(pkg-config --variable=udevdir udev)/rules.d"
+udev_rule="$udev_rules_dir/40-monitor-hotplug.rules"
+echo 'ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/autorandr --batch --change --default default"' |
+    sudo tee "$udev_rule"

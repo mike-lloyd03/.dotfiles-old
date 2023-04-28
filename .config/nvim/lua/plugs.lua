@@ -57,6 +57,14 @@ require("packer").startup(function(use)
     use("SmiteshP/nvim-navic")
     use("tpope/vim-abolish")
     use("jose-elias-alvarez/null-ls.nvim")
+    use({
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+        },
+    })
 end)
 
 require("theme")
@@ -414,3 +422,13 @@ require("nvim-navic").setup({
     highlight = true,
 })
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
+-- nvim-navbuddy
+require("nvim-navbuddy").setup({
+    window = {
+        border = "rounded"
+    },
+    lsp = {
+        auto_attach = true,
+    }
+})

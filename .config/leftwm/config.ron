@@ -2,7 +2,8 @@
 (
     modkey: "Mod4",
     mousekey: "Mod4",
-    workspaces: [],
+    workspaces: [
+    ],
     tags: [
         "1",
         "2",
@@ -99,8 +100,8 @@
         (command: Execute, value: "spectacle -fbic", modifier: ["Control", "Mod4", "Shift"], key: "3"),
         (command: Execute, value: "spectacle -rbi", modifier: ["Control", "Shift"], key: "4"),
         (command: Execute, value: "spectacle -rbic", modifier: ["Control", "Mod4", "Shift"], key: "4"),
-        (command: Execute, value: "scripts/resync_a2dp", modifier: ["Shift"], key: "F12"),
-        (command: Execute, value: "scripts/resync_hfp", modifier: ["Shift"], key: "F11"),
+        (command: Execute, value: "scripts/resync_a2dp", modifier: ["Shift"], key: "XF86XK_AudioRaiseVolume"),
+        (command: Execute, value: "scripts/resync_hfp", modifier: ["Shift"], key: "XF86XK_AudioLowerVolume"),
         (command: ToggleScratchPad, value: "Alacritty", modifier: ["Alt"], key: "t"),
         (command: Execute, value: "xkill", modifier: ["Control", "Alt"], key: "Escape"),
         (command: Execute, value: "dunstctl set-paused toggle", modifier: ["Alt"], key: "d"),
