@@ -1,4 +1,5 @@
-require("plugs")
+require("plugs-lazy")
+-- require("plugs")
 require("lsp")
 require("mappings")
 require("statusline")
@@ -56,7 +57,7 @@ if vim.fn.has("macunix") == 1 then
 else
     vim.opt.guifont = "MesloLGS NF"
 end
--- vim.g.neovide_cursor_animation_length=0
+vim.g.neovide_cursor_animation_length = 0
 
 -- Disable mouse
 vim.opt.mouse = ""

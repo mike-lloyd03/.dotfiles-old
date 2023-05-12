@@ -1,8 +1,23 @@
+local function on_attach(bufnr)
+    local api = require("nvim-tree.api")
+
+    local function opts(desc)
+        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    api.config.mappings.default_on_attach(bufnr)
+
+    vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split"))
+    vim.keymap.set("n", "i", api.node.open.horizontal, opts("Open: Horizontal Split"))
+    vim.keymap.set("n", "t", api.node.open.tab, opts("Open: New Tab"))
+    vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
+    vim.keymap.set("n", "c", api.tree.change_root_to_node, opts("CD"))
+end
+
 require("nvim-tree").setup({
+    on_attach = on_attach,
     disable_netrw = true,
     hijack_netrw = true,
-    -- open_on_setup = false,
-    -- ignore_ft_on_setup = {},
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = false,
@@ -28,13 +43,6 @@ require("nvim-tree").setup({
         side = "left",
         mappings = {
             custom_only = false,
-            list = {
-                { key = "s", action = "vsplit" },
-                { key = "i", action = "split" },
-                { key = "t", action = "tabnew" },
-                { key = "?", action = "toggle_help" },
-                { key = "c", action = "cd" },
-            },
         },
         number = false,
         relativenumber = false,

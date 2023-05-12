@@ -49,27 +49,21 @@ require("lspconfig").jsonls.setup({
 ----------------------------
 -- Lua Config
 ----------------------------
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
     on_attach = navic_attach,
     settings = {
         Lua = {
             runtime = {
                 version = "LuaJIT",
-                path = runtime_path,
             },
             diagnostics = {
-                -- Get the language server to recognize the `vim` global
                 globals = { "vim" },
             },
             workspace = {
-                -- Make the server aware of Neovim runtime files
                 library = vim.api.nvim_get_runtime_file("", true),
             },
             telemetry = {
                 enable = false,
-            },
-            format = {
-                enable = true,
             },
         },
     },

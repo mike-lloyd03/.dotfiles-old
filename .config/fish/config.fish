@@ -37,6 +37,7 @@ end
 
 # Path
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.cargo/bin
 
 # Prompt
 if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
