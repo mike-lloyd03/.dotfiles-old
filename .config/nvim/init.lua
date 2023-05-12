@@ -1,5 +1,4 @@
-require("plugs-lazy")
--- require("plugs")
+require("plugs")
 require("lsp")
 require("mappings")
 require("statusline")
