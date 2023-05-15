@@ -431,6 +431,34 @@ require("lazy").setup({
             })
         end,
     },
+    {
+        "nvim-neorg/neorg",
+        commit = "f67110d11d37fde09756eb2de8a1814d04a4a03b",
+        build = ":Neorg sync-parsers",
+        opts = {
+            load = {
+                ["core.defaults"] = {},
+                ["core.concealer"] = {
+                    config = {
+                        folds = false,
+                        icon_preset = "diamond",
+                    },
+                },
+                ["core.dirman"] = {
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+                ["core.qol.toc"] = {},
+                ["core.qol.todo_items"] = {},
+            },
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
 
     -----------------------------------------------
     -- Language Support
