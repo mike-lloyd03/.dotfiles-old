@@ -433,7 +433,6 @@ require("lazy").setup({
     },
     {
         "nvim-neorg/neorg",
-        commit = "f67110d11d37fde09756eb2de8a1814d04a4a03b",
         build = ":Neorg sync-parsers",
         opts = {
             load = {
