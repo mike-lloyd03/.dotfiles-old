@@ -131,8 +131,10 @@ require("lazy").setup({
                 enable = true,
             },
         },
+        dependencies = {
+            "nvim-treesitter/playground",
+        },
     },
-    "nvim-treesitter/playground",
 
     -----------------------------------------------
     -- Telescope
@@ -315,7 +317,7 @@ require("lazy").setup({
                         require("formatter.filetypes.python").black,
                         require("formatter.filetypes.python").isort,
                     },
-                    rust = require("formatter.filetypes.rust"),
+                    rust = require("formatter.filetypes.rust").rustfmt,
                     sh = require("formatter.filetypes.sh").shfmt,
                     sql = require("formatter.filetypes.sql"),
                     svelte = require("formatter.defaults.prettier"),

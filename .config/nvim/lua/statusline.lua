@@ -33,7 +33,7 @@ require("lualine").setup({
             },
             {
                 "diagnostics",
-                symbols = { error = " ", warn = " " },
+                symbols = { error = "● ", warn = "● ", info = "● ", hint = "● " },
             },
         },
         lualine_x = {
