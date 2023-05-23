@@ -470,10 +470,10 @@ require("lazy").setup({
     },
     {
         "simrat39/rust-tools.nvim",
-        ft = {
-            "rust",
-            "toml",
-        },
+        -- ft = {
+        --     "rust",
+        --     "toml",
+        -- },
         opts = {
 
             tools = {

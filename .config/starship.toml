@@ -150,7 +150,7 @@ symbol = " "
 
 [package]
 format = "| [$symbol$version]($style) "
-symbol = " "
+symbol = "󰏗 "
 
 [python]
 symbol = " "
@@ -162,7 +162,7 @@ symbol = " "
 
 [rust]
 format = "| [$symbol($version )]($style) "
-symbol = "𝗥 "
+symbol = " "
 
 [shlvl]
 symbol = " "
