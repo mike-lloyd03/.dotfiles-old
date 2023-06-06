@@ -17,7 +17,7 @@ require("lazy").setup({
         "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
-        init = function()
+        config = function()
             require("theme")
         end,
     },
@@ -96,9 +96,9 @@ require("lazy").setup({
             })
         end,
     },
-    -----------------------------------------------
+    ---------------------------------------------
     -- Snippets
-    -----------------------------------------------
+    ---------------------------------------------
     {
         "hrsh7th/vim-vsnip",
         config = function()
@@ -139,15 +139,14 @@ require("lazy").setup({
     -----------------------------------------------
     -- Telescope
     -----------------------------------------------
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-fzf-native.nvim",
         },
         config = function()
-            require("telescope").load_extension("fzf")
-            require("telescope").load_extension("flutter")
-            require("telescope").load_extension("notify")
 
             require("telescope").setup({
                 defaults = {
@@ -184,16 +183,15 @@ require("lazy").setup({
                     },
                 },
             })
+
+            require("telescope").load_extension("notify")
+            require("telescope").load_extension("fzf")
         end,
     },
 
     -----------------------------------------------
     -- UI
     -----------------------------------------------
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-    },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
