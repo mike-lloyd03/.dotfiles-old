@@ -12,6 +12,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- LSP
+-- Snippets
+-- Treesitter
+-- Telescope
+-- UI
+-- Functionality
+-- Language Support
+
 require("lazy").setup({
     {
         "navarasu/onedark.nvim",
@@ -139,7 +147,7 @@ require("lazy").setup({
     -----------------------------------------------
     -- Telescope
     -----------------------------------------------
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
@@ -147,7 +155,6 @@ require("lazy").setup({
             "nvim-telescope/telescope-fzf-native.nvim",
         },
         config = function()
-
             require("telescope").setup({
                 defaults = {
                     mappings = {
@@ -293,6 +300,8 @@ require("lazy").setup({
             return {
                 logging = false,
                 filetype = {
+                    c = require("formatter.filetypes.c").clangformat,
+                    cpp = require("formatter.filetypes.cpp").clangformat,
                     css = require("formatter.defaults.prettier"),
                     dart = require("formatter.filetypes.dart").dartformat,
                     go = require("formatter.filetypes.go").gofmt,
@@ -457,6 +466,14 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle" },
+        ft = { "markdown" },
+        build = function()
+            vim.fn["mkdp#util#install"]()
+        end,
     },
 
     -----------------------------------------------
