@@ -45,6 +45,7 @@ require("lspconfig").eslint.setup({})
 require("lspconfig").jsonls.setup({
     on_attach = navic_attach,
 })
+require("lspconfig").ccls.setup({})
 
 ----------------------------
 -- Lua Config

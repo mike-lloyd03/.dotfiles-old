@@ -3,15 +3,18 @@ require("onedark").setup({
     style = "deep",
     toggle_style_key = "<leader>ts",
     -- toggle_style_list = { "dark", "light" },
+    colors = {
+        light_blue = "#0888f1",
+    },
     highlights = {
         MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
 
-        TSKeyword = { fg = "$red" },
-        TSInclude = { fg = "$red" },
-        TSFuncMacro = { fg = "$red" },
-        TSOperator = { fg = "$purple" },
-        TSParameter = { fg = "$cyan" },
-        TSNamespace = { fg = "$blue" },
+        -- TSKeyword = { fg = "$red" },
+        -- TSInclude = { fg = "$red" },
+        -- TSFuncMacro = { fg = "$red" },
+        -- TSOperator = { fg = "$purple" },
+        -- TSParameter = { fg = "$cyan" },
+        -- TSNamespace = { fg = "$blue" },
 
         TelescopeBorder = { fg = "$light_grey" },
         TelescopePromptBorder = { fg = "$light_grey" },
@@ -20,10 +23,14 @@ require("onedark").setup({
         TelescopeMatching = { fg = "$orange", fmt = "bold" },
         TelescopePromptPrefix = { fg = "$red" },
 
-        DiagnosticError = { fg = "$red" },
-        DiagnosticHint = { fg = "$purple" },
-        DiagnosticInfo = { fg = "$blue" },
-        DiagnosticWarn = { fg = "$yellow" },
+        -- DiagnosticError = { fg = "$red" },
+        -- DiagnosticHint = { fg = "$purple" },
+        -- DiagnosticInfo = { fg = "$blue" },
+        -- DiagnosticWarn = { fg = "$yellow" },
+
+        CurSearch = { bg = "$blue" },
+        IncSearch = { bg = "$blue" },
+        Search = { bg = "$light_blue" },
     },
     diagnostics = {
         darker = true, -- darker colors for diagnostic
