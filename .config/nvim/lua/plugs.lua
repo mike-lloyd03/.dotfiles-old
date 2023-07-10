@@ -559,4 +559,8 @@ require("lazy").setup({
             },
         },
     },
+    {
+        "NoahTheDuke/vim-just",
+        ft = "just",
+    },
 })
