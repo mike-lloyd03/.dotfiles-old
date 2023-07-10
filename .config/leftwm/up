@@ -1,5 +1,7 @@
 #!/bin/bash
 
+xrandr > /home/mike/xrandr_config
+
 wallpaper="$HOME/Pictures/Wallpapers/City3_GIMP_Denoise.jpg"
 wallpaper_small="$HOME/Pictures/Wallpapers/City3_small.jpg"
 
@@ -59,3 +61,4 @@ udev_rules_dir="$(pkg-config --variable=udevdir udev)/rules.d"
 udev_rule="$udev_rules_dir/40-monitor-hotplug.rules"
 echo 'ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/autorandr --batch --change --default default"' |
     sudo tee "$udev_rule"
+
