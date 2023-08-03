@@ -5,6 +5,7 @@ function h
     else if [ "$argv[1]" = "go" ]
         go help "$cmd[2..]" | $PAGER
     else if [ "$argv[1]" = "aws" ]
+        $cmd[1] = "/usr/bin/aws"
         "$cmd" help | $PAGER
     else if [ "$argv[1]" = "cargo" ]
         cargo help "$cmd[2..]"
