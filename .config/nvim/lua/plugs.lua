@@ -184,7 +184,7 @@ require("lazy").setup({
                         sort_lastused = true,
                         mappings = {
                             i = {
-                                ["<C-d>"] = require("telescope.actions").delete_buffer,
+                                ["<C-b>"] = require("telescope.actions").delete_buffer,
                             },
                         },
                     },
