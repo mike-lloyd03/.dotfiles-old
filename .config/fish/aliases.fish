@@ -7,7 +7,7 @@ alias jc="sudo journalctl -xe"
 alias om=optimus-manager
 alias sf="source ~/.config/fish/config.fish"
 command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
-command -v exa &>/dev/null && alias ls="exa" && alias ll="exa -lg" && alias la="exa -lga"
+command -v exa &>/dev/null && alias ls="exa --group-directories-first" && alias ll="exa -lg --group-directories-first" && alias la="exa -lga --group-directories-first"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
 

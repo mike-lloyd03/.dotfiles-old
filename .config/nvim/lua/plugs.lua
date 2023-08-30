@@ -563,4 +563,8 @@ require("lazy").setup({
         "NoahTheDuke/vim-just",
         ft = "just",
     },
+    { "ellisonleao/glow.nvim", config = {
+        width = 120,
+        border = "rounded",
+    }, cmd = "Glow" },
 })
