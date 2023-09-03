@@ -384,12 +384,12 @@ require("lazy").setup({
         dependencies = {
             "neovim/nvim-lspconfig",
         },
-        opts = function()
-            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-            return {
-                highlight = true,
-            }
-        end,
+        -- opts = function()
+        --     vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+        --     return {
+        --         highlight = true,
+        --     }
+        -- end,
     },
     "tpope/vim-abolish",
     {
@@ -475,6 +475,7 @@ require("lazy").setup({
             vim.fn["mkdp#util#install"]()
         end,
     },
+    "WhoIsSethDaniel/lualine-lsp-progress.nvim",
 
     -----------------------------------------------
     -- Language Support

@@ -16,6 +16,11 @@ require("lualine").setup({
         section_separators = { left = "", right = "" },
         disabled_filetypes = { "NvimTree" },
         always_divide_middle = true,
+        -- globalstatus = true,
+        refresh = {
+            statusline = 100,
+            winbar = 100,
+        },
     },
     sections = {
         lualine_a = { { "mode", color = { gui = "bold" } } },
@@ -34,6 +39,7 @@ require("lualine").setup({
             {
                 "diagnostics",
                 symbols = { error = "● ", warn = "● ", info = "● ", hint = "● " },
+                update_in_insert = true,
             },
         },
         lualine_x = {
@@ -67,6 +73,38 @@ require("lualine").setup({
                     active = "lualine_a_insert", -- Color for active tab.
                     inactive = "lualine_b_normal", -- Color for inactive tab.
                 },
+            },
+        },
+    },
+    winbar = {
+        lualine_c = {
+            {
+                "navic",
+                color_correction = "static",
+                navic_opts = { highlight = true },
+                padding = {
+                    right = 0,
+                },
+                draw_empty = true,
+            },
+        },
+        lualine_x = {
+            {
+                "lsp_progress",
+                spinner_symbols = { "⣾ ", "⣽ ", "⣻ ", "⢿ ", "⡿ ", "⣟ ", "⣯ ", "⣷ " },
+                timer = {
+                    spinner = 100,
+                },
+                color = { bg = nil },
+            },
+        },
+    },
+    inactive_winbar = {
+        lualine_c = {
+            {
+                function()
+                    return " "
+                end,
             },
         },
     },

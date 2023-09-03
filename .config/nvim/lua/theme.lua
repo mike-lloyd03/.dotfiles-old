@@ -6,6 +6,9 @@ require("onedark").setup({
     colors = {
         light_blue = "#0888f1",
     },
+    lualine = {
+        transparent = true,
+    },
     highlights = {
         MatchParen = { fg = "$red", bg = "$none", fmt = "underline" },
 
