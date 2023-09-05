@@ -87,6 +87,11 @@ require("lualine").setup({
                 },
                 draw_empty = true,
             },
+            {
+                function()
+                    return " "
+                end,
+            },
         },
         lualine_x = {
             {
