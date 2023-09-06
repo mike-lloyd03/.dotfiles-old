@@ -17,7 +17,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -51,7 +52,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -85,7 +87,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -119,7 +122,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -153,7 +157,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -187,7 +192,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -221,7 +227,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -255,7 +262,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -289,7 +297,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -323,7 +332,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -357,7 +367,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -391,7 +402,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -425,7 +437,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -459,7 +472,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -493,7 +507,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -527,7 +542,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -561,7 +577,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -583,40 +600,6 @@
                     ]
                 },
                 {
-                    "description": "C-q",
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.googlecode\\.iterm2$",
-                                "^com\\.apple\\.Terminal$",
-                                "^org\\.vim\\.MacVim$",
-                                "^org\\.alacritty$",
-                                "^com\\.neovide\\.neovide$",
-                                "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "q",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_command"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "q",
-                            "modifiers": [
-                                "left_control"
-                            ]
-                        }
-                    ]
-                },
-                {
                     "description": "C-d",
                     "type": "basic",
                     "conditions": [
@@ -629,7 +612,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -663,7 +647,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -697,7 +682,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],
@@ -731,7 +717,8 @@
                                 "^org\\.alacritty$",
                                 "^com\\.neovide\\.neovide$",
                                 "^com\\.jetbrains\\.intellij\\.ce$",
-                                "^net\\.kovidgoyal\\.kitty$"
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
                             ]
                         }
                     ],

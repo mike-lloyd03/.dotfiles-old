@@ -8,6 +8,7 @@ bundle_identifiers:
   - "^com\\.neovide\\.neovide$"
   - "^com\\.jetbrains\\.intellij\\.ce$"
   - "^net\\.kovidgoyal\\.kitty$"
+  - "^md\\.obsidian$"
 keys:
   - c
   - v
@@ -26,7 +27,7 @@ keys:
   - b
   - s
   - slash
-  - q
+  # - q
   - d
   - e
   - p

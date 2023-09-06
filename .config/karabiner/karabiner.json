@@ -18,6 +18,51 @@
                 },
                 "rules": [
                     {
+                        "description": "Forward and back with button4 and button5",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": "command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": "command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Toggle CAPS_LOCK with LEFT_SHIFT + RIGHT_SHIFT",
                         "manipulators": [
                             {
@@ -64,51 +109,6 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "right_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Forward and back with button4 and button5",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.finder$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "pointing_button": "button4"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": "command"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.finder$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "pointing_button": "button5"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": "command"
                                     }
                                 ],
                                 "type": "basic"
@@ -644,7 +644,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -678,7 +679,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -712,7 +714,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -746,7 +749,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -780,7 +784,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -814,7 +819,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -848,7 +854,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -882,7 +889,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -916,7 +924,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -950,7 +959,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -984,7 +994,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1018,7 +1029,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1052,7 +1064,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1086,7 +1099,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1120,7 +1134,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1154,7 +1169,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1188,7 +1204,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1222,41 +1239,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "C-q",
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^org\\.vim\\.MacVim$",
-                                            "^org\\.alacritty$",
-                                            "^com\\.neovide\\.neovide$",
-                                            "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1290,7 +1274,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1324,7 +1309,8 @@
                                             "^org\\.alacritty$",
                                             "^com\\.neovide\\.neovide$",
                                             "^com\\.jetbrains\\.intellij\\.ce$",
-                                            "^net\\.kovidgoyal\\.kitty$"
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1341,6 +1327,41 @@
                                 "to": [
                                     {
                                         "key_code": "p",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.vim\\.MacVim$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.neovide\\.neovide$",
+                                            "^com\\.jetbrains\\.intellij\\.ce$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^md\\.obsidian$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "C-g",
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "g",
                                         "modifiers": [
                                             "left_control"
                                         ]
@@ -1404,7 +1425,7 @@
                         "product_id": 591,
                         "vendor_id": 1452
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
