@@ -39,6 +39,7 @@ end
 if [ "$(uname -n)" = dev ]
     alias kdev='kubectl config use-context appsec-dev'
     alias kprod='kubectl config use-context appsec-prod'
+    alias ac=armorcode
 end
 
 # git
