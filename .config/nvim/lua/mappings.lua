@@ -13,6 +13,11 @@ local function vmap(shortcut, command, opts)
     vim.api.nvim_set_keymap("v", shortcut, command, opts)
 end
 
+local function cmap(shortcut, command, opts)
+    opts = opts or { noremap = true }
+    vim.api.nvim_set_keymap("c", shortcut, command, opts)
+end
+
 -- This always screws me up
 nmap("<C-R>", "q:")
 nmap("q:", "")
@@ -29,10 +34,17 @@ nmap("gl", "$")
 nmap("gs", "_")
 nmap("ge", "G")
 nmap("g.", "g;")
+
 vmap("gh", "0")
 vmap("gl", "$")
 vmap("gs", "_")
 vmap("ge", "G")
+
+cmap("gh", "0")
+cmap("gl", "$")
+cmap("gs", "_")
+cmap("ge", "G")
+
 nmap("<space>w", "<C-w>")
 nmap("U", "<C-r>")
 vmap(">", ">gv")
