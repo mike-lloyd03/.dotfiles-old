@@ -3,19 +3,14 @@ local function nmap(shortcut, command, opts)
     vim.api.nvim_set_keymap("n", shortcut, command, opts)
 end
 
-local function imap(shortcut, command, opts)
-    opts = opts or { noremap = true }
-    vim.api.nvim_set_keymap("i", shortcut, command, opts)
-end
-
 local function vmap(shortcut, command, opts)
     opts = opts or { noremap = true }
     vim.api.nvim_set_keymap("v", shortcut, command, opts)
 end
 
-local function cmap(shortcut, command, opts)
+local function omap(shortcut, command, opts)
     opts = opts or { noremap = true }
-    vim.api.nvim_set_keymap("c", shortcut, command, opts)
+    vim.api.nvim_set_keymap("o", shortcut, command, opts)
 end
 
 -- This always screws me up
@@ -40,10 +35,10 @@ vmap("gl", "$")
 vmap("gs", "_")
 vmap("ge", "G")
 
-cmap("gh", "0")
-cmap("gl", "$")
-cmap("gs", "_")
-cmap("ge", "G")
+omap("gh", "0")
+omap("gl", "$")
+omap("gs", "_")
+omap("ge", "G")
 
 nmap("<space>w", "<C-w>")
 nmap("U", "<C-r>")
@@ -79,16 +74,6 @@ nmap("<space>m", "<CMD>lua require('telescope.builtin').treesitter{}<CR>")
 -- nvim.notify
 nmap("<space>nn", "<CMD>Telescope notify<CR>")
 nmap("<space>nd", "<CMD>lua require('notify').dismiss()<CR>")
-
-function search_dotfiles()
-    require("telescope.builtin").find_files({
-        prompt_title = "< vimrc >",
-        cwd = "~/.config/nvim",
-        hidden = true,
-    })
-end
-
-nmap("<leader>vr", "<CMD>lua search_dotfiles()<CR>")
 
 -- Find and replace under cursor
 nmap("<leader>s", ":%s/<C-r><C-w>/")
