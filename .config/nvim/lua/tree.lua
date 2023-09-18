@@ -29,7 +29,7 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = false,
-        custom = { "\\.git", "__pycache__", "\\.venv", "\\.pytest_cache" },
+        custom = { "\\.git", "__pycache__", "\\.venv", "\\.pytest_cache", "node_modules", ".svelte-kit" },
         exclude = {},
     },
     git = {
@@ -41,9 +41,6 @@ require("nvim-tree").setup({
         width = 35,
         hide_root_folder = false,
         side = "left",
-        mappings = {
-            custom_only = false,
-        },
         number = false,
         relativenumber = false,
         signcolumn = "no",

@@ -37,6 +37,8 @@ vim.opt.cursorline = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.termguicolors = true
+
 -- Clipboard handling
 if vim.fn.hostname() == "dev" then
     vim.g.clipboard = {

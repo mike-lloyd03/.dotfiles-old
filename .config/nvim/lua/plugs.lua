@@ -441,33 +441,6 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        opts = {
-            load = {
-                ["core.defaults"] = {},
-                ["core.concealer"] = {
-                    config = {
-                        folds = false,
-                        icon_preset = "diamond",
-                    },
-                },
-                ["core.dirman"] = {
-                    config = {
-                        workspaces = {
-                            notes = "~/notes",
-                        },
-                    },
-                },
-                ["core.qol.toc"] = {},
-                ["core.qol.todo_items"] = {},
-            },
-        },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
-    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle" },
         ft = { "markdown" },
