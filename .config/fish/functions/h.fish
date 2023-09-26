@@ -9,6 +9,8 @@ function h
         "$cmd" help | $PAGER
     else if [ "$argv[1]" = "cargo" ]
         cargo help "$cmd[2..]"
+    else if [ "$argv[1]" = "npm" ]
+        npm help "$cmd[2..]"
     else if man -w "$cmd" &>/dev/null
         man "$cmd"
     else if eval "$cmd --help" &>/dev/null

@@ -93,16 +93,16 @@ require("lualine").setup({
                 end,
             },
         },
-        -- lualine_x = {
-        --     {
-        --         "lsp_progress",
-        --         spinner_symbols = { "⣾ ", "⣽ ", "⣻ ", "⢿ ", "⡿ ", "⣟ ", "⣯ ", "⣷ " },
-        --         timer = {
-        --             spinner = 100,
-        --         },
-        --         color = { bg = nil },
-        --     },
-        -- },
+        lualine_x = {
+            {
+                "lsp_progress",
+                spinner_symbols = { "⣾ ", "⣽ ", "⣻ ", "⢿ ", "⡿ ", "⣟ ", "⣯ ", "⣷ " },
+                timer = {
+                    spinner = 100,
+                },
+                color = { bg = nil },
+            },
+        },
     },
     inactive_winbar = {
         lualine_c = {
