@@ -132,6 +132,9 @@ nmap("<C-f>", "<CMD>Format<CR>")
 -- Lualine
 nmap("<C-w>,", ":LualineRenameTab ")
 
+-- write quit all
+nmap("XX", ":xa<CR>")
+
 -- vsnip
 vim.cmd([[
     imap <expr> <TAB> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<TAB>'

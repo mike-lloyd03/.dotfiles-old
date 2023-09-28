@@ -1,5 +1,5 @@
 \set COMP_KEYWORD_CASE upper
 \pset null '(null)'
 -- default prompt '%/%R%x%# '
-\set PROMPT1 '%001%[%033[1;32m%]%002%/%001%[%033[0m%]%002%R%x%# '
-\set PROMPT2 '%001%[%033[1;32m%]%002%/%001%[%033[0m%]%002%R%x%# '
+--\set PROMPT1 '%001%[%033[1;32m%]%002%/%001%[%033[0m%]%002%R%x%# '
+--\set PROMPT2 '%001%[%033[1;32m%]%002%/%001%[%033[0m%]%002%R%x%# '
