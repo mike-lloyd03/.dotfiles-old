@@ -61,7 +61,7 @@ $shell\
 $character\
 """
 
-# right_format = """$kubernetes"""
+right_format = """$kubernetes"""
 
 [aws]
 symbol = "  "

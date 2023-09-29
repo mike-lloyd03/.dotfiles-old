@@ -31,17 +31,17 @@ end
 bind --mode default \co edit_command_buffer
 bind --mode insert \co edit_command_buffer
 
-if type --quiet skim_key_bindings
-    skim_key_bindings
-end
-
 # Path
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
 # Prompt
-if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
-    /usr/local/bin/starship init fish | source
-else
-    starship init fish | source
+if status is-interactive
+    if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
+        /usr/local/bin/starship init fish | source
+    else
+        starship init fish | source
+    end
+
+    atuin init fish | source
 end
