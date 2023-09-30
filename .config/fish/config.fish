@@ -43,5 +43,5 @@ if status is-interactive
         starship init fish | source
     end
 
-    atuin init fish | source
+    atuin init fish --disable-up-arrow | source
 end
