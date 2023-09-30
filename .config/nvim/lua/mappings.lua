@@ -8,6 +8,11 @@ local function vmap(shortcut, command, opts)
     vim.api.nvim_set_keymap("v", shortcut, command, opts)
 end
 
+local function imap(shortcut, command, opts)
+    opts = opts or { noremap = true }
+    vim.api.nvim_set_keymap("i", shortcut, command, opts)
+end
+
 local function omap(shortcut, command, opts)
     opts = opts or { noremap = true }
     vim.api.nvim_set_keymap("o", shortcut, command, opts)
@@ -133,7 +138,12 @@ nmap("<C-f>", "<CMD>Format<CR>")
 nmap("<C-w>,", ":LualineRenameTab ")
 
 -- write quit all
-nmap("XX", ":xa<CR>")
+nmap("<C-x>", ":xa<CR>")
+
+-- quick save
+nmap("::", ":w<CR>")
+nmap("<C-f>", "<ESC>:wa<CR>")
+imap("<C-f>", "<ESC>:wa<CR>")
 
 -- vsnip
 vim.cmd([[
@@ -207,5 +217,11 @@ wk.register({
         ["-"] = { "Coerse to dash-case" },
         ["."] = { "Coerse to dot.case" },
         [" "] = { "Coerse to space case" },
+    },
+    X = {
+        X = { "Write quit all" },
+    },
+    [":"] = {
+        [":"] = { "Write" },
     },
 })
