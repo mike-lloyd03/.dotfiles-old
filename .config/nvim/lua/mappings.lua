@@ -141,7 +141,6 @@ nmap("<C-w>,", ":LualineRenameTab ")
 nmap("<C-x>", ":xa<CR>")
 
 -- quick save
-nmap("::", ":w<CR>")
 nmap("<C-f>", "<ESC>:wa<CR>")
 imap("<C-f>", "<ESC>:wa<CR>")
 
@@ -220,8 +219,5 @@ wk.register({
     },
     X = {
         X = { "Write quit all" },
-    },
-    [":"] = {
-        [":"] = { "Write" },
     },
 })
