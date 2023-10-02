@@ -39,7 +39,10 @@ end
 
 if [ "$(uname -n)" = dev ]
     alias kdev='kubectl config use-context appsec-dev'
-    alias kprod='kubectl config use-context appsec-prod'
+    alias kdevt='kubectl config use-context appsec-dev-tanzu'
+    alias kprod='kubectl config use-context appsec-prod-rancher'
+    alias kprodt="kubectl config use-context appsec-prod-tanzu"
+    alias klogin="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-prd --tanzu-kubernetes-cluster-namespace app-sec-prd-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com && kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-dev --tanzu-kubernetes-cluster-namespace app-sec-dev-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
     alias ac=armorcode
 end
 
@@ -107,6 +110,3 @@ alias kl="kubectl logs"
 alias ke="kubectl exec"
 alias keit="kubectl exec -it"
 alias kdl="kubectl delete"
-alias ksw-tanzu="kubectl config use-context appsec-prod-tanzu"
-alias ksw-rancher="kubectl config use-context appsec-prod-rancher"
-alias klogin="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-prd --tanzu-kubernetes-cluster-namespace app-sec-prd-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
