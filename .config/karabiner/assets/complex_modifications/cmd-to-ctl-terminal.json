@@ -738,6 +738,76 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "description": "C-f",
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.apple\\.Terminal$",
+                                "^org\\.vim\\.MacVim$",
+                                "^org\\.alacritty$",
+                                "^com\\.neovide\\.neovide$",
+                                "^com\\.jetbrains\\.intellij\\.ce$",
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description": "C-x",
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.apple\\.Terminal$",
+                                "^org\\.vim\\.MacVim$",
+                                "^org\\.alacritty$",
+                                "^com\\.neovide\\.neovide$",
+                                "^com\\.jetbrains\\.intellij\\.ce$",
+                                "^net\\.kovidgoyal\\.kitty$",
+                                "^md\\.obsidian$"
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "x",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "x",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
                 }
             ]
         }
