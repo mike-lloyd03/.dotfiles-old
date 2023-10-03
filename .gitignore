@@ -16,3 +16,4 @@ venv-nvim
 .config/nushell/history.txt
 .luarc.json
 .config/nvim/lazy-lock.json
+.config/fish/completions

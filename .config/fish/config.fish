@@ -45,5 +45,5 @@ if status is-interactive
 
     atuin init fish --disable-up-arrow | source
 
-    zoxide init fish --cmd c | source
+    zoxide init fish --cmd cd | source
 end
