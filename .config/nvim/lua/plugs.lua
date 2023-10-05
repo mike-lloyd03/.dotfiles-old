@@ -157,6 +157,7 @@ require("lazy").setup({
         config = function()
             require("telescope").setup({
                 defaults = {
+                    prompt_prefix = "❯ ",
                     mappings = {
                         i = {
                             ["<esc>"] = require("telescope.actions").close,
@@ -256,9 +257,12 @@ require("lazy").setup({
     },
     {
         "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
         opts = {
-            space_char_blankline = " ",
-            use_treesitter_scope = true,
+            indent = {
+                char = "│",
+                highlight = "VertSplit",
+            },
         },
     },
 

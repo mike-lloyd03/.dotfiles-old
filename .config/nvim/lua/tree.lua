@@ -39,7 +39,6 @@ require("nvim-tree").setup({
     },
     view = {
         width = 35,
-        hide_root_folder = false,
         side = "left",
         number = false,
         relativenumber = false,
@@ -48,6 +47,7 @@ require("nvim-tree").setup({
     renderer = {
         group_empty = true,
         highlight_opened_files = "name",
+        root_folder_label = false,
         icons = {
             git_placement = "after",
             padding = " ",

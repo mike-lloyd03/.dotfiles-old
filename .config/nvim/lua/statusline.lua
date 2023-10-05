@@ -86,6 +86,7 @@ require("lualine").setup({
                     right = 0,
                 },
                 draw_empty = true,
+                separator = "",
             },
             {
                 function()
@@ -95,6 +96,7 @@ require("lualine").setup({
         },
         lualine_x = {
             {
+                separator = nil,
                 "lsp_progress",
                 spinner_symbols = { "⣾ ", "⣽ ", "⣻ ", "⢿ ", "⡿ ", "⣟ ", "⣯ ", "⣷ " },
                 timer = {
