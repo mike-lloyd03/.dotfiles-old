@@ -10,7 +10,6 @@ command -v rg &>/dev/null && alias rgih="rg --no-ignore --hidden"
 command -v exa &>/dev/null && alias ls="exa --group-directories-first" && alias ll="exa -lg --group-directories-first" && alias la="exa -lga --group-directories-first"
 command -v journalctl &>/dev/null && alias jc='sudo journalctl -xe'
 alias svenv="source .venv/bin/activate.fish"
-# alias cd="__zoxide_z"
 
 function last_history_item
     echo $history[1]
@@ -42,7 +41,8 @@ if [ "$(uname -n)" = dev ]
     alias kdevt='kubectl config use-context appsec-dev-tanzu'
     alias kprod='kubectl config use-context appsec-prod-rancher'
     alias kprodt="kubectl config use-context appsec-prod-tanzu"
-    alias klogin="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-prd --tanzu-kubernetes-cluster-namespace app-sec-prd-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com && kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-dev --tanzu-kubernetes-cluster-namespace app-sec-dev-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
+    alias klogin="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-prd --tanzu-kubernetes-cluster-namespace app-sec-prd-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
+    alias klogindev="kubectl vsphere login --server=10.22.124.2 --tanzu-kubernetes-cluster-name app-sec-dev --tanzu-kubernetes-cluster-namespace app-sec-dev-ns --insecure-skip-tls-verify --vsphere-username ml255064@td.teradata.com"
     alias ac=armorcode
 end
 
