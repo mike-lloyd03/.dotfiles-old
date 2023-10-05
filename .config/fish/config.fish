@@ -37,11 +37,12 @@ fish_add_path $HOME/.cargo/bin
 
 # Prompt
 if status is-interactive
-    if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
-        /usr/local/bin/starship init fish | source
-    else
-        starship init fish | source
+    function starship_transient_prompt_func
+        starship module line_break
+        starship module character
     end
+    starship init fish | source
+    enable_transience
 
     atuin init fish --disable-up-arrow | source
 

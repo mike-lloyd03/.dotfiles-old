@@ -17,3 +17,5 @@ venv-nvim
 .luarc.json
 .config/nvim/lazy-lock.json
 .config/fish/completions
+.config/fish/functions/_*
+.config/fish/conf.d/
