@@ -25,7 +25,7 @@ require("onedark").setup({
     },
     diagnostics = {
         darker = true, -- darker colors for diagnostic
-        undercurl = false, -- use undercurl instead of underline for diagnostics
+        undercurl = true, -- use undercurl instead of underline for diagnostics
         -- background = true, -- use background color for virtual text
     },
 })

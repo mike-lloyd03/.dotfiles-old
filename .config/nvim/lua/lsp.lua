@@ -46,6 +46,7 @@ require("lspconfig").jsonls.setup({
     on_attach = navic_attach,
 })
 require("lspconfig").ccls.setup({})
+require("lspconfig").kotlin_language_server.setup({})
 
 ----------------------------
 -- Lua Config
