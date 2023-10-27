@@ -1,6 +1,8 @@
 layout_dir "/home/mike/.config/zellij/layouts"
 default_layout "compact"
 
+ansi_underlines true
+
 keybinds {
     session {
         unbind "Ctrl o"
