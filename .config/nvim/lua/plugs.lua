@@ -261,6 +261,7 @@ require("lazy").setup({
         opts = {
             scope = {
                 show_start = false,
+                show_end = false,
             },
             indent = {
                 char = "│",
@@ -460,6 +461,7 @@ require("lazy").setup({
         "kevinhwang91/nvim-ufo",
         dependencies = {
             "kevinhwang91/promise-async",
+            -- Sets up fold column
             {
                 "luukvbaal/statuscol.nvim",
                 config = function()
@@ -467,9 +469,9 @@ require("lazy").setup({
                     require("statuscol").setup({
                         relculright = true,
                         segments = {
-                            { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-                            { text = { "%s" }, click = "v:lua.ScSa" },
                             { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+                            { text = { "%s" }, click = "v:lua.ScSa" },
+                            { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
                         },
                     })
                 end,

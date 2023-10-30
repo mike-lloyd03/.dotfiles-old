@@ -2,10 +2,6 @@
 require("onedark").setup({
     style = "deep",
     toggle_style_key = "<leader>ts",
-    -- toggle_style_list = { "dark", "light" },
-    colors = {
-        light_blue = "#0888f1",
-    },
     lualine = {
         transparent = true,
     },
@@ -19,9 +15,11 @@ require("onedark").setup({
         TelescopeMatching = { fg = "$orange", fmt = "bold" },
         TelescopePromptPrefix = { fg = "$red" },
 
-        CurSearch = { bg = "$blue" },
-        IncSearch = { bg = "$blue" },
-        Search = { bg = "$light_blue" },
+        CurSearch = { bg = "$fg" },
+        IncSearch = { bg = "$fg" },
+        Search = { bg = "$blue" },
+
+        FoldColumn = { bg = "$bg0" },
     },
     diagnostics = {
         darker = true, -- darker colors for diagnostic
