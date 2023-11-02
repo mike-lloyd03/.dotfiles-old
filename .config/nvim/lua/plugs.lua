@@ -374,6 +374,15 @@ require("lazy").setup({
         dependencies = {
             "kyazdani42/nvim-web-devicons",
         },
+        config = {
+            signs = {
+                error = "●",
+                warning = "●",
+                hint = "●",
+                information = "●",
+                other = "●",
+            },
+        },
     },
     {
         "ggandor/leap.nvim",
