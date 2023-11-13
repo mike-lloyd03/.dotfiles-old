@@ -1,3 +1,4 @@
+// Alacritty colors
 // foreground: "0xa0a8b8"
 // background: "0x1a1c23"
 // black: "0x2c323c"
@@ -16,39 +17,39 @@ layout {
 
     pane size=1 borderless=true {
         plugin location="file:/home/mike/.config/zellij/plugins/zjstatus.wasm" {
-            format_left  "{mode}#[fg=#1a1c23,bg=#4fa6ed,bold]{session}#[fg=#4fa6ed,bg=#1a1c23]{tabs}"
-            format_right "#[fg=#1a1c23,bg=#4fa6ed,bold]{datetime}"
+            format_left  "{mode}#[fg=#1a1c23,bg=#4fa6ed,bold]{session}#[fg=#4fa6ed,bg=#1a1c23]{tabs}"
+            format_right "#[fg=#1a1c23,bg=#4fa6ed,bold]{datetime}"
             format_space "#[bg=#1a1c23]"
 
             border_enabled  "false"
 
             hide_frame_for_single_pane "true"
 
-            tab_normal              "#[fg=#1a1c23,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index}  {name} #[fg=#4C4C59,bg=#1a1c23]"
-            tab_normal_fullscreen   "#[fg=#1a1c23,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index}  {name} Z #[fg=#4C4C59,bg=#1a1c23]"
-            tab_normal_fullscreen   "#[fg=#1a1c23,bg=#4C4C59] #[fg=#000000,bg=#4C4C59]{index}  {name} S #[fg=#4C4C59,bg=#1a1c23]"
-            tab_active              "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} #[fg=#ffffff,bg=#1a1c23]"
-            tab_active_fullscreen   "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} Z #[fg=#ffffff,bg=#1a1c23]"
-            tab_active_fullscreen   "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} S #[fg=#ffffff,bg=#1a1c23]"
+            tab_normal              "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} #[fg=#4C4C59,bg=#1a1c23]"
+            tab_normal_fullscreen   "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} Z #[fg=#4C4C59,bg=#1a1c23]"
+            tab_normal_sync         "#[fg=#1a1c23,bg=#4C4C59] {index}  {name} S #[fg=#4C4C59,bg=#1a1c23]"
+            tab_active              "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} #[fg=#ffffff,bg=#1a1c23]"
+            tab_active_fullscreen   "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} Z #[fg=#ffffff,bg=#1a1c23]"
+            tab_active_sync         "#[fg=#1a1c23,bg=#ffffff,bold] {index}  {name} S #[fg=#ffffff,bg=#1a1c23]"
 
             datetime        "#[fg=#1a1c23,bg=#4fa6ed,bold] {format} "
             datetime_format "%A, %Y%m%d %H%M"
             datetime_timezone "America/Los_Angeles"
 
-            mode_normal        "#[fg=#1a1c23,bg=#4fa6ed,bold]  NORMAL "
-            mode_locked        "#[fg=#1a1c23,bg=#e55561,bold]  LOCKED "
-            mode_resize        "#[fg=#1a1c23,bg=#e2b86b,bold]  RESIZE "
-            mode_pane          "#[fg=#1a1c23,bg=#e2b86b,bold]   PANE  "
-            mode_tab           "#[fg=#1a1c23,bg=#e2b86b,bold]   TAB   "
-            mode_scroll        "#[fg=#1a1c23,bg=#e2b86b,bold]  SCROLL "
-            mode_enter_search  "#[fg=#1a1c23,bg=#e2b86b,bold] ENTER SEARCH "
-            mode_search        "#[fg=#1a1c23,bg=#e2b86b,bold]  SEARCH "
-            mode_rename_tab    "#[fg=#1a1c23,bg=#e2b86b,bold] RENAME TAB "
-            mode_rename_pane   "#[fg=#1a1c23,bg=#e2b86b,bold] RENAME PANE "
-            mode_session       "#[fg=#1a1c23,bg=#e2b86b,bold] SESSION "
-            mode_move          "#[fg=#1a1c23,bg=#e2b86b,bold]   MOVE  "
-            mode_prompt        "#[fg=#1a1c23,bg=#e2b86b,bold]  PROMPT "
-            mode_tmux          "#[fg=#1a1c23,bg=#8ebd6b,bold]   TMUX  "
+            mode_normal        "#[fg=#1a1c23,bg=#4fa6ed,bold]  NORMAL "
+            mode_locked        "#[fg=#1a1c23,bg=#e55561,bold]  LOCKED "
+            mode_resize        "#[fg=#1a1c23,bg=#e2b86b,bold]  RESIZE "
+            mode_pane          "#[fg=#1a1c23,bg=#e2b86b,bold]   PANE  "
+            mode_tab           "#[fg=#1a1c23,bg=#e2b86b,bold]   TAB   "
+            mode_scroll        "#[fg=#1a1c23,bg=#e2b86b,bold]  SCROLL "
+            mode_enter_search  "#[fg=#1a1c23,bg=#e2b86b,bold] ENTER SEARCH "
+            mode_search        "#[fg=#1a1c23,bg=#e2b86b,bold]  SEARCH "
+            mode_rename_tab    "#[fg=#1a1c23,bg=#e2b86b,bold] RENAME TAB "
+            mode_rename_pane   "#[fg=#1a1c23,bg=#e2b86b,bold] RENAME PANE "
+            mode_session       "#[fg=#1a1c23,bg=#e2b86b,bold] SESSION "
+            mode_move          "#[fg=#1a1c23,bg=#e2b86b,bold]   MOVE  "
+            mode_prompt        "#[fg=#1a1c23,bg=#e2b86b,bold]  PROMPT "
+            mode_tmux          "#[fg=#1a1c23,bg=#8ebd6b,bold]   TMUX  "
         }
     }
 }

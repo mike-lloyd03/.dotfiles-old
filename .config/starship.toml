@@ -53,7 +53,7 @@ when = true
 disabled = true
 
 [dart]
-format = " [$symbol($version )]($style)"
+format = " [$symbol($version )]($style)"
 symbol = " "
 
 [directory]
@@ -66,7 +66,7 @@ repo_root_style = "bold underline"
 symbol = " "
 
 [golang]
-format = " [$symbol($version )]($style)"
+format = " [$symbol($version )]($style)"
 symbol = " "
 
 [hostname]
@@ -74,7 +74,7 @@ format = "[@$hostname]($style):"
 style = "bold #5192df"
 
 [java]
-format = " [${symbol}(${version} )]($style)"
+format = " [${symbol}(${version} )]($style)"
 symbol = " "
 detect_extensions = ["java", "class", "jar", "cljs", "cljc"]
 detect_files = [
@@ -87,7 +87,7 @@ detect_files = [
 ]
 
 [kotlin]
-format = " [$symbol($version )]($style)"
+format = " [$symbol($version )]($style)"
 symbol = " "
 
 [kubernetes]
@@ -101,19 +101,19 @@ style = "blue bold"
 symbol = " "
 
 [nodejs]
-format = " [$symbol($version )]($style)"
+format = " [$symbol($version )]($style)"
 
 [package]
-format = " [$symbol$version]($style) "
+format = " [$symbol$version]($style) "
 symbol = "󰏗 "
 
 [python]
 symbol = " "
-format = ' [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = ' [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 python_binary = ["python3", "python2"]
 
 [rust]
-format = " [$symbol($version )]($style) "
+format = " [$symbol($version )]($style) "
 symbol = " "
 
 [time]
@@ -121,7 +121,7 @@ disabled = false
 time_format = "%H%M"
 
 [terraform]
-format = " [$symbol$workspace]($style) "
+format = " [$symbol$workspace]($style) "
 disabled = true
 
 [username]
@@ -129,4 +129,4 @@ format = "[$user]($style)"
 style_user = "bold #5192df"
 
 [vagrant]
-format = " [$symbol($version )]($style) "
+format = " [$symbol($version )]($style) "
