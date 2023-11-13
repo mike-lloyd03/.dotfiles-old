@@ -598,4 +598,5 @@ require("lazy").setup({
         width = 120,
         border = "rounded",
     }, cmd = "Glow" },
+    "Glench/Vim-Jinja2-Syntax",
 })
