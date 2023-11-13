@@ -1,7 +1,7 @@
 layout_dir "/home/mike/.config/zellij/layouts"
-default_layout "compact"
+// default_layout "compact"
 
-ansi_underlines true
+// styled_underlines false
 
 keybinds {
     session {
@@ -33,6 +33,7 @@ keybinds {
         bind "a" { ToggleTab; SwitchToMode "Normal"; }
         bind "w" { SwitchToMode "Tab"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        // bind "i" { ToggleActiveSyncTab; }
         bind "Ctrl h" { Resize "Left"; }
         bind "Ctrl j" { Resize "Down"; }
         bind "Ctrl k" { Resize "Up"; }
