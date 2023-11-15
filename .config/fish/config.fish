@@ -19,6 +19,7 @@ set -U fish_greeting ""
 
 if [ "$(uname -n)" = "TD-C02FK3H8MD6T" ]
     fish_add_path "/usr/local/opt/gnubin:/usr/local/bin"
+    fish_add_path "/Users/mike.lloyd/.nix-profile/bin:/nix/var/nix/profiles/default/bin"
     # set -x MANPATH /usr/local/opt/gnuman:${MANPATH:-/usr/share/man}
     set -x KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config-dev"
 end
