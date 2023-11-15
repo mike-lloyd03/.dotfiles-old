@@ -20,6 +20,7 @@ $python\
 $rust\
 $terraform\
 $zig\
+$nix_shell\
 $endline\
 $line_break\
 ${custom.corner_bot}\
@@ -128,5 +129,5 @@ disabled = true
 format = "[$user]($style)"
 style_user = "bold #5192df"
 
-[vagrant]
-format = " [$symbol($version )]($style) "
+[nix_shell]
+format = ' [$symbol$state( \($name\))]($style) '

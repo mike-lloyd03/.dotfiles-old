@@ -328,6 +328,7 @@ require("lazy").setup({
                         }
                     end,
                     markdown = require("formatter.defaults.prettier"),
+                    nix = require("formatter.filetypes.nix").alejandra,
                     python = {
                         require("formatter.filetypes.python").black,
                         require("formatter.filetypes.python").isort,
