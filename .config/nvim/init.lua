@@ -46,6 +46,10 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+-- Display tabs
+vim.opt.list = true
+vim.opt.listchars = "tab:>-"
+
 -- Clipboard handling
 if vim.fn.hostname() == "dev" then
     vim.g.clipboard = {
